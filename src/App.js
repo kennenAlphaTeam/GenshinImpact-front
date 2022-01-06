@@ -1,26 +1,31 @@
 import { useState } from "react";
+import { UserData } from "./UserData";
+import InputUID from "./InputUID";
+import { profile } from "./UserData";
+import { characters } from "./UserData";
 
-export default function InputUID() {
-    let profile;
-    const [ uid, setUID ] = useState('');
-    function handleUIDClick() {
-        localStorage.setItem('UID', uid);
+export default function App() {
+    const [ data, setData ] = useState([]);
+    function handleLoad() {
+        const userUID = localStorage.getItem('UID');
+        UserData(userUID)
+        .then(
+            ()=>{
+                setData([{ id: "profileData", data: profile}, { id: "characterData", data: characters}])
+            }
+        );
     }
-    function handleUIDChange(e) {
-        setUID(e.target.value);
-    }
-    fetch(`http://localhost:3030/api/825460402/userdata`)
-    .then(res => res.json())
-    .then(json => profile = json);
     return (
         <>
-            <div>
-                <h1>Input your Genshin Impact UID</h1>
-                <label htmlFor="">UID:</label>
-                <input type="text" onChange={handleUIDChange}/>
-                <button onClick={handleUIDClick}>Input</button>
-            </div>
-            <p>{profile}</p>
+            <h1>Test Page</h1>
+            {
+                localStorage.getItem('UID')===null?
+                <InputUID/>:
+                <>
+                <h2 onLoad={handleLoad}>UID checked!!</h2>
+                <p>{data.filter((element)=>element.id === "profileData")}</p>
+                </>
+            }
         </>
-    )
+    );
 }
