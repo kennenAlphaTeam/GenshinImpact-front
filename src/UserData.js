@@ -11,7 +11,7 @@ async function characterData(userUID) {
 }
 
 export default async function allData(userUID) {
-  return await Promise.all([userData(userUID), characterData(userUID)]);
+  return Promise.all([userData(userUID), characterData(userUID)]);
 }
 
 
