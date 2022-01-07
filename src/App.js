@@ -1,30 +1,23 @@
-import { useState } from "react";
-import { UserData } from "./UserData";
+import { useEffect, useState } from "react";
 import InputUID from "./InputUID";
-import { profile } from "./UserData";
-import { characters } from "./UserData";
+import allData from "./UserData";
 
 export default function App() {
+    const [ lock, setLock ] = useState('lock');
     const [ data, setData ] = useState([]);
-    function handleLoad() {
-        const userUID = localStorage.getItem('UID');
-        UserData(userUID)
-        .then(
-            ()=>{
-                setData([{ id: "profileData", data: profile}, { id: "characterData", data: characters}])
-            }
-        );
-    }
+    const [ userData, setUserData ] = useState();
+    
+    useEffect(() => {
+        const data = allData(localStorage.getItem('UID'));
+        setUserData(data);
+    }, [lock]);
     return (
         <>
             <h1>Test Page</h1>
             {
-                localStorage.getItem('UID')===null?
+                userData?
                 <InputUID/>:
-                <>
-                <h2 onLoad={handleLoad}>UID checked!!</h2>
-                <p>{data.filter((element)=>element.id === "profileData")}</p>
-                </>
+                <p>{userData}</p>
             }
         </>
     );
