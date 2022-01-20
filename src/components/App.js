@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import InputCookie from './InputCookie';
-import { data } from '../data';
 
 const App = () => {
-  return <>{!data ? <InputCookie /> : <p>{data}</p>}</>;
+  return (
+    <div>
+      <InputCookie />
+    </div>
+  );
 };
 export default App;
