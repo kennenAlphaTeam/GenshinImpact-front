@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux';
 import * as dataAPI from '../../api/data';
 
-type InitialState = {
+type DataState = {
   private_data: object;
 };
 
-const initialState: InitialState = {
+const dataState: DataState = {
   private_data: null,
 };
 
@@ -24,31 +24,31 @@ const getPrivateDataSuccess = (data: object) => {
   };
 };
 
-const getPrivateDataError = (e: string) => {
+const getPrivateDataError = () => {
   return {
     type: GET_PRIVATE_DATA_ERROR,
-    private_data: { error: e },
+    private_data: { error: 'Error occured while fetching data..' },
   };
 };
 
 export const getPrivateDataAsync = (cookie: string) => {
   return async (
     dispatch: ReturnType<typeof useDispatch>,
-    getState: InitialState,
+    getState: DataState,
   ) => {
     try {
       const private_data = await dataAPI.getCookieData(cookie);
       dispatch(getPrivateDataSuccess(private_data));
     } catch (e) {
-      dispatch(getPrivateDataError(e));
+      dispatch(getPrivateDataError());
     }
   };
 };
 
 export default function dataReducer(
-  state = initialState,
+  state = dataState,
   action: DataAction,
-): InitialState {
+): DataState {
   switch (action.type) {
     case GET_PRIVATE_DATA_SUCCESS:
       return {

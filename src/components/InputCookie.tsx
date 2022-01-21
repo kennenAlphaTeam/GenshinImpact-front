@@ -17,7 +17,6 @@ function InputCookie() {
       <button onClick={() => dispatch(getPrivateDataAsync(cookie))}>
         submit
       </button>
-      <p>{JSON.stringify(data)}</p>
     </div>
   );
 }
