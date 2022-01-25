@@ -24,4 +24,5 @@ export interface DataProfile {
   dailynote: object;
   characters?: object;
   handbook?: object;
+  resin?: string;
 }
