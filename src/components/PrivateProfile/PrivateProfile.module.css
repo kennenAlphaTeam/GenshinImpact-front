@@ -1,4 +1,38 @@
 .Profile {
-  background-color: blue;
+  background-color: #4a5366;
   display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+.Nickname {
+  display: flex;
+  margin: auto;
+}
+
+.Dailynote {
+  display: flex;
+}
+
+.Dailyfarming {
+  display: flex;
+}
+
+.CharacterList {
+  display: flex;
+  flex-direction: column;
+}
+
+.Stats {
+  display: flex;
+}
+
+.Dailynote li {
+  list-style: none;
+  background-color: burlywood;
+}
+
+.Stats li {
+  list-style: none;
+  background-color: burlywood;
 }

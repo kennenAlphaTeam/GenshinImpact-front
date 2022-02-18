@@ -1,0 +1,38 @@
+.CharacterList {
+  display: flex;
+  background-color: #ece5d8;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 13px;
+}
+
+.Imgbox {
+  width: 80px;
+  height: 80px;
+  border-radius: 70%;
+  overflow: hidden;
+  border: solid #d3bc8e;
+  background-color: #ffffff;
+}
+
+.Rare5 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(#966842, #c27e44);
+}
+
+.Rare4 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(#6a5489, #8e6bc2);
+}
+
+.Rare105 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(#ba4e55, #da4b51);
+}

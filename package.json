@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/kennenAlphaTeam/GenshinImpact-front#readme",
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.4.2",
     "@reduxjs/toolkit": "^1.7.1",
     "@types/react-redux": "^7.1.22",
     "axios": "^0.24.0",
