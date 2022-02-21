@@ -7,26 +7,36 @@ import {
 import { selectData } from '../../features/userdata/userdata';
 import styles from './PrivateProfile.module.css';
 import Character, { CharacterProps } from './Character';
-import { Grid } from '@mui/material';
+import { Container, Grid } from '@mui/material';
+import Profile from './Profile';
 
 function PrivateProfile() {
-  const dispatch = useDispatch();
-  const data = useSelector(selectData);
-  const resin = useSelector(selectResin);
-  useEffect(() => {
-    const timer = setInterval(() => {
-      dispatch(getResinDataAsync());
-    }, 240000);
-    return () => clearInterval(timer);
-  }, []);
   return (
-    <Grid container direction='column'>
+    <Grid className={styles.Main} container direction='column'>
       <Grid item>test1</Grid>
-      <Grid item container>
-        <Grid xs={3}>-----</Grid>
-        <Grid xs={6}>test2</Grid>
-        <Grid xs={3}>-----</Grid>
-      </Grid>
+      <Container maxWidth='lg'>
+        <Grid item container columns={12}>
+          <Grid item xs={4}></Grid>
+          <Grid item xs={4}>
+            searchbar
+          </Grid>
+          <Grid item xs={4}></Grid>
+        </Grid>
+        <Grid item container columns={12}>
+          <Grid item xs={4}></Grid>
+          <Grid item xs={4}>
+            <Profile />
+          </Grid>
+          <Grid item xs={4}></Grid>
+        </Grid>
+        <Grid item container columns={12}>
+          <Grid item xs={3}></Grid>
+          <Grid item xs={6}>
+            dailyitem
+          </Grid>
+          <Grid item xs={3}></Grid>
+        </Grid>
+      </Container>
     </Grid>
     // <div>
     //   <div className={styles.Profile}>

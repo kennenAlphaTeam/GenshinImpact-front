@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.Main {
+  background: url('/src/components/PrivateProfile/background.png');
+}
+
 .Nickname {
   display: flex;
   margin: auto;

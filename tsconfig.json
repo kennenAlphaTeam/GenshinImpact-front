@@ -9,6 +9,9 @@
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "lib": ["es6", "dom"],
+    "noImplicitThis": true,
+    "strictNullChecks": true
   }
 }

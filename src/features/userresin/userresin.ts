@@ -6,7 +6,7 @@ type ResinState = {
 };
 
 const resinState: ResinState = {
-  resin_data: null,
+  resin_data: {},
 };
 
 type ResinAction =

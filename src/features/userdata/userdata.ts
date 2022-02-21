@@ -6,7 +6,7 @@ type DataState = {
 };
 
 const dataState: DataState = {
-  private_data: null,
+  private_data: {},
 };
 
 type DataAction =

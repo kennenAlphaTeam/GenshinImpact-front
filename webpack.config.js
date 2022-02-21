@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -21,9 +22,36 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /.css?$/,
-        exclude: [path.resolve(__dirname, 'node_modules')],
-        use: ['style-loader', 'css-loader'],
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              url: true,
+            },
+          },
+        ],
+        include: /\.module\.css$/,
+      },
+      {
+        test: /\.(png|jp(e*)g)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              outputPath: './img/',
+              limit: 10000,
+              esModule: false,
+              name: '[name].[ext]',
+            },
+          },
+        ],
+        type: 'javascript/auto',
       },
     ],
   },
@@ -42,11 +70,17 @@ module.exports = {
       template: 'public/index.html',
       filename: 'index.html',
     }),
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+    }),
     // 전의 빌드를 삭제함
     new CleanWebpackPlugin(),
   ],
-  devtool: 'source-map',
+  //devtool: 'source-map',
   devServer: {
+    devMiddleware: {
+      writeToDisk: true,
+    },
     host: 'localhost',
     port: 8080,
     hot: true,
