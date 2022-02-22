@@ -1,4 +1,4 @@
-/*! build time : 오후 11:49:31 */
+/*! build time : 오후 11:08:17 */
 /*!***************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/PrivateProfile/PrivateProfile.module.css ***!
   \***************************************************************************************************************************************/
@@ -10,7 +10,8 @@
 }
 
 .PHNZulmBtzytZxHhjXDK {
-  background: url(img/background.png);
+  background-image: url(img/background.png);
+  background-size: cover;
 }
 
 .OjgcEbJNwKYL9d0vUrnk {
@@ -48,4 +49,49 @@
 /*!********************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/PrivateProfile/Profile.module.css ***!
   \********************************************************************************************************************************/
+.lQI_Lg6mt3j7ys3D2S3s {
+  display: flex;
+  flex-direction: row;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+}
+.lQI_Lg6mt3j7ys3D2S3s div {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+.h8Q2lNs5EuWp59AbEPGQ {
+  object-fit: cover;
+  overflow: hidden;
+  margin: auto;
+}
+.Hz6fw4_Kt1W3xSqNBjIg {
+  object-fit: cover;
+  margin: auto;
+  max-height: 23px;
+}
+.z8N48aiCDVjB7cl8CYVp {
+  min-width: 75px;
+  font-size: 18px;
+}
+.qylRicV0e3G5RfquyeVz {
+  min-width: 93px;
+  font-size: 18px;
+}
+.F6t26npjR8rpAOVFqFm5 {
+  white-space: pre-line;
+  font-size: 48px;
+}
+.EKYxglNi5fvlayrACnmm {
+  max-width: 130px;
+  margin-bottom: 47px;
+  margin-top: 63px;
+}
+.DbIKdXxs3Y72vCjUcC4P {
+  margin-bottom: 13px;
+}
+.IkHnu3ji64V9csXEG6Ek {
+  margin-bottom: 11px;
+}
 

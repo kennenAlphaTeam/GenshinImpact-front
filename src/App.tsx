@@ -6,8 +6,12 @@ import { useSelector } from 'react-redux';
 
 const App = () => {
   const data = useSelector(selectData);
+  console.log('data is...' + JSON.stringify(data));
+  console.log(Object.keys(data));
   return (
-    <div className='main'>{data ? <PrivateProfile /> : <InputCookie />}</div>
+    <div className='main'>
+      {Object.keys(data).length !== 0 ? <PrivateProfile /> : <InputCookie />}
+    </div>
   );
 };
 export default App;

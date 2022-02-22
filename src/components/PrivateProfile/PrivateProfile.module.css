@@ -6,7 +6,8 @@
 }
 
 .Main {
-  background: url('/src/components/PrivateProfile/background.png');
+  background-image: url('/public/img/background.png');
+  background-size: cover;
 }
 
 .Nickname {
