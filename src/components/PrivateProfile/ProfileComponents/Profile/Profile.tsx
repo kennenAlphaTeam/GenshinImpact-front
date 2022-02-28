@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   getResinDataAsync,
   selectResin,
-} from '../../features/userresin/userresin';
-import { selectData } from '../../features/userdata/userdata';
+} from '../../../../features/userresin/userresin';
+import { selectData } from '../../../../features/userdata/userdata';
 
 export default function Profile() {
   const dispatch = useDispatch();

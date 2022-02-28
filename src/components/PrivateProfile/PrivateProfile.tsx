@@ -6,9 +6,12 @@ import {
 } from '../../features/userresin/userresin';
 import { selectData } from '../../features/userdata/userdata';
 import styles from './PrivateProfile.module.css';
-import Character, { CharacterProps } from './Character';
+import Character, {
+  CharacterProps,
+} from './ProfileComponents/Character/Character';
 import { Container, Grid } from '@mui/material';
-import Profile from './Profile';
+import Profile from './ProfileComponents/Profile/Profile';
+import Dailyitem from './ProfileComponents/DailyItems/Dailyitems';
 
 function PrivateProfile() {
   return (
@@ -32,7 +35,7 @@ function PrivateProfile() {
         <Grid item container columns={12}>
           <Grid item xs={3}></Grid>
           <Grid item xs={6}>
-            dailyitem
+            <Dailyitem />
           </Grid>
           <Grid item xs={3}></Grid>
         </Grid>
