@@ -1,4 +1,4 @@
-/*! build time : 오후 11:32:18 */
+/*! build time : 오전 1:31:38 */
 /*!***************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/PrivateProfile/PrivateProfile.module.css ***!
   \***************************************************************************************************************************************/
@@ -93,5 +93,47 @@
 }
 .C7mbtarw_ZE1Fm2AXJrm {
   margin-bottom: 11px;
+}
+
+/*!****************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./src/components/PrivateProfile/ProfileComponents/DailyItems/Dailyitems.module.css ***!
+  \****************************************************************************************************************************************************************/
+.wBCCcc3PNxqAg10S4inT {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: white;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+  margin-top: 58px;
+}
+.wBCCcc3PNxqAg10S4inT div {
+  display: flex;
+}
+.B5uI9V8_aCr1qMDK6rQh {
+  color: #4b4b4b;
+  margin-left: 8px;
+  font-size: 18px;
+  font-family: Roboto;
+  font-weight: bold;
+  font-style: normal;
+}
+.YN8RsnlIEPsXFYsBIAXL {
+  margin-top: 4px;
+}
+.XR8kNaO5QUdNlNuLRwOF {
+  width: 100%;
+  background-color: #4b4b4b;
+  border-radius: 11px;
+  padding: 4px;
+}
+.XR8kNaO5QUdNlNuLRwOF div {
+  aspect-ratio: 1/1;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 4px;
+}
+.XR8kNaO5QUdNlNuLRwOF div img {
+  object-fit: cover;
+  border-radius: 10px;
 }
 
