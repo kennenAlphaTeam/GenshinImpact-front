@@ -1,20 +1,22 @@
 import axios from 'axios';
 
-export async function getCookieData(userCookie: string): Promise<any> {
-  const res = await axios.post<DataProfile>(
-    'http://localhost:3030/api/private-user',
-    {
-      cookie: userCookie,
-    },
-  );
-  return res.data;
+export async function setCookieData(userCookie: string): Promise<any> {
+  const res = await axios.post<DataProfile>('api/user/me/cookie', {
+    cookie: userCookie,
+  });
+  //유저 고유 Cookie값을 서버로 넘겨줌
 }
 
-export async function getResinData(): Promise<any> {
-  const res = await axios.get<DataProfile>(
-    'http://localhost:3030/api/private-resin',
-  );
+export async function getDailyData(): Promise<any> {
+  const res = await axios.get<DataProfile>('api/mihoyo/me/daily-note');
   return res.data;
+  //유저 UID와 고유 Cookie값이 일치할 시 데이타를 반환해줌 api
+}
+
+export async function getProfileData(userUID: string): Promise<any> {
+  const res = await axios.get<DataProfile>(`api/mihoyo/profile/${userUID}`);
+  return res.data;
+  //유저 UID 관련된 데이타를 반환해주는 api
 }
 
 export interface DataProfile {

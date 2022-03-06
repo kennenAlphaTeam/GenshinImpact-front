@@ -5,20 +5,21 @@ import styles from './Profile.module.css';
 import { Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  getResinDataAsync,
-  selectResin,
-} from '../../../../features/userresin/userresin';
-import { selectData } from '../../../../features/userdata/userdata';
+  asyncGetData,
+  asyncGetDaily,
+} from '../../../../features/redux/profiledata/profiledata';
+import { RootState } from '../../../../features/redux';
 
 export default function Profile() {
+  const { private_data, daily_data, status } = useSelector(
+    (state: RootState) => state.privateReducer,
+  );
   const dispatch = useDispatch();
-  const data = useSelector(selectData);
-  const resin = useSelector(selectResin);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      dispatch(getResinDataAsync());
-    }, 24000);
+      dispatch(asyncGetDaily());
+    }, 10000);
     return () => clearInterval(timer);
   }, []);
 
@@ -34,27 +35,24 @@ export default function Profile() {
           className={styles.Name}
           variant='inherit'>
           어서오세요
-          <br />
-          {data.handbook.nickname}님
+          <br />님
         </Typography>
       </Box>
       <Box className={styles.Resinbox}>
         <img src='img/icon-resin.png' alt='' className={styles.Icon} />
         <Box className={styles.Resin}>
           <Typography align='center' component='div' variant='inherit'>
-            {resin.resin ? resin.resin : data.dailynote.current_resin}/160
+            /160
           </Typography>
         </Box>
       </Box>
       <Box>
         <img src='img/icon-pot.png' alt='' className={styles.Icon} />
         <Box className={styles.Home}>
-          <Typography align='center' component='div' variant='inherit'>
-            {resin.home_coin
-              ? resin.home_coin
-              : data.dailynote.current_home_coin}
-            /{data.dailynote.max_home_coin}
-          </Typography>
+          <Typography
+            align='center'
+            component='div'
+            variant='inherit'></Typography>
         </Box>
       </Box>
     </Grid>

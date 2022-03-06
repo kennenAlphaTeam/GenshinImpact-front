@@ -1,10 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  getResinDataAsync,
-  selectResin,
-} from '../../features/userresin/userresin';
-import { selectData } from '../../features/userdata/userdata';
 import styles from './PrivateProfile.module.css';
 import Character, {
   CharacterProps,

@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
-import {
-  getPrivateDataAsync,
-  selectData,
-} from '../../features/userdata/userdata';
-import { useDispatch, useSelector } from 'react-redux';
+import { asyncSetCookie } from '../../features/redux/cookiedata/cookiedata';
+import { useDispatch } from 'react-redux';
 
 function InputCookie() {
   const [cookie, setCookie] = useState<string>('');
+  const dispatch = useDispatch();
+
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setCookie(e.target.value);
-  const dispatch = useDispatch();
-  const data = useSelector(selectData);
+
   const handleOnClick = () => {
-    localStorage.setItem('cookie', cookie);
-    dispatch(getPrivateDataAsync(cookie));
+    dispatch(asyncSetCookie(cookie));
   };
-  const localdata = localStorage.getItem('cookie');
-  if (localdata) dispatch(getPrivateDataAsync(localdata));
 
   return (
     <div>
@@ -27,9 +22,5 @@ function InputCookie() {
     </div>
   );
 }
-
-InputCookie.defaultProps = {
-  cookie: 'testCookie',
-};
 
 export default InputCookie;

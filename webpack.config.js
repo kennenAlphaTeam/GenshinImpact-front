@@ -82,7 +82,7 @@ module.exports = {
       writeToDisk: true,
     },
     host: 'localhost',
-    port: 8080,
+    port: 5674,
     hot: true,
     open: true,
   },
