@@ -21,11 +21,12 @@ const privateState: PrivateState = {
 };
 //privateReducer 인자, 반환값들 타입 지정
 
-export const asyncGetData = (uid: number) => {
+export const asyncGetPrivateData = (uid: number) => {
   return async (dispatch: Function) => {
     dispatch(requestData());
     const data = await dataAPI.getProfileData(uid.toString());
-    return dispatch(receiveData(data));
+    const iddata = await dataAPI.getIDCardData();
+    return dispatch(receiveData(Object.assign(data, iddata)));
   };
 }; //getProfileData api 비동기 호출용
 
@@ -64,7 +65,7 @@ const receiveDailyData = (data: object) => {
 };
 //privateReducer에 사용될 액션 생성자들
 
-export function privateReducer(
+export default function privateReducer(
   state = privateState,
   action: any,
 ): PrivateState {
@@ -88,37 +89,7 @@ export function privateReducer(
     case RECEIVE_DAILY_DATA:
       return {
         ...state,
-        private_data: action.payload,
-        status: 'Success',
-      };
-    default:
-      return state;
-  }
-}
-//privateReducer
-
-type PublicState = {
-  public_data: object;
-  status: string;
-};
-
-const publicState: PublicState = {
-  public_data: {},
-  status: '',
-};
-//publicReducer 인자, 반환값들 타입 지정
-
-export function publicReducer(state = publicState, action: any): PublicState {
-  switch (action.type) {
-    case REQUEST_DATA:
-      return {
-        ...state,
-        status: 'Request pulblic data...',
-      };
-    case RECEIVE_DATA:
-      return {
-        ...state,
-        public_data: action.payload,
+        daily_data: action.payload,
         status: 'Success',
       };
     default:

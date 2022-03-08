@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { asyncSetCookie } from '../../features/redux/cookiedata/cookiedata';
 import { useDispatch } from 'react-redux';
+import {
+  asyncGetPrivateData,
+  asyncGetDaily,
+} from '../../features/redux/profiledata/privatedata';
 
 function InputCookie() {
   const [cookie, setCookie] = useState<string>('');
@@ -10,7 +14,16 @@ function InputCookie() {
     setCookie(e.target.value);
 
   const handleOnClick = () => {
-    dispatch(asyncSetCookie(cookie));
+    dispatch(asyncSetCookie(cookieSlice(cookie)));
+    dispatch(asyncGetPrivateData(825460402));
+    dispatch(asyncGetDaily());
+  };
+
+  const cookieSlice = (cookie_string: string) => {
+    const cookie_arr: string[] = cookie_string
+      .split(' ')
+      .map((str) => str.replace(/(\_g|cto).*/, ''));
+    return cookie_arr.join(' ').trim();
   };
 
   return (

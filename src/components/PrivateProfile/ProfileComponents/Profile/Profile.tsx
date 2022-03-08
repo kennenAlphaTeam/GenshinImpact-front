@@ -5,14 +5,18 @@ import styles from './Profile.module.css';
 import { Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  asyncGetData,
+  asyncGetPrivateData,
   asyncGetDaily,
-} from '../../../../features/redux/profiledata/profiledata';
+} from '../../../../features/redux/profiledata/privatedata';
+import { asyncGetPublicData } from '../../../../features/redux/profiledata/publicdata';
 import { RootState } from '../../../../features/redux';
 
 export default function Profile() {
-  const { private_data, daily_data, status } = useSelector(
-    (state: RootState) => state.privateReducer,
+  const dailyData: any = useSelector(
+    (state: RootState) => state.private_data.daily_data,
+  );
+  const privateData: any = useSelector(
+    (state: RootState) => state.private_data.private_data,
   );
   const dispatch = useDispatch();
 
@@ -21,6 +25,11 @@ export default function Profile() {
       dispatch(asyncGetDaily());
     }, 10000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    dispatch(asyncGetPrivateData(825460402));
+    dispatch(asyncGetDaily());
   }, []);
 
   return (
@@ -35,14 +44,15 @@ export default function Profile() {
           className={styles.Name}
           variant='inherit'>
           어서오세요
-          <br />님
+          <br />
+          {privateData.nickname}님
         </Typography>
       </Box>
       <Box className={styles.Resinbox}>
         <img src='img/icon-resin.png' alt='' className={styles.Icon} />
         <Box className={styles.Resin}>
           <Typography align='center' component='div' variant='inherit'>
-            /160
+            {dailyData.current_resin}/160
           </Typography>
         </Box>
       </Box>
@@ -53,6 +63,7 @@ export default function Profile() {
             align='center'
             component='div'
             variant='inherit'></Typography>
+          {dailyData.current_home_coin}/{dailyData.max_home_coin}
         </Box>
       </Box>
     </Grid>

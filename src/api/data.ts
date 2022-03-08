@@ -1,9 +1,10 @@
 import axios from 'axios';
 
 export async function setCookieData(userCookie: string): Promise<any> {
-  const res = await axios.post<DataProfile>('api/user/me/cookie', {
+  const res = await axios.put<DataProfile>('api/user/me/cookie', {
     cookie: userCookie,
   });
+  return res.data;
   //유저 고유 Cookie값을 서버로 넘겨줌
 }
 
@@ -17,6 +18,11 @@ export async function getProfileData(userUID: string): Promise<any> {
   const res = await axios.get<DataProfile>(`api/mihoyo/profile/${userUID}`);
   return res.data;
   //유저 UID 관련된 데이타를 반환해주는 api
+}
+
+export async function getIDCardData(): Promise<any> {
+  const res = await axios.get<DataProfile>('api/user/me/genshinIdCard');
+  return res.data;
 }
 
 export interface DataProfile {

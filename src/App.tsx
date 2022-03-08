@@ -5,10 +5,10 @@ import { useSelector } from 'react-redux';
 import { RootState } from './features/redux';
 
 const App = () => {
-  const cookie = useSelector((state: RootState) => state.cookieReducer.cookie);
+  const data = useSelector((state: RootState) => state);
   return (
     <div className='main'>
-      {cookie === '' ? <InputCookie /> : <PrivateProfile />}
+      {data.cookie_data.cookie === '' ? <InputCookie /> : <PrivateProfile />}
     </div>
   );
 };

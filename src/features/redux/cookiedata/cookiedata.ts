@@ -29,7 +29,7 @@ const receiveCookie = (res: object) => {
 };
 
 export const asyncSetCookie = (cookie: string) => {
-  return async (dispatch: Function) => {
+  return async (dispatch: ReturnType<typeof useDispatch>) => {
     dispatch(sendingCookie(cookie));
     const res = await dataAPI.setCookieData(cookie);
     return dispatch(receiveCookie(res));

@@ -81,6 +81,12 @@ module.exports = {
     devMiddleware: {
       writeToDisk: true,
     },
+    proxy: {
+      '/api/*': {
+        target: 'http://localhost:8080',
+        pathRewrite: { '^/api': '/' },
+      },
+    },
     host: 'localhost',
     port: 5674,
     hot: true,

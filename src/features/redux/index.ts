@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
-import { privateReducer, publicReducer } from './profiledata/profiledata';
+import privateReducer from './profiledata/privatedata';
+import publicReducer from './profiledata/publicdata';
 import cookieReducer from './cookiedata/cookiedata';
 
 const rootReducer = combineReducers({
-  privateReducer,
-  publicReducer,
-  cookieReducer,
+  private_data: privateReducer,
+  public_data: publicReducer,
+  cookie_data: cookieReducer,
 });
 
 export default rootReducer;
