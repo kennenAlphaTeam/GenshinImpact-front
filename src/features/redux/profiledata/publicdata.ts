@@ -1,9 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { combineReducers } from 'redux';
 import * as dataAPI from '../../../api/data';
-
-const REQUEST_DATA: string = 'REQUEST_DATA';
-const RECEIVE_DATA: string = 'RECEIVE_DATA';
+import { RECEIVE_DATA, REQUEST_DATA } from './actions';
 //액션 상수 지정
 
 export const asyncGetPublicData = (uid: number) => {

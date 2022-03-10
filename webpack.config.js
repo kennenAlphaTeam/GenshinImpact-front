@@ -91,5 +91,6 @@ module.exports = {
     port: 5674,
     hot: true,
     open: true,
+    historyApiFallback: true,
   },
 };

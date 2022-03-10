@@ -1,11 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { combineReducers } from 'redux';
 import * as dataAPI from '../../../api/data';
-
-const REQUEST_DATA: string = 'REQUEST_DATA';
-const RECEIVE_DATA: string = 'RECEIVE_DATA';
-const REQUEST_DAILY_DATA: string = 'REQUEST_DAILY_DATA';
-const RECEIVE_DAILY_DATA: string = 'RECEIVE_DAILY_DATA';
+import {
+  RECEIVE_DATA,
+  REQUEST_DATA,
+  RECEIVE_DAILY_DATA,
+  REQUEST_DAILY_DATA,
+} from './actions';
 //액션 상수 지정
 
 type PrivateState = {
