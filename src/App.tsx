@@ -3,15 +3,19 @@ import InputCookie from './components/InputCookie/InputCookie';
 import PrivateProfile from './components/PrivateProfile/PrivateProfile';
 import { useSelector } from 'react-redux';
 import { RootState } from './features/redux';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import { cookieGet } from './features/cookie/Cookie';
+import Login from './components/Login/Login';
 
 const App = () => {
-  const data = useSelector((state: RootState) => state);
+  const navigate = useNavigate();
+
   return (
     <div className='main'>
       <Routes>
-        <Route path='/' element={<PrivateProfile />} />
-        <Route path='/inputcookie' element={<InputCookie />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/myprofile' element={<PrivateProfile />} />
+        <Route path='/login' element={<InputCookie />} />
       </Routes>
     </div>
   );

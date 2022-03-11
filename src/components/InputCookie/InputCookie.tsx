@@ -5,18 +5,27 @@ import {
   asyncGetPrivateData,
   asyncGetDaily,
 } from '../../features/redux/profiledata/privatedata';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../features/redux';
+import { useNavigate } from 'react-router-dom';
+import { cookieSet } from '../../features/cookie/Cookie';
 
 function InputCookie() {
   const [cookie, setCookie] = useState<string>('');
   const dispatch = useDispatch();
+  const cookiedata = useSelector((state: RootState) => state.cookie_data);
+  const navigate = useNavigate();
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setCookie(e.target.value);
 
-  const handleOnClick = () => {
+  const handleOnClick = async () => {
     dispatch(asyncSetCookie(cookieSlice(cookie)));
-    dispatch(asyncGetPrivateData(825460402));
+    dispatch(asyncGetPrivateData());
     dispatch(asyncGetDaily());
+    Object.keys(cookiedata.res).find((key) => key === 'error')
+      ? navigate('/login')
+      : (navigate('/myprofile'), cookieSet('myCookie', cookie));
   };
 
   const cookieSlice = (cookie_string: string) => {

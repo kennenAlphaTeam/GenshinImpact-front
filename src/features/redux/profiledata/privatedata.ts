@@ -22,10 +22,10 @@ const privateState: PrivateState = {
 };
 //privateReducer 인자, 반환값들 타입 지정
 
-export const asyncGetPrivateData = (uid: number) => {
+export const asyncGetPrivateData = () => {
   return async (dispatch: Function) => {
     dispatch(requestData());
-    const data = await dataAPI.getProfileData(uid.toString());
+    const data = await dataAPI.getMyProfileData();
     const iddata = await dataAPI.getIDCardData();
     return dispatch(receiveData(Object.assign(data, iddata)));
   };

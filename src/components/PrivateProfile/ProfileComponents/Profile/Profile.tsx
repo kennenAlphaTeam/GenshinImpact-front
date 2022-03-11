@@ -28,7 +28,7 @@ export default function Profile() {
   }, []);
 
   useEffect(() => {
-    dispatch(asyncGetPrivateData(825460402));
+    dispatch(asyncGetPrivateData());
     dispatch(asyncGetDaily());
   }, []);
 

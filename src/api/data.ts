@@ -20,6 +20,12 @@ export async function getProfileData(userUID: string): Promise<any> {
   //유저 UID 관련된 데이타를 반환해주는 api
 }
 
+export async function getMyProfileData(): Promise<any> {
+  const res = await axios.get<DataProfile>(`api/mihoyo/me/profile`);
+  return res.data;
+  //유저 UID 관련된 데이타를 반환해주는 api
+}
+
 export async function getIDCardData(): Promise<any> {
   const res = await axios.get<DataProfile>('api/user/me/genshinIdCard');
   return res.data;
