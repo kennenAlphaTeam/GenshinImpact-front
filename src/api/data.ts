@@ -39,4 +39,6 @@ export interface DataProfile {
   characters?: object;
   handbook?: object;
   resin?: string;
+  nickname?: string;
+  genshinUid?: number;
 }

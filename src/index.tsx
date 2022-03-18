@@ -2,17 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux';
-import rootReducer from './features/redux';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import Thunk from 'redux-thunk';
-import logger from 'redux-logger';
 import { BrowserRouter } from 'react-router-dom';
+import createSagaMiddleware from 'redux-saga';
+import rootReducer from './features/redux/reducers';
+import rootSaga from './features/redux/sagas';
+
+const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(Thunk)),
+  composeWithDevTools(applyMiddleware(sagaMiddleware)),
 );
+
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>

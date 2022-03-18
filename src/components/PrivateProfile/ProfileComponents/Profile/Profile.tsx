@@ -4,32 +4,31 @@ import { Box, style } from '@mui/system';
 import styles from './Profile.module.css';
 import { Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../../features/redux/reducers';
 import {
-  asyncGetPrivateData,
-  asyncGetDaily,
-} from '../../../../features/redux/profiledata/privatedata';
-import { asyncGetPublicData } from '../../../../features/redux/profiledata/publicdata';
-import { RootState } from '../../../../features/redux';
+  GET_MY_DAILY_REQUEST,
+  GET_MY_PROFILE_REQUEST,
+} from '../../../../features/redux/constants/actionTypes';
+import { getMyProfile } from '../../../../features/redux/reducers/myprofile';
+import { getMyDaily } from '../../../../features/redux/reducers/mydaily';
 
 export default function Profile() {
-  const dailyData: any = useSelector(
-    (state: RootState) => state.private_data.daily_data,
-  );
+  const dailyData: any = useSelector((state: RootState) => state.mydaily.data);
   const privateData: any = useSelector(
-    (state: RootState) => state.private_data.private_data,
+    (state: RootState) => state.myprofile.data,
   );
   const dispatch = useDispatch();
 
   useEffect(() => {
     const timer = setInterval(() => {
-      dispatch(asyncGetDaily());
+      dispatch(getMyProfile());
     }, 10000);
     return () => clearInterval(timer);
   }, []);
 
   useEffect(() => {
-    dispatch(asyncGetPrivateData());
-    dispatch(asyncGetDaily());
+    dispatch(getMyProfile());
+    dispatch(getMyDaily());
   }, []);
 
   return (

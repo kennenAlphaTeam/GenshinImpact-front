@@ -6,14 +6,14 @@ import {
   asyncGetDaily,
 } from '../../features/redux/profiledata/privatedata';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../features/redux';
 import { useNavigate } from 'react-router-dom';
 import { cookieSet } from '../../features/cookie/Cookie';
+import { RootState } from '../../features/redux/reducers';
 
 function InputCookie() {
   const [cookie, setCookie] = useState<string>('');
   const dispatch = useDispatch();
-  const cookiedata = useSelector((state: RootState) => state.cookie_data);
+  const cookiedata = useSelector((state: RootState) => state.cookie);
   const navigate = useNavigate();
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) =>
