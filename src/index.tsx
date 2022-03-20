@@ -6,7 +6,6 @@ import rootReducer from './features/redux';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import Thunk from 'redux-thunk';
-import logger from 'redux-logger';
 import { BrowserRouter } from 'react-router-dom';
 
 const store = createStore(

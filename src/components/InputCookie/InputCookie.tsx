@@ -31,7 +31,7 @@ function InputCookie() {
   const cookieSlice = (cookie_string: string) => {
     const cookie_arr: string[] = cookie_string
       .split(' ')
-      .map((str) => str.replace(/(\_g|cto).*/, ''));
+      .map((str) => str.replace(/^(?!lt).*$/, ''));
     return cookie_arr.join(' ').trim();
   };
 
