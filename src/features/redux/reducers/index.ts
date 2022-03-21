@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import cookieReducer from '../cookiedata/cookiedata';
+import myCookie from './cookie';
 import myDaily from './mydaily';
 import myProfile from './myprofile';
 
 const rootReducer = combineReducers({
   myprofile: myProfile,
   mydaily: myDaily,
-  cookie: cookieReducer,
+  cookie: myCookie,
 });
 
 export default rootReducer;

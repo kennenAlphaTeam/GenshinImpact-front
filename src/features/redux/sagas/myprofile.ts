@@ -6,7 +6,7 @@ import {
   GET_MY_PROFILE_SUCCESS,
 } from '../constants/actionTypes';
 
-function* getMyProfile(action: any) {
+function* getMyProfile() {
   try {
     const [data, id]: API.DataProfile[] = yield all([
       call(API.getMyProfileData),

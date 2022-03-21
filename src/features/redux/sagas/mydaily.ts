@@ -6,7 +6,7 @@ import {
   GET_MY_DAILY_SUCCESS,
 } from '../constants/actionTypes';
 
-function* getMyDaily(action: any) {
+function* getMyDaily() {
   try {
     const data: API.DataProfile = yield call(API.getDailyData);
     yield put({ type: GET_MY_DAILY_SUCCESS, data: data });

@@ -6,11 +6,9 @@ import { Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../../features/redux/reducers';
 import {
-  GET_MY_DAILY_REQUEST,
-  GET_MY_PROFILE_REQUEST,
+  getMyDailyAsync,
+  getMyProfileAsync,
 } from '../../../../features/redux/constants/actionTypes';
-import { getMyProfile } from '../../../../features/redux/reducers/myprofile';
-import { getMyDaily } from '../../../../features/redux/reducers/mydaily';
 
 export default function Profile() {
   const dailyData: any = useSelector((state: RootState) => state.mydaily.data);
@@ -21,14 +19,14 @@ export default function Profile() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      dispatch(getMyProfile());
+      dispatch(getMyDailyAsync.request());
     }, 10000);
     return () => clearInterval(timer);
   }, []);
 
   useEffect(() => {
-    dispatch(getMyProfile());
-    dispatch(getMyDaily());
+    dispatch(getMyDailyAsync.request());
+    dispatch(getMyProfileAsync.request());
   }, []);
 
   return (
