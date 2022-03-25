@@ -6,6 +6,7 @@ import Character, {
 import { Container, Grid } from '@mui/material';
 import Profile from './ProfileComponents/Profile/Profile';
 import Dailyitem from './ProfileComponents/DailyItems/Dailyitems';
+import Searchbar from './ProfileComponents/Searchbar/Searchbar';
 
 function PrivateProfile() {
   return (
@@ -15,7 +16,7 @@ function PrivateProfile() {
         <Grid item container columns={12}>
           <Grid item xs={4}></Grid>
           <Grid item xs={4}>
-            searchbar
+            <Searchbar></Searchbar>
           </Grid>
           <Grid item xs={4}></Grid>
         </Grid>

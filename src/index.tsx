@@ -4,12 +4,17 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { BrowserRouter } from 'react-router-dom';
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './features/redux/reducers';
 import rootSaga from './features/redux/sagas';
+import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
+import history from './features/history';
 
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware({
+  context: {
+    navigate: history,
+  },
+});
 
 const store = createStore(
   rootReducer,
@@ -20,9 +25,9 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HistoryRouter history={history}>
       <App></App>
-    </BrowserRouter>
+    </HistoryRouter>
   </Provider>,
   document.getElementById('root'),
 );

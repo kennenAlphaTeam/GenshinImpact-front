@@ -1,7 +1,9 @@
+import { ActionType } from 'typesafe-actions';
 import {
-  FETCH_COOKIE_FAILURE,
-  FETCH_COOKIE_REQUEST,
-  FETCH_COOKIE_SUCCESS,
+  getProfileAsync,
+  GET_PROFILE_FAILURE,
+  GET_PROFILE_REQUEST,
+  GET_PROFILE_SUCCESS,
 } from '../constants/actionTypes';
 
 type InitialState = {
@@ -9,25 +11,27 @@ type InitialState = {
   loading: boolean;
 };
 
-const initialState = {
+const initialState: InitialState = {
   data: {},
   loading: false,
 };
 
-const myCookie = (state = initialState, action: any): InitialState => {
+type uidAction = ActionType<typeof getProfileAsync>;
+
+const uidProfile = (state = initialState, action: uidAction): InitialState => {
   switch (action.type) {
-    case FETCH_COOKIE_REQUEST:
+    case GET_PROFILE_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case FETCH_COOKIE_SUCCESS:
+    case GET_PROFILE_SUCCESS:
       return {
         ...state,
         loading: false,
         data: action.payload,
       };
-    case FETCH_COOKIE_FAILURE:
+    case GET_PROFILE_FAILURE:
       return {
         ...state,
         loading: false,
@@ -38,4 +42,4 @@ const myCookie = (state = initialState, action: any): InitialState => {
   }
 };
 
-export default myCookie;
+export default uidProfile;

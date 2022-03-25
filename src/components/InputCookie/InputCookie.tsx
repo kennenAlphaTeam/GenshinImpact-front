@@ -1,31 +1,19 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { cookieSet } from '../../features/cookie/Cookie';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 import { RootState } from '../../features/redux/reducers';
-import {
-  getMyDailyAsync,
-  getMyProfileAsync,
-} from '../../features/redux/constants/actionTypes';
-import { getMyCookie } from '../../features/redux/reducers/cookie';
+import { fetchCookieAsync } from '../../features/redux/constants/actionTypes';
 
 function InputCookie() {
   const [cookie, setCookie] = useState<string>('');
   const dispatch = useDispatch();
-  const cookiedata = useSelector((state: RootState) => state.cookie);
-  const navigate = useNavigate();
+  const error: any = useSelector((state: RootState) => state.cookie.data);
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setCookie(e.target.value);
 
-  const handleOnClick = async () => {
-    dispatch(getMyCookie(cookie));
-    dispatch(getMyProfileAsync.request());
-    dispatch(getMyDailyAsync.request());
-    Object.keys(cookiedata.cookie).find((key) => key === 'error')
-      ? navigate('/login')
-      : (navigate('/myprofile'), cookieSet('myCookie', cookie));
+  const handleOnClick = () => {
+    dispatch(fetchCookieAsync.request(cookie));
   };
 
   const cookieSlice = (cookie_string: string) => {
@@ -35,9 +23,22 @@ function InputCookie() {
     return cookie_arr.join(' ').trim();
   };
 
+  const errorSlice = (error_string: string) => {
+    const errorName = error_string.split(' ').pop();
+    switch (errorName) {
+      case '401':
+        return '구글 소셜로그인에 문제가 발생했습니다';
+      case '500':
+        return '서버에 문제가 발생했습니다';
+      default:
+        return '잘못된 쿠키이거나 열람 불가능한 계정입니다';
+    }
+  };
+
   return (
     <div>
       <h3>Input HoyoLab cookie</h3>
+      <h5>{error.message && errorSlice(error.message)}</h5>
       <label>Input</label>
       <input type='text' name='' id='' onChange={handleOnChange} />
       <button onClick={handleOnClick}>submit</button>

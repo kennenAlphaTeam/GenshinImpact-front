@@ -5,6 +5,8 @@ import {
   GET_MY_PROFILE_REQUEST,
   GET_MY_PROFILE_SUCCESS,
 } from '../constants/actionTypes';
+import { useLocation } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
 function* getMyProfile() {
   try {
