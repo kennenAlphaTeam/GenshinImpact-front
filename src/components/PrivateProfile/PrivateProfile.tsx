@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styles from './PrivateProfile.module.css';
-import Character, {
-  CharacterProps,
-} from './ProfileComponents/Character/Character';
 import { Container, Grid } from '@mui/material';
 import Profile from './ProfileComponents/Profile/Profile';
 import Dailyitem from './ProfileComponents/DailyItems/Dailyitems';

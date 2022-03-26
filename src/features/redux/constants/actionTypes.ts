@@ -21,6 +21,7 @@ export const GET_PROFILE_FAILURE = 'profile/GET_PROFILE_FAILURE';
 
 export const GO_TO_MYPROFILE = 'route/GO_TO_MYPROFILE';
 export const GO_TO_UIDPROFILE = 'route/GO_TO_UIDPROFILE';
+export const GO_TO_LOGIN = 'route/GO_TO_LOGIN';
 
 export const getMyProfileAsync = createAsyncAction(
   GET_MY_PROFILE_REQUEST,

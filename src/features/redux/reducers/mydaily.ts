@@ -12,11 +12,13 @@ export const getMyDaily = () => ({
 type InitialState = {
   data: object;
   loading: boolean;
+  error: boolean;
 };
 
 const initialState = {
   data: {},
   loading: false,
+  error: false,
 };
 
 const myDaily = (state = initialState, action: any): InitialState => {
@@ -25,6 +27,7 @@ const myDaily = (state = initialState, action: any): InitialState => {
       return {
         ...state,
         loading: true,
+        error: false,
       };
     case GET_MY_DAILY_SUCCESS:
       return {
@@ -36,6 +39,7 @@ const myDaily = (state = initialState, action: any): InitialState => {
       return {
         ...state,
         loading: false,
+        error: true,
       };
     default:
       return state;

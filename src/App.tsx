@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import InputCookie from './components/InputCookie/InputCookie';
 import PrivateProfile from './components/PrivateProfile/PrivateProfile';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './components/Login/Login';
 import UserProfile from './components/UserProfile/UserProfile';
 
@@ -10,9 +10,10 @@ const App = () => {
     <div className='main'>
       <Routes>
         <Route path='/myprofile' element={<PrivateProfile />} />
-        <Route path='/login' element={<InputCookie />} />
+        <Route path='/input-cookie' element={<InputCookie />} />
         <Route path='/profile' element={<UserProfile />} />
-        <Route path='/' element={<Login />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Navigate replace to='/myprofile' />} />
       </Routes>
     </div>
   );

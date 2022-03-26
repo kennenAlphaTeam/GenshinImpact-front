@@ -30,39 +30,43 @@ export default function Profile() {
   }, []);
 
   return (
-    <Grid className={styles.Main} container direction='column'>
-      <Box className={styles.Logobox}>
-        <img className={styles.Logo} src='img/banner-tri.png' />
-      </Box>
-      <Box className={styles.Namebox}>
-        <Typography
-          align='center'
-          component='div'
-          className={styles.Name}
-          variant='inherit'>
-          어서오세요
-          <br />
-          {privateData.nickname}님
-        </Typography>
-      </Box>
-      <Box className={styles.Resinbox}>
-        <img src='img/icon-resin.png' alt='' className={styles.Icon} />
-        <Box className={styles.Resin}>
-          <Typography align='center' component='div' variant='inherit'>
-            {dailyData.current_resin}/160
-          </Typography>
-        </Box>
-      </Box>
-      <Box>
-        <img src='img/icon-pot.png' alt='' className={styles.Icon} />
-        <Box className={styles.Home}>
-          <Typography
-            align='center'
-            component='div'
-            variant='inherit'></Typography>
-          {dailyData.current_home_coin}/{dailyData.max_home_coin}
-        </Box>
-      </Box>
-    </Grid>
+    <>
+      {dailyData.current_resin >= 0 && (
+        <Grid className={styles.Main} container direction='column'>
+          <Box className={styles.Logobox}>
+            <img className={styles.Logo} src='img/banner-tri.png' />
+          </Box>
+          <Box className={styles.Namebox}>
+            <Typography
+              align='center'
+              component='div'
+              className={styles.Name}
+              variant='inherit'>
+              어서오세요
+              <br />
+              {privateData.nickname}님
+            </Typography>
+          </Box>
+          <Box className={styles.Resinbox}>
+            <img src='img/icon-resin.png' alt='' className={styles.Icon} />
+            <Box className={styles.Resin}>
+              <Typography align='center' component='div' variant='inherit'>
+                {dailyData.current_resin}/160
+              </Typography>
+            </Box>
+          </Box>
+          <Box>
+            <img src='img/icon-pot.png' alt='' className={styles.Icon} />
+            <Box className={styles.Home}>
+              <Typography
+                align='center'
+                component='div'
+                variant='inherit'></Typography>
+              {dailyData.current_home_coin}/{dailyData.max_home_coin}
+            </Box>
+          </Box>
+        </Grid>
+      )}
+    </>
   );
 }
