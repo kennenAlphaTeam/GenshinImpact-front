@@ -11,7 +11,7 @@ import Searchbar from './ProfileComponents/Searchbar/Searchbar';
 function PrivateProfile() {
   return (
     <Grid className={styles.Main} container direction='column'>
-      <Grid item>test1</Grid>
+      <Grid item></Grid>
       <Container maxWidth='lg'>
         <Grid item container columns={12}>
           <Grid item xs={4}></Grid>
