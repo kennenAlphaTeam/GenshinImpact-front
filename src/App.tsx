@@ -4,6 +4,7 @@ import PrivateProfile from './components/PrivateProfile/PrivateProfile';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './components/Login/Login';
 import UserProfile from './components/UserProfile/UserProfile';
+import MyProfile from './components/Pages/MyProfile/MyProfile';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path='/profile' element={<UserProfile />} />
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<Navigate replace to='/myprofile' />} />
+        <Route path='/test' element={<MyProfile />} />
       </Routes>
     </div>
   );

@@ -1,0 +1,40 @@
+.Test {
+  width: 100%;
+}
+
+.Profile {
+  width: 100%;
+  background: url('/public/img/Profile-background.png');
+  height: 860px;
+}
+
+.ProfileGrid {
+  max-width: 1520px;
+  height: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.Grid {
+  height: 100%;
+  margin-top: 0 !important;
+  margin-left: -16px !important;
+}
+
+.Grid div {
+  padding-top: 0 !important;
+}
+
+.Nickname {
+  height: 155px;
+  font-size: 128px;
+  color: white;
+  margin: auto;
+}
+
+.Uid {
+  height: 24px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}

@@ -39,6 +39,22 @@ module.exports = {
         include: /\.module\.css$/,
       },
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              url: true,
+              sourceMap: true,
+            },
+          },
+        ],
+        exclude: /\.module\.css$/,
+      },
+      {
         test: /\.(png|jp(e*)g)$/,
         use: [
           {
@@ -47,6 +63,21 @@ module.exports = {
               outputPath: './img/',
               limit: 10000,
               esModule: false,
+              name: '[name].[ext]',
+            },
+          },
+        ],
+        type: 'javascript/auto',
+      },
+      {
+        test: /\.ttf$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              outputPath: './fonts/',
+              fallback: 'file-loader',
               name: '[name].[ext]',
             },
           },

@@ -9,6 +9,7 @@ import rootReducer from './features/redux/reducers';
 import rootSaga from './features/redux/sagas';
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
 import history from './features/history';
+import './index.css';
 
 const sagaMiddleware = createSagaMiddleware({
   context: {
