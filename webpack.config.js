@@ -11,6 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     chunkFilename: '[name].js',
+    assetModuleFilename: 'assets/[name][ext]',
   },
   module: {
     rules: [
@@ -48,41 +49,53 @@ module.exports = {
             loader: 'css-loader',
             options: {
               url: true,
-              sourceMap: true,
             },
           },
         ],
         exclude: /\.module\.css$/,
       },
+      // {
+      //   test: /\.(png|jp(e*)g)$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         outputPath: './img/',
+      //         limit: 10000,
+      //         esModule: false,
+      //         name: '[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      //   type: 'javascript/auto',
+      // },
       {
         test: /\.(png|jp(e*)g)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              outputPath: './img/',
-              limit: 10000,
-              esModule: false,
-              name: '[name].[ext]',
-            },
-          },
-        ],
-        type: 'javascript/auto',
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash][ext]',
+        },
       },
+      // {
+      //   test: /\.ttf$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 10000,
+      //         fallback: 'file-loader',
+      //         name: 'fonts/[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      //   type: 'javascript/auto',
+      // },
       {
-        test: /\.ttf$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-              outputPath: './fonts/',
-              fallback: 'file-loader',
-              name: '[name].[ext]',
-            },
-          },
-        ],
-        type: 'javascript/auto',
+        test: /\.(ttf|otf)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
       },
     ],
   },

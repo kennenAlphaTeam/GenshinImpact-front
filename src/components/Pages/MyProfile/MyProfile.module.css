@@ -6,35 +6,149 @@
   width: 100%;
   background: url('/public/img/Profile-background.png');
   height: 860px;
+  display: flex;
 }
 
 .ProfileGrid {
   max-width: 1520px;
-  height: 100%;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  width: 100%;
+  margin: auto;
 }
 
 .Grid {
-  height: 100%;
-  margin-top: 0 !important;
+  display: flex;
+  margin-top: 0px !important;
   margin-left: -16px !important;
 }
 
-.Grid div {
+.Grid > div {
   padding-top: 0 !important;
 }
 
 .Nickname {
+  width: 825px;
   height: 155px;
   font-size: 128px;
   color: white;
   margin: auto;
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 155px;
 }
 
 .Uid {
+  width: 152px;
   height: 24px;
   font-size: 20px;
   color: white;
   text-align: center;
+  font-weight: 300;
+  font-family: 'Inter-300', serif;
+  line-height: 24px;
+  margin: auto;
+}
+
+.Daily {
+  margin-top: 52px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Inter-300';
+  color: white;
+  justify-content: space-between;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.DailyBanner {
+  width: 128px;
+  height: 78px;
+}
+
+.DailyBanner :first-child {
+  height: 42px;
+  margin-bottom: 9px;
+}
+
+.DailyiconResin {
+  max-width: 34px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.Dailyicon {
+  max-width: 42px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.Divline::before {
+  content: '';
+  height: 78px;
+  position: absolute;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Materials {
+  width: 100%;
+  height: 430px;
+  display: flex;
+}
+
+.MaterialsGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin: auto;
+}
+
+.MaterialList {
+  width: 930px;
+  height: 235px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 21px 33px 21px 33px;
+  margin: auto;
+}
+
+.MaterialList > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.MaterialText {
+  width: 409px;
+  height: 45px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.MaterialTextUnder {
+  width: 100%;
+  height: 1px;
+  margin: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.MaterialItems {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.MaterialItems > img {
+  max-width: 128px;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
 }
