@@ -152,3 +152,160 @@
   aspect-ratio: 1/1;
   border-radius: 6px;
 }
+
+.BlackBg {
+  background-color: #1b1b1b;
+  height: 2000px;
+  width: 100%;
+}
+
+.Worlds {
+  width: 100%;
+  height: 660px;
+  background: #1b1b1b;
+  display: flex;
+}
+
+.WorldsGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin: auto;
+}
+
+.WorldExpList {
+  max-width: 1218px;
+  width: 100%;
+  height: 406px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.WorldExpList > :first-child {
+  background-image: url('/public/img/box/Monde.png');
+}
+
+.WorldExpList > :nth-child(2) {
+  background-image: url('/public/img/box/Liyue.png');
+}
+
+.WorldExpList > :last-child {
+  background-image: url('/public/img/box/Inazuma.png');
+}
+
+.WorldExpBox {
+  max-width: 406px;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: calc(1920 * 0.555px) calc(1080 * 0.555px);
+}
+
+.WorldBoxFilter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  font-family: 'Noto Sans KR';
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.WorldBoxFilter > div {
+  margin: auto;
+}
+
+.WorldIcon {
+  max-width: 100px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: contain;
+  margin: auto;
+}
+
+.WorldName {
+  line-height: 77px;
+  height: 77px;
+  font-size: 64px;
+}
+
+.WorldLevel {
+  font-size: 28px;
+  line-height: 34px;
+  height: 34px;
+  margin-top: 26px;
+}
+
+.WorldProgress {
+  font-size: 15px;
+  font-weight: 200;
+  height: 18px;
+  line-height: 18px;
+  margin-top: 16px;
+}
+
+.Contour {
+  margin-left: 4%;
+  width: 92%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Myinfo {
+  margin-top: 100px;
+  width: 100%;
+  background: #1b1b1b;
+}
+
+.MyinfoGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.MydataList {
+  height: 230px;
+  max-width: 936px;
+  margin: auto;
+  background-color: #212121;
+  border: 1px solid #313131;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 29px 13px 29px 13px;
+  color: white;
+  font-family: 'Noto Sans KR';
+  text-align: center;
+}
+
+.MydataTextBox {
+  height: 172px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.MydataText {
+  min-width: 130px;
+  min-height: 75px;
+}
+
+.MydataText :first-child {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.MydataText :last-child {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.MydataDivline {
+  height: 172px;
+  width: 0px;
+  border: 1px solid #313131;
+}

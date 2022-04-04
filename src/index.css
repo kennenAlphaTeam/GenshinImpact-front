@@ -18,6 +18,27 @@
 @font-face {
   font-family: 'Noto Sans KR';
   font-style: normal;
+  font-weight: 500;
+  src: url('/public/fonts/NotoSansKR-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
   font-weight: 400;
   src: url('/public/fonts/NotoSansKR-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/public/fonts/NotoSansKR-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 200;
+  src: url('/public/fonts/NotoSansKR-Thin.otf') format('opentype');
 }
