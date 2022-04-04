@@ -1,12 +1,37 @@
-import { AppBar, Grid, Toolbar } from '@mui/material';
+import { Grid, Toolbar } from '@mui/material';
 import React from 'react';
 import styles from './MyProfile.module.css';
 
+let ypos = window.scrollY;
+if (ypos !== window.scrollY) ypos = window.scrollY;
+
 const Menubar = () => {
   return (
-    <AppBar position='fixed'>
-      <Toolbar></Toolbar>
-    </AppBar>
+    <div
+      className={[
+        styles.AppBar,
+        window.scrollY >= 1340 && styles.AppBarOff,
+      ].join(' ')}>
+      <img src='img/icons/banner-tri.png' alt='' />
+    </div>
+  );
+};
+
+const GoTop = () => {
+  const handleScroll = (e: React.MouseEvent) => {
+    console.log('test');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <button
+      style={{ position: 'fixed', bottom: 16, right: 16 }}
+      onClick={handleScroll}>
+      Go to top
+    </button>
   );
 };
 
@@ -279,6 +304,7 @@ const MyData = () => {
 const MyProfile = () => {
   return (
     <div className={styles.Test}>
+      <Menubar />
       <main className={styles.Profile}>
         <div className={styles.ProfileGrid}>
           <Userdata />
@@ -303,6 +329,7 @@ const MyProfile = () => {
           </div>
         </div>
       </div>
+      <GoTop />
     </div>
   );
 };
