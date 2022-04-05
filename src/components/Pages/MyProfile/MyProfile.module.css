@@ -5,6 +5,7 @@
 .Profile {
   width: 100%;
   background: url('/public/img/Profile-background.png');
+  background-attachment: fixed;
   height: 860px;
   display: flex;
 }
@@ -320,6 +321,8 @@
   z-index: 100;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   transition: opacity 0.35s linear;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .AppBarOff {
@@ -327,10 +330,116 @@
   box-shadow: 0 0 0 transparent;
 }
 
-.AppBar > img {
+.AppBar > img:first-child {
   width: 34px;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 9px;
   object-fit: contain;
+}
+
+.TopButton {
+  opacity: 0;
+  border-radius: 100%;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.35s linear;
+}
+
+.TopButtonOff {
+  opacity: 1;
+  box-shadow: 0px 0px 0px transparent;
+}
+
+.TopButtonPos {
+  position: fixed;
+  bottom: 16px;
+  right: -50px;
+  background-color: transparent;
+  border: 0;
+  transition: right 0.35s ease-in-out;
+}
+
+.TopButtonPosOff {
+  right: 16px;
+}
+
+.LogoutButton {
+  border: 0;
+  background-color: transparent;
+  width: 29px;
+  height: 25px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 18px;
+}
+
+.Logout {
+  object-fit: cover;
+}
+
+.Searchbar {
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #363636;
+  height: 28px;
+  width: 280px;
+  border-radius: 90px;
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: border-color 0.2s linear;
+  border-color: transparent;
+}
+
+.Searchbar:focus-within {
+  border: 2px solid #ffffff;
+  color: #606060;
+}
+
+.Searchbar > input {
+  color: white;
+  flex-grow: 7.5;
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+}
+
+.Searchbar > input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.Searchbar > input:focus {
+  border: 0;
+  outline: none;
+}
+
+.Searchbar > div {
+  flex-grow: 1;
+  width: 0;
+  height: 20px;
+  border-left: 2px solid #313131;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: border-left 0.2s linear;
+}
+
+.Searchbar:focus-within > div {
+  border-left: 2px solid #ffffff;
+}
+
+.Searchbar > button {
+  flex-grow: 1.5;
+  border: 0;
+  background-color: transparent;
+  background-image: url('/public/img/icons/SearchButtonGray.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: 6px;
+  height: 24px;
+  transition: background-image 0.2s linear;
+}
+
+.Searchbar:focus-within > button {
+  background-image: url('/public/img/icons/SearchButtonWhite.png');
 }

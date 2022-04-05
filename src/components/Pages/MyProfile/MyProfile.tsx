@@ -1,23 +1,26 @@
 import { Grid, Toolbar } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './MyProfile.module.css';
 
-let ypos = window.scrollY;
-if (ypos !== window.scrollY) ypos = window.scrollY;
-
-const Menubar = () => {
+const Menubar = (props: any) => {
   return (
     <div
-      className={[
-        styles.AppBar,
-        window.scrollY >= 1340 && styles.AppBarOff,
-      ].join(' ')}>
+      className={[styles.AppBar, props.opacity && styles.AppBarOff].join(' ')}
+      ref={props.ref}>
       <img src='img/icons/banner-tri.png' alt='' />
+      <div className={styles.Searchbar}>
+        <input type='text' placeholder='인게임 UID를 입력해 주세요'></input>
+        <div />
+        <button></button>
+      </div>
+      <button className={styles.LogoutButton}>
+        <img src='img/icons/Logout.png' alt='' className={styles.Logout} />
+      </button>
     </div>
   );
 };
 
-const GoTop = () => {
+const GoTop = (props: any) => {
   const handleScroll = (e: React.MouseEvent) => {
     console.log('test');
     window.scrollTo({
@@ -28,9 +31,19 @@ const GoTop = () => {
 
   return (
     <button
-      style={{ position: 'fixed', bottom: 16, right: 16 }}
-      onClick={handleScroll}>
-      Go to top
+      onClick={handleScroll}
+      className={[
+        styles.TopButtonPos,
+        props.opacity && styles.TopButtonPosOff,
+      ].join(' ')}>
+      <img
+        src='img/icons/icon-gototop.png'
+        className={[
+          styles.TopButton,
+          props.opacity && styles.TopButtonOff,
+        ].join(' ')}
+        alt=''
+      />
     </button>
   );
 };
@@ -302,9 +315,36 @@ const MyData = () => {
 };
 
 const MyProfile = () => {
+  const [intersect, setIntersect] = useState(false);
+
+  const blackline = useRef(null);
+  const view = useRef(null);
+
+  useEffect(() => {
+    let options = {
+      root: view.current,
+      rootMargin: '0px',
+      threshold: 0,
+    };
+
+    const opacityControll = (entries: any, observer: any) => {
+      entries.forEach((entry: any) => {
+        if (!entry.isIntersecting) {
+          setIntersect(false);
+          return;
+        }
+        setIntersect(true);
+      });
+    };
+
+    const io = new IntersectionObserver(opacityControll, options);
+
+    if (blackline.current) io.observe(blackline.current);
+  }, [blackline, view]);
+
   return (
     <div className={styles.Test}>
-      <Menubar />
+      <Menubar ref={view} opacity={intersect} />
       <main className={styles.Profile}>
         <div className={styles.ProfileGrid}>
           <Userdata />
@@ -316,7 +356,7 @@ const MyProfile = () => {
           <TodayMaterials />
         </div>
       </div>
-      <div className={styles.BlackBg}>
+      <div className={styles.BlackBg} ref={blackline}>
         <div className={styles.Worlds}>
           <div className={styles.WorldsGrid}>
             <WorldExp />
@@ -329,7 +369,7 @@ const MyProfile = () => {
           </div>
         </div>
       </div>
-      <GoTop />
+      <GoTop opacity={intersect} />
     </div>
   );
 };
