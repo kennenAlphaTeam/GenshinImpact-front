@@ -104,7 +104,7 @@ const WorldExp = (props: any) => {
               <div className={styles.WorldLevel}>평판 레벨:{liyue?.level}</div>
               <div className={styles.WorldProgress}>
                 탐사 진행도:{' '}
-                {liyue && liyue.exploration_percentage / 10.0 + '%'}%
+                {liyue && liyue.exploration_percentage / 10.0 + '%'}
               </div>
             </div>
           </div>
@@ -242,9 +242,15 @@ const UidProfile = () => {
           <Grid item xs={10}>
             <div className={styles.Mainbox}>
               <Menubar />
-              <div className={styles.Uid}>{data.uid}</div>
-              <WorldExp state={data} />
+              <div className={styles.Divline}></div>
+              <div className={styles.Uid}>UID:{data.uid}</div>
+              <div className={styles.Divline}></div>
               <UidData state={data} />
+              <div className={styles.Divline}></div>
+              <WorldExp state={data} />
+              <footer className={styles.Footer}>
+                문의 메일: kennenalphateam@gmail.com
+              </footer>
             </div>
           </Grid>
           <Grid item xs />

@@ -158,7 +158,7 @@
 
 .BlackBg {
   background-color: #1b1b1b;
-  height: 1300px;
+  height: 1090px;
   width: 100%;
 }
 
@@ -460,4 +460,14 @@
 
 .Searchbar:focus-within > button {
   background-image: url('/public/img/icons/SearchButtonWhite.png');
+}
+
+.Footer {
+  height: 30px;
+  text-align: center;
+  color: white;
+  background-color: #313131;
+  font-size: 16px;
+  font-family: 'Noto Sans KR';
+  font-weight: 300;
 }

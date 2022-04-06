@@ -271,7 +271,7 @@ const WorldExp = (props: any) => {
                   </div>
                   <div className={styles.WorldProgress}>
                     탐사 진행도:{' '}
-                    {liyue && liyue.exploration_percentage / 10.0 + '%'}%
+                    {liyue && liyue.exploration_percentage / 10.0 + '%'}
                   </div>
                 </div>
               </div>
@@ -469,6 +469,9 @@ const MyProfile = () => {
           </div>
         </div>
       </div>
+      <footer className={styles.Footer}>
+        문의 메일: kennenalphateam@gmail.com
+      </footer>
       <GoTop opacity={intersect} />
     </div>
   );
