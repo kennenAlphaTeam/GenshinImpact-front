@@ -1,0 +1,48 @@
+.Body {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/public/img/Profile-background.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 105%;
+}
+
+.Body > div {
+  width: 100%;
+  max-width: 1520px;
+  margin: auto;
+}
+
+.Grid {
+  display: flex;
+  margin-top: 0px !important;
+  margin-left: -16px !important;
+  height: 100%;
+}
+
+.Grid > div {
+  padding-top: 0 !important;
+}
+
+.Mainbox {
+  display: flex;
+  height: 100vh;
+  background-color: #1b1b1b;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.AppBar {
+  width: 100%;
+  height: 50px;
+}
+
+.WorldExpList {
+  width: 100%;
+  height: 400px;
+}
+
+.MydataList {
+  width: 100%;
+  height: 400px;
+}

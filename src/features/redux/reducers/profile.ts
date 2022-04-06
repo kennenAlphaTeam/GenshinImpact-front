@@ -6,14 +6,19 @@ import {
   GET_PROFILE_SUCCESS,
 } from '../constants/actionTypes';
 
+type InitailState = {
+  data: object;
+  loading: boolean;
+};
+
 const initialState: any = {
-  error_data: {},
+  data: {},
   loading: false,
 };
 
 type uidAction = ActionType<typeof getProfileAsync>;
 
-const uidProfile = (state = initialState, action: uidAction) => {
+const uidProfile = (state = initialState, action: uidAction): InitailState => {
   switch (action.type) {
     case GET_PROFILE_REQUEST:
       return {
@@ -21,18 +26,16 @@ const uidProfile = (state = initialState, action: uidAction) => {
         loading: true,
       };
     case GET_PROFILE_SUCCESS:
-      if (action.payload.uid != null)
-        return {
-          ...state,
-          loading: false,
-          [action.payload.uid]: action.payload,
-        };
-      return state;
+      return {
+        ...state,
+        loading: false,
+        data: action.payload,
+      };
     case GET_PROFILE_FAILURE:
       return {
         ...state,
         loading: false,
-        error_data: action.payload,
+        data: action.payload,
       };
     default:
       return state;

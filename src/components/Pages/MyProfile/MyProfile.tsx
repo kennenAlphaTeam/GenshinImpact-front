@@ -29,6 +29,16 @@ const Menubar = (props: any) => {
     dispatch(getProfileAsync.request(uid));
   };
 
+  const handleOnKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      if (uid.length != 9) {
+        alert('잘못된 UID입니다');
+        return;
+      }
+      dispatch(getProfileAsync.request(uid));
+    }
+  };
+
   const handleLogout = (e: React.MouseEvent<HTMLButtonElement>) => {
     dispatch({ type: GO_TO_INTRO });
   };
@@ -41,6 +51,7 @@ const Menubar = (props: any) => {
         <input
           type='number'
           onChange={handleOnChange}
+          onKeyUp={handleOnKeyUp}
           placeholder='인게임 UID를 입력해 주세요'></input>
         <div />
         <button onClick={handleOnClick}></button>
