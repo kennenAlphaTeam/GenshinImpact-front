@@ -1,19 +1,51 @@
-import { Grid, Toolbar } from '@mui/material';
+import { Grid } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getMyDailyAsync,
+  getMyProfileAsync,
+  getProfileAsync,
+  GO_TO_INTRO,
+} from '../../../features/redux/constants/actionTypes';
+import { RootState } from '../../../features/redux/reducers';
 import styles from './MyProfile.module.css';
 
 const Menubar = (props: any) => {
+  const [uid, setUid] = useState('');
+  const uidData: any = useSelector(
+    (state: RootState) => state.uid_profile.data,
+  );
+  const dispatch = useDispatch();
+
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUid(e.target.value);
+  };
+
+  const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (uid.length != 9) {
+      alert('잘못된 UID입니다');
+      return;
+    }
+    dispatch(getProfileAsync.request(uid));
+  };
+
+  const handleLogout = (e: React.MouseEvent<HTMLButtonElement>) => {
+    dispatch({ type: GO_TO_INTRO });
+  };
+
   return (
     <div
-      className={[styles.AppBar, props.opacity && styles.AppBarOff].join(' ')}
-      ref={props.ref}>
+      className={[styles.AppBar, props.opacity && styles.AppBarOff].join(' ')}>
       <img src='img/icons/banner-tri.png' alt='' />
       <div className={styles.Searchbar}>
-        <input type='text' placeholder='인게임 UID를 입력해 주세요'></input>
+        <input
+          type='number'
+          onChange={handleOnChange}
+          placeholder='인게임 UID를 입력해 주세요'></input>
         <div />
-        <button></button>
+        <button onClick={handleOnClick}></button>
       </div>
-      <button className={styles.LogoutButton}>
+      <button className={styles.LogoutButton} onClick={handleLogout}>
         <img src='img/icons/Logout.png' alt='' className={styles.Logout} />
       </button>
     </div>
@@ -48,20 +80,22 @@ const GoTop = (props: any) => {
   );
 };
 
-const Userdata = () => {
+const Userdata = (props: any) => {
+  const state = props.state;
   return (
     <Grid container spacing={2} className={styles.Grid}>
       <Grid item xs></Grid>
       <Grid item xs={8}>
-        <div className={styles.Nickname}>콜라피스도살자</div>
-        <div className={styles.Uid}>UID:825460402</div>
+        <div className={styles.Nickname}>{state.nickname}</div>
+        <div className={styles.Uid}>UID:{state.genshinUid}</div>
       </Grid>
       <Grid item xs></Grid>
     </Grid>
   );
 };
 
-const Dailydata = () => {
+const Dailydata = (props: any) => {
+  const state = props.state;
   return (
     <Grid container spacing={2} className={styles.Grid}>
       <Grid item xs></Grid>
@@ -74,14 +108,14 @@ const Dailydata = () => {
                 className={styles.DailyiconResin}
               />
             </div>
-            <div>160/160</div>
+            <div>{state.current_resin}/160</div>
           </div>
           <div className={styles.Divline}></div>
           <div className={styles.DailyBanner}>
             <div>
               <img src='img/icons/icon-pot.png' className={styles.Dailyicon} />
             </div>
-            <div>2400/2400</div>
+            <div>{state.current_home_coin}/2400</div>
           </div>
           <div className={styles.Divline}></div>
           <div className={styles.DailyBanner}>
@@ -91,7 +125,7 @@ const Dailydata = () => {
                 className={styles.Dailyicon}
               />
             </div>
-            <div>4/4</div>
+            <div>{state.finished_task_num}/4</div>
           </div>
           <div className={styles.Divline}></div>
           <div className={styles.DailyBanner}>
@@ -101,7 +135,7 @@ const Dailydata = () => {
                 className={styles.Dailyicon}
               />
             </div>
-            <div>5/5</div>
+            <div>{state.current_expedition_num}/5</div>
           </div>
         </div>
       </Grid>
@@ -170,159 +204,197 @@ const TodayMaterials = () => {
   );
 };
 
-const WorldExp = () => {
-  return (
-    <Grid container spacing={2} className={styles.Grid}>
-      <Grid item xs></Grid>
-      <Grid item xs={10}>
-        <div className={styles.WorldExpList}>
-          <div className={styles.WorldExpBox}>
-            <div className={styles.WorldBoxFilter}>
-              <div>
-                <img
-                  src='img/icons/Monde.png'
-                  alt=''
-                  className={styles.WorldIcon}
-                />
-                <div className={styles.WorldName}>몬드</div>
-                <div className={styles.WorldLevel}>평판 레벨:8</div>
-                <div className={styles.WorldProgress}>탐사 진행도: 86.9%</div>
+const WorldExp = (props: any) => {
+  if (Object.keys(props.state).length != 0) {
+    interface WorldExpType {
+      level: number;
+      exploration_percentage: number;
+      icon: string;
+      name: string;
+      type: number;
+      offerings: [];
+      id: number;
+    }
+
+    const state: WorldExpType[] = props.state.world_explorations;
+
+    const monde = state.find((obj) => obj.name === '몬드');
+    const liyue = state.find((obj) => obj.name === '리월');
+    const inazuma = state.find((obj) => obj.name === '이나즈마');
+
+    return (
+      <Grid container spacing={2} className={styles.Grid}>
+        <Grid item xs></Grid>
+        <Grid item xs={10}>
+          <div className={styles.WorldExpList}>
+            <div className={styles.WorldExpBox}>
+              <div className={styles.WorldBoxFilter}>
+                <div>
+                  <img
+                    src='img/icons/Monde.png'
+                    alt=''
+                    className={styles.WorldIcon}
+                  />
+                  <div className={styles.WorldName}>몬드</div>
+                  <div className={styles.WorldLevel}>
+                    평판 레벨:{monde?.level}
+                  </div>
+                  <div className={styles.WorldProgress}>
+                    탐사 진행도:{' '}
+                    {monde && monde?.exploration_percentage / 10.0 + '%'}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.WorldExpBox}>
+              <div className={styles.WorldBoxFilter}>
+                <div>
+                  <img
+                    src='img/icons/Liyue.png'
+                    alt=''
+                    className={styles.WorldIcon}
+                  />
+                  <div className={styles.WorldName}>리월</div>
+                  <div className={styles.WorldLevel}>
+                    평판 레벨:{liyue?.level}
+                  </div>
+                  <div className={styles.WorldProgress}>
+                    탐사 진행도:{' '}
+                    {liyue && liyue.exploration_percentage / 10.0 + '%'}%
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.WorldExpBox}>
+              <div className={styles.WorldBoxFilter}>
+                <div>
+                  <img
+                    src='img/icons/Inazuma.png'
+                    alt=''
+                    className={styles.WorldIcon}
+                  />
+                  <div className={styles.WorldName}>이나즈마</div>
+                  <div className={styles.WorldLevel}>
+                    평판 레벨:{inazuma?.level}
+                  </div>
+                  <div className={styles.WorldProgress}>
+                    탐사 진행도:{' '}
+                    {inazuma && inazuma.exploration_percentage / 10.0 + '%'}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className={styles.WorldExpBox}>
-            <div className={styles.WorldBoxFilter}>
-              <div>
-                <img
-                  src='img/icons/Liyue.png'
-                  alt=''
-                  className={styles.WorldIcon}
-                />
-                <div className={styles.WorldName}>리월</div>
-                <div className={styles.WorldLevel}>평판 레벨:8</div>
-                <div className={styles.WorldProgress}>탐사 진행도: 86.9%</div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.WorldExpBox}>
-            <div className={styles.WorldBoxFilter}>
-              <div>
-                <img
-                  src='img/icons/Inazuma.png'
-                  alt=''
-                  className={styles.WorldIcon}
-                />
-                <div className={styles.WorldName}>이나즈마</div>
-                <div className={styles.WorldLevel}>평판 레벨:8</div>
-                <div className={styles.WorldProgress}>탐사 진행도: 86.9%</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </Grid>
+        <Grid item xs></Grid>
       </Grid>
-      <Grid item xs></Grid>
-    </Grid>
-  );
+    );
+  }
+  return <></>;
 };
 
-const MyData = () => {
-  return (
-    <Grid container spacing={2} className={styles.Grid}>
-      <Grid item xs />
-      <Grid item xs={8}>
-        <div className={styles.MydataList}>
-          <div className={styles.MydataTextBox}>
-            <div className={styles.MydataText}>
-              <div>245</div>
-              <div>활동 일수</div>
+const MyData = (props: any) => {
+  if (Object.keys(props.state).length) {
+    const state = props.state.stats;
+    console.log(state);
+    return (
+      <Grid container spacing={2} className={styles.Grid}>
+        <Grid item xs />
+        <Grid item xs={8}>
+          <div className={styles.MydataList}>
+            <div className={styles.MydataTextBox}>
+              <div className={styles.MydataText}>
+                <div>{state.active_day_number}</div>
+                <div>활동 일수</div>
+              </div>
+              <div className={styles.MydataText}>
+                <div>{state.domain_number}</div>
+                <div>비경 개방</div>
+              </div>
             </div>
-            <div className={styles.MydataText}>
-              <div>31</div>
-              <div>비경 개방</div>
+            <div className={styles.MydataDivline} />
+            <div className={styles.MydataTextBox}>
+              <div className={styles.MydataText}>
+                <div>{state.achievement_number}</div>
+                <div>업적 달성 개수</div>
+              </div>
+              <div className={styles.MydataText}>
+                <div>{state.spiral_abyss}</div>
+                <div>나선 비경</div>
+              </div>
+            </div>
+            <div className={styles.MydataDivline} />
+            <div className={styles.MydataTextBox}>
+              <div className={styles.MydataText}>
+                <div>{state.avatar_number}</div>
+                <div>획득한 캐릭터</div>
+              </div>
+              <div className={styles.MydataText}>
+                <div>{state.luxurious_chest_number}</div>
+                <div>화려한 보물상자</div>
+              </div>
+            </div>
+            <div className={styles.MydataDivline} />
+            <div className={styles.MydataTextBox}>
+              <div className={styles.MydataText}>
+                <div>{state.way_point_number}</div>
+                <div>워프 포인트</div>
+              </div>
+              <div className={styles.MydataText}>
+                <div>{state.precious_chest_number}</div>
+                <div>진귀한 보물상자</div>
+              </div>
+            </div>
+            <div className={styles.MydataDivline} />
+            <div className={styles.MydataTextBox}>
+              <div className={styles.MydataText}>
+                <div>{state.anemoculus_number}</div>
+                <div>바람 신의 눈동자</div>
+              </div>
+              <div className={styles.MydataText}>
+                <div>{state.exquisite_chest_number}</div>
+                <div>정교한 보물상자</div>
+              </div>
+            </div>
+            <div className={styles.MydataDivline} />
+            <div className={styles.MydataTextBox}>
+              <div className={styles.MydataText}>
+                <div>{state.geoculus_number}</div>
+                <div>바위 신의 눈동자</div>
+              </div>
+              <div className={styles.MydataText}>
+                <div>{state.common_chest_number}</div>
+                <div>평범한 보물상자</div>
+              </div>
+            </div>
+            <div className={styles.MydataDivline} />
+            <div className={styles.MydataTextBox}>
+              <div className={styles.MydataText}>
+                <div>{state.electroculus_number}</div>
+                <div>번개 신의 눈동자</div>
+              </div>
+              <div className={styles.MydataText}>
+                <div>{state.magic_chest_number}</div>
+                <div>신묘한 보물상자</div>
+              </div>
             </div>
           </div>
-          <div className={styles.MydataDivline} />
-          <div className={styles.MydataTextBox}>
-            <div className={styles.MydataText}>
-              <div>344</div>
-              <div>업적 달성 개수</div>
-            </div>
-            <div className={styles.MydataText}>
-              <div>12-3</div>
-              <div>나선 비경</div>
-            </div>
-          </div>
-          <div className={styles.MydataDivline} />
-          <div className={styles.MydataTextBox}>
-            <div className={styles.MydataText}>
-              <div>35</div>
-              <div>획득한 캐릭터</div>
-            </div>
-            <div className={styles.MydataText}>
-              <div>92</div>
-              <div>화려한 보물상자</div>
-            </div>
-          </div>
-          <div className={styles.MydataDivline} />
-          <div className={styles.MydataTextBox}>
-            <div className={styles.MydataText}>
-              <div>159</div>
-              <div>워프 포인트</div>
-            </div>
-            <div className={styles.MydataText}>
-              <div>205</div>
-              <div>진귀한 보물상자</div>
-            </div>
-          </div>
-          <div className={styles.MydataDivline} />
-          <div className={styles.MydataTextBox}>
-            <div className={styles.MydataText}>
-              <div>65</div>
-              <div>바람 신의 눈동자</div>
-            </div>
-            <div className={styles.MydataText}>
-              <div>577</div>
-              <div>정교한 보물상자</div>
-            </div>
-          </div>
-          <div className={styles.MydataDivline} />
-          <div className={styles.MydataTextBox}>
-            <div className={styles.MydataText}>
-              <div>131</div>
-              <div>바위 신의 눈동자</div>
-            </div>
-            <div className={styles.MydataText}>
-              <div>674</div>
-              <div>평범한 보물상자</div>
-            </div>
-          </div>
-          <div className={styles.MydataDivline} />
-          <div className={styles.MydataTextBox}>
-            <div className={styles.MydataText}>
-              <div>180</div>
-              <div>번개 신의 눈동자</div>
-            </div>
-            <div className={styles.MydataText}>
-              <div>14</div>
-              <div>신묘한 보물상자</div>
-            </div>
-          </div>
-        </div>
+        </Grid>
+        <Grid item xs />
       </Grid>
-      <Grid item xs />
-    </Grid>
-  );
+    );
+  }
+  return <></>;
 };
 
 const MyProfile = () => {
   const [intersect, setIntersect] = useState(false);
 
   const blackline = useRef(null);
-  const view = useRef(null);
 
   useEffect(() => {
     let options = {
-      root: view.current,
+      root: null,
       rootMargin: '0px',
       threshold: 0,
     };
@@ -340,15 +412,32 @@ const MyProfile = () => {
     const io = new IntersectionObserver(opacityControll, options);
 
     if (blackline.current) io.observe(blackline.current);
-  }, [blackline, view]);
+  }, [blackline]);
+  //IntersectionObserverAPI로 스크롤 애니매이션 지정
+
+  const dailyData: any = useSelector((state: RootState) => state.mydaily.data);
+  const myData: any = useSelector((state: RootState) => state.myprofile.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMyDailyAsync.request());
+    dispatch(getMyProfileAsync.request());
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      dispatch(getMyDailyAsync.request());
+    }, 240000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className={styles.Test}>
-      <Menubar ref={view} opacity={intersect} />
+      <Menubar opacity={intersect} />
       <main className={styles.Profile}>
         <div className={styles.ProfileGrid}>
-          <Userdata />
-          <Dailydata />
+          <Userdata state={myData} />
+          <Dailydata state={dailyData} />
         </div>
       </main>
       <div className={styles.Materials}>
@@ -359,13 +448,13 @@ const MyProfile = () => {
       <div className={styles.BlackBg} ref={blackline}>
         <div className={styles.Worlds}>
           <div className={styles.WorldsGrid}>
-            <WorldExp />
+            <WorldExp state={myData} />
           </div>
         </div>
         <div className={styles.Contour}></div>
         <div className={styles.Myinfo}>
           <div className={styles.MyinfoGrid}>
-            <MyData />
+            <MyData state={myData} />
           </div>
         </div>
       </div>

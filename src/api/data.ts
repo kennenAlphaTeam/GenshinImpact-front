@@ -32,6 +32,7 @@ export async function getIDCardData(): Promise<any> {
 }
 
 export interface DataProfile {
+  uid?: string;
   server?: string;
   role_id?: string;
   profile?: object;

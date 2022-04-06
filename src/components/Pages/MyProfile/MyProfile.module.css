@@ -1,5 +1,6 @@
 .Test {
   width: 100%;
+  background-color: #1b1b1b;
 }
 
 .Profile {
@@ -93,6 +94,7 @@
 }
 
 .Materials {
+  background-color: white;
   width: 100%;
   height: 430px;
   display: flex;
@@ -136,9 +138,9 @@
 
 .MaterialTextUnder {
   width: 100%;
-  height: 1px;
+  height: 2px;
   margin: 2px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.07);
 }
 
 .MaterialItems {
@@ -156,7 +158,7 @@
 
 .BlackBg {
   background-color: #1b1b1b;
-  height: 2000px;
+  height: 1300px;
   width: 100%;
 }
 
@@ -402,15 +404,31 @@
   background-color: transparent;
   border: 0;
   text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: 'Noto Sans KR';
+  margin-bottom: 2px;
 }
 
 .Searchbar > input::-webkit-input-placeholder {
   text-align: center;
+  font-size: 14px;
+}
+
+.Searchbar > input::-webkit-outer-spin-button,
+.Searchbar > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .Searchbar > input:focus {
   border: 0;
   outline: none;
+}
+
+.Searchbar > input:focus::-webkit-input-placeholder {
+  color: transparent;
 }
 
 .Searchbar > div {
