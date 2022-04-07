@@ -6,6 +6,7 @@
 .Profile {
   width: 100%;
   background: url('/public/img/Profile-background.png');
+  background-size: 102%;
   background-attachment: fixed;
   height: 860px;
   display: flex;
