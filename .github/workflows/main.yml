@@ -1,0 +1,13 @@
+name: my workflow
+on: [push]
+
+jobs:
+  build:
+    name: test github action
+    runs-on: ubuntu-18.04
+    steps:
+      - name: checkout source code
+        uses: actions/checkout@action
+
+      - name: echo Test
+        run: echo 'Test'
