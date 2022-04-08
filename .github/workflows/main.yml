@@ -1,13 +1,27 @@
-name: my workflow
-on: [push]
+name: React build
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
-    name: test github action
     runs-on: ubuntu-18.04
     steps:
-      - name: checkout source code
+      - name: Checkout source code.
         uses: actions/checkout@main
 
-      - name: echo Test
-        run: echo 'Test'
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
