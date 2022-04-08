@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useLocation, useNavigate, useParams } from 'react-router';
+import { useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 import {
   getProfileAsync,

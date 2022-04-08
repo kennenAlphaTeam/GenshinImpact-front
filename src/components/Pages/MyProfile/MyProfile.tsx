@@ -65,7 +65,6 @@ const Menubar = (props: any) => {
 
 const GoTop = (props: any) => {
   const handleScroll = (e: React.MouseEvent) => {
-    console.log('test');
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -307,7 +306,6 @@ const WorldExp = (props: any) => {
 const MyData = (props: any) => {
   if (Object.keys(props.state).length) {
     const state = props.state.stats;
-    console.log(state);
     return (
       <Grid container spacing={2} className={styles.Grid}>
         <Grid item xs />

@@ -1,4 +1,3 @@
-import { DataProfile } from '../../../api/data';
 import {
   GET_MY_PROFILE_FAILURE,
   GET_MY_PROFILE_REQUEST,

@@ -1,4 +1,3 @@
-import { createBrowserHistory } from 'history';
 import { all, call, fork, put, takeLatest } from 'redux-saga/effects';
 import * as API from '../../../api/data';
 import {

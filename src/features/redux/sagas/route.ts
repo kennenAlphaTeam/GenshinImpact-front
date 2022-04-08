@@ -1,5 +1,4 @@
 import { all, fork, getContext, take, takeLatest } from 'redux-saga/effects';
-import { ActionType } from 'typesafe-actions';
 import history from '../../history';
 import {
   GO_TO_ERROR,

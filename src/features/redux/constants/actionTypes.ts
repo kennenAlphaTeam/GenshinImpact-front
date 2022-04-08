@@ -1,7 +1,6 @@
 import { AxiosError } from 'axios';
 import { createAsyncAction } from 'typesafe-actions';
 import { DataProfile } from '../../../api/data';
-import { deprecated } from 'typesafe-actions';
 
 export const GET_MY_PROFILE_REQUEST = 'myprofile/GET_MY_PROFILE_REQUEST';
 export const GET_MY_PROFILE_SUCCESS = 'myprofile/GET_MY_PROFILE_SUCCESS';

@@ -17,7 +17,6 @@ const App = () => {
         <Route path='/intro' element={<Intro />} />
         <Route path='/error' element={<Errorpage />} />
         <Route path='/' element={<Navigate replace to='/myprofile' />} />
-        <Route path='/test' element={<MyProfile />} />
       </Routes>
     </div>
   );

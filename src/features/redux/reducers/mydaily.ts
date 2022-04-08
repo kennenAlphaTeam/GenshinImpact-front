@@ -1,4 +1,3 @@
-import { DataProfile } from '../../../api/data';
 import {
   GET_MY_DAILY_FAILURE,
   GET_MY_DAILY_REQUEST,
