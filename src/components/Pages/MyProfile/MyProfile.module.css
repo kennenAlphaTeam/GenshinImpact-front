@@ -1,0 +1,474 @@
+.Test {
+  width: 100%;
+  background-color: #1b1b1b;
+}
+
+.Profile {
+  width: 100%;
+  background: url('/public/img/Profile-background.png');
+  background-size: 102%;
+  background-attachment: fixed;
+  height: 860px;
+  display: flex;
+}
+
+.ProfileGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin: auto;
+}
+
+.Grid {
+  display: flex;
+  margin-top: 0px !important;
+  margin-left: -16px !important;
+}
+
+.Grid > div {
+  padding-top: 0 !important;
+}
+
+.Nickname {
+  width: 825px;
+  height: 155px;
+  font-size: 128px;
+  color: white;
+  margin: auto;
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 155px;
+}
+
+.Uid {
+  width: 152px;
+  height: 24px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  font-weight: 300;
+  font-family: 'Inter-300', serif;
+  line-height: 24px;
+  margin: auto;
+}
+
+.Daily {
+  margin-top: 52px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Inter-300';
+  color: white;
+  justify-content: space-between;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.DailyBanner {
+  width: 128px;
+  height: 78px;
+}
+
+.DailyBanner :first-child {
+  height: 42px;
+  margin-bottom: 9px;
+}
+
+.DailyiconResin {
+  max-width: 34px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.Dailyicon {
+  max-width: 42px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.Divline::before {
+  content: '';
+  height: 78px;
+  position: absolute;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Materials {
+  background-color: white;
+  width: 100%;
+  height: 430px;
+  display: flex;
+}
+
+.MaterialsGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin: auto;
+}
+
+.MaterialList {
+  width: 930px;
+  height: 235px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 21px 33px 21px 33px;
+  margin: auto;
+}
+
+.MaterialList > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.MaterialText {
+  width: 409px;
+  height: 45px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.MaterialTextUnder {
+  width: 100%;
+  height: 2px;
+  margin: 2px;
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.MaterialItems {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.MaterialItems > img {
+  max-width: 128px;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+}
+
+.BlackBg {
+  background-color: #1b1b1b;
+  height: 1090px;
+  width: 100%;
+}
+
+.Worlds {
+  width: 100%;
+  height: 660px;
+  background: #1b1b1b;
+  display: flex;
+}
+
+.WorldsGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin: auto;
+}
+
+.WorldExpList {
+  max-width: 1218px;
+  width: 100%;
+  height: 406px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.WorldExpList > :first-child {
+  background-image: url('/public/img/box/Monde.png');
+}
+
+.WorldExpList > :nth-child(2) {
+  background-image: url('/public/img/box/Liyue.png');
+}
+
+.WorldExpList > :last-child {
+  background-image: url('/public/img/box/Inazuma.png');
+}
+
+.WorldExpBox {
+  max-width: 406px;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: calc(1920 * 0.555px) calc(1080 * 0.555px);
+}
+
+.WorldBoxFilter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  font-family: 'Noto Sans KR';
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.WorldBoxFilter > div {
+  margin: auto;
+}
+
+.WorldIcon {
+  max-width: 100px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: contain;
+  margin: auto;
+}
+
+.WorldName {
+  line-height: 77px;
+  height: 77px;
+  font-size: 64px;
+}
+
+.WorldLevel {
+  font-size: 28px;
+  line-height: 34px;
+  height: 34px;
+  margin-top: 26px;
+}
+
+.WorldProgress {
+  font-size: 15px;
+  font-weight: 200;
+  height: 18px;
+  line-height: 18px;
+  margin-top: 16px;
+}
+
+.Contour {
+  margin-left: 4%;
+  width: 92%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Myinfo {
+  margin-top: 100px;
+  width: 100%;
+  background: #1b1b1b;
+}
+
+.MyinfoGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.MydataList {
+  height: 230px;
+  max-width: 936px;
+  margin: auto;
+  background-color: #212121;
+  border: 1px solid #313131;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 29px 13px 29px 13px;
+  color: white;
+  font-family: 'Noto Sans KR';
+  text-align: center;
+}
+
+.MydataTextBox {
+  height: 172px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.MydataText {
+  min-width: 130px;
+  min-height: 75px;
+}
+
+.MydataText :first-child {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.MydataText :last-child {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.MydataDivline {
+  height: 172px;
+  width: 0px;
+  border: 1px solid #313131;
+}
+
+.AppBar {
+  width: 100%;
+  height: 50px;
+  background-color: #2d2d2d;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  z-index: 100;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.35s linear;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.AppBarOff {
+  opacity: 0;
+  box-shadow: 0 0 0 transparent;
+}
+
+.AppBar > img:first-child {
+  width: 34px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 9px;
+  object-fit: contain;
+}
+
+.TopButton {
+  opacity: 0;
+  border-radius: 100%;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.35s linear;
+}
+
+.TopButtonOff {
+  opacity: 1;
+  box-shadow: 0px 0px 0px transparent;
+}
+
+.TopButtonPos {
+  position: fixed;
+  bottom: 16px;
+  right: -50px;
+  background-color: transparent;
+  border: 0;
+  transition: right 0.35s ease-in-out;
+}
+
+.TopButtonPosOff {
+  right: 16px;
+}
+
+.LogoutButton {
+  border: 0;
+  background-color: transparent;
+  width: 29px;
+  height: 25px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 18px;
+}
+
+.Logout {
+  object-fit: cover;
+}
+
+.Searchbar {
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #363636;
+  height: 28px;
+  width: 280px;
+  border-radius: 90px;
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: border-color 0.2s linear;
+  border-color: transparent;
+}
+
+.Searchbar:focus-within {
+  border: 2px solid #ffffff;
+  color: #606060;
+}
+
+.Searchbar > input {
+  color: white;
+  flex-grow: 7.5;
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: 'Noto Sans KR';
+  margin-bottom: 2px;
+}
+
+.Searchbar > input::-webkit-input-placeholder {
+  text-align: center;
+  font-size: 14px;
+}
+
+.Searchbar > input::-webkit-outer-spin-button,
+.Searchbar > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.Searchbar > input:focus {
+  border: 0;
+  outline: none;
+}
+
+.Searchbar > input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.Searchbar > div {
+  flex-grow: 1;
+  width: 0;
+  height: 20px;
+  border-left: 2px solid #313131;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: border-left 0.2s linear;
+}
+
+.Searchbar:focus-within > div {
+  border-left: 2px solid #ffffff;
+}
+
+.Searchbar > button {
+  flex-grow: 1.5;
+  border: 0;
+  background-color: transparent;
+  background-image: url('/public/img/icons/SearchButtonGray.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: 6px;
+  height: 24px;
+  transition: background-image 0.2s linear;
+}
+
+.Searchbar:focus-within > button {
+  background-image: url('/public/img/icons/SearchButtonWhite.png');
+}
+
+.Footer {
+  height: 30px;
+  text-align: center;
+  color: white;
+  background-color: #313131;
+  font-size: 16px;
+  font-family: 'Noto Sans KR';
+  font-weight: 300;
+}

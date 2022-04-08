@@ -1,0 +1,32 @@
+.Body {
+  background-color: #272727;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.Body > div {
+  margin: auto;
+  color: white;
+  text-align: center;
+  font-family: 'Noto Sans KR';
+}
+
+.Body > div > div {
+  font-size: 120px;
+  font-weight: 700;
+}
+
+.Body > div > div > img {
+  width: 97px;
+  margin-right: 8px;
+}
+
+.Body > div > a {
+  background-color: #363636;
+  border-radius: 8px;
+  font-size: 20px;
+  padding: 5px;
+  color: white;
+  text-decoration-line: none;
+}

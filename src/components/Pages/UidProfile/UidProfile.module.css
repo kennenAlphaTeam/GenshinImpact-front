@@ -1,0 +1,284 @@
+.Body {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/public/img/Profile-background.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 105%;
+}
+
+.Body > div {
+  width: 100%;
+  max-width: 1520px;
+  margin: auto;
+}
+
+.Grid {
+  display: flex;
+  margin-top: 0px !important;
+  margin-left: -16px !important;
+  height: 100%;
+}
+
+.Grid > div {
+  padding-top: 0 !important;
+}
+
+.Mainbox {
+  display: flex;
+  height: 100vh;
+  background-color: #1b1b1b;
+  flex-direction: column;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.AppBar {
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+.WorldExpList {
+  width: 100%;
+  height: 400px;
+}
+
+.MydataList {
+  width: 100%;
+  height: 400px;
+}
+
+/* 검색창 */
+.Searchbar {
+  margin: auto;
+  background-color: #363636;
+  height: 28px;
+  width: 280px;
+  border-radius: 90px;
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: border-color 0.2s linear;
+  border-color: transparent;
+}
+
+.Searchbar:focus-within {
+  border: 2px solid #ffffff;
+  color: #606060;
+}
+
+.Searchbar > input {
+  color: white;
+  flex-grow: 7.5;
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: 'Noto Sans KR';
+  margin-bottom: 2px;
+}
+
+.Searchbar > input::-webkit-input-placeholder {
+  text-align: center;
+  font-size: 14px;
+}
+
+.Searchbar > input::-webkit-outer-spin-button,
+.Searchbar > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.Searchbar > input:focus {
+  border: 0;
+  outline: none;
+}
+
+.Searchbar > input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.Searchbar > div {
+  flex-grow: 1;
+  width: 0;
+  height: 20px;
+  border-left: 2px solid #313131;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: border-left 0.2s linear;
+}
+
+.Searchbar:focus-within > div {
+  border-left: 2px solid #ffffff;
+}
+
+.Searchbar > button {
+  flex-grow: 1.5;
+  border: 0;
+  background-color: transparent;
+  background-image: url('/public/img/icons/SearchButtonGray.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: 6px;
+  height: 24px;
+  transition: background-image 0.2s linear;
+}
+
+.Searchbar:focus-within > button {
+  background-image: url('/public/img/icons/SearchButtonWhite.png');
+}
+
+/* 월드 탐험도 */
+.WorldExpList {
+  max-width: 1080px;
+  width: 100%;
+  height: 406px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.WorldExpList > :first-child {
+  background-image: url('/public/img/box/Monde.png');
+}
+
+.WorldExpList > :nth-child(2) {
+  background-image: url('/public/img/box/Liyue.png');
+}
+
+.WorldExpList > :last-child {
+  background-image: url('/public/img/box/Inazuma.png');
+}
+
+.WorldExpBox {
+  max-width: 360px;
+  max-height: 360px;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: calc(1920 * 0.555px) calc(1080 * 0.555px);
+}
+
+.WorldBoxFilter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  font-family: 'Noto Sans KR';
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.WorldBoxFilter > div {
+  margin: auto;
+}
+
+.WorldIcon {
+  max-width: 100px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: contain;
+  margin: auto;
+}
+
+.WorldName {
+  line-height: 77px;
+  height: 77px;
+  font-size: 64px;
+}
+
+.WorldLevel {
+  font-size: 28px;
+  line-height: 34px;
+  height: 34px;
+  margin-top: 26px;
+}
+
+.WorldProgress {
+  font-size: 15px;
+  font-weight: 200;
+  height: 18px;
+  line-height: 18px;
+  margin-top: 16px;
+}
+
+/* 유저데이터 */
+.MydataList {
+  height: 230px;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 29px 13px 29px 13px;
+  color: white;
+  font-family: 'Noto Sans KR';
+  text-align: center;
+}
+
+.MydataTextBox {
+  height: 172px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.MydataText {
+  min-width: 130px;
+  min-height: 75px;
+}
+
+.MydataText :first-child {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.MydataText :last-child {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.MydataDivline {
+  height: 172px;
+  width: 0px;
+  border: 1px solid #313131;
+}
+
+.Divline {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.Uid {
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 84px;
+  text-align: center;
+  color: white;
+}
+
+.Footer {
+  height: 30px;
+  text-align: center;
+  color: white;
+  background-color: #313131;
+  font-size: 16px;
+  font-family: 'Noto Sans KR';
+  font-weight: 300;
+}
