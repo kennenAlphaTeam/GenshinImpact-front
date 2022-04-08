@@ -16,7 +16,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/intro' element={<Intro />} />
         <Route path='/error' element={<Errorpage />} />
-        <Route path='/' element={<Navigate replace to='/myprofile' />} />
+        <Route path='/' element={<Navigate replace to='/intro' />} />
       </Routes>
     </div>
   );
