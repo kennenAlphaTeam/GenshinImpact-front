@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: checkout source code
-        uses: actions/checkout@action
+        uses: actions/checkout@main
 
       - name: echo Test
         run: echo 'Test'
