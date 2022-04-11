@@ -9,7 +9,7 @@ export async function setCookieData(userCookie: string): Promise<any> {
 }
 
 export async function getDailyData(): Promise<any> {
-  const res = await axios.get<DataProfile>('api/mihoyo/me/daily-note');
+  const res = await axios.get<DailyProfile>('api/mihoyo/me/daily-note');
   return res.data;
   //유저 UID와 고유 Cookie값이 일치할 시 데이타를 반환해줌 api
 }
@@ -27,7 +27,14 @@ export async function getMyProfileData(): Promise<any> {
 }
 
 export async function getIDCardData(): Promise<any> {
-  const res = await axios.get<DataProfile>('api/user/me/genshinIdCard');
+  const res = await axios.get<{ genshinUid: string; nickname: string }>(
+    'api/user/me/genshinIdCard',
+  );
+  return res.data;
+}
+
+export async function getMyCharacterData(): Promise<object> {
+  const res = await axios.get<CharacterProfile>('/api/mihoyo/character');
   return res.data;
 }
 
@@ -122,7 +129,7 @@ interface Reliquaries {
   pos_name: string;
 }
 
-interface Character {
+export interface Character {
   id: number;
   image: string;
   icon: string;

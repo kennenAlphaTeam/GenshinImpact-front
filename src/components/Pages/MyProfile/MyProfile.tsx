@@ -2,6 +2,13 @@ import { Grid } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  Character,
+  CharacterProfile,
+  DailyProfile,
+  DataProfile,
+} from '../../../api/data';
+import {
+  getMyCharacterAsync,
   getMyDailyAsync,
   getMyProfileAsync,
   getProfileAsync,
@@ -396,6 +403,23 @@ const MyData = (props: any) => {
   return <></>;
 };
 
+const MyCharacter = (props: any) => {
+  if (Object.keys(props.state).length) {
+    const state: CharacterProfile = props.state;
+    return (
+      <Grid container spacing={2} className={styles.Grid}>
+        <Grid item xs />
+        <Grid item xs={8}>
+          {state.avatars.map((list: Character) => {
+            return <img src={list.image} />;
+          })}
+        </Grid>
+        <Grid item xs />
+      </Grid>
+    );
+  } else return <div></div>;
+};
+
 const MyProfile = () => {
   const [intersect, setIntersect] = useState(false);
 
@@ -424,13 +448,15 @@ const MyProfile = () => {
   }, [blackline]);
   //IntersectionObserverAPI로 스크롤 애니매이션 지정
 
-  const dailyData: any = useSelector((state: RootState) => state.mydaily.data);
-  const myData: any = useSelector((state: RootState) => state.myprofile.data);
+  const dailyData = useSelector((state: RootState) => state.mydaily.data);
+  const myData = useSelector((state: RootState) => state.myprofile.data);
+  const myCharacter = useSelector((state: RootState) => state.mycharacter.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getMyDailyAsync.request());
     dispatch(getMyProfileAsync.request());
+    dispatch(getMyCharacterAsync.request());
   }, []);
 
   useEffect(() => {
@@ -464,6 +490,11 @@ const MyProfile = () => {
         <div className={styles.Myinfo}>
           <div className={styles.MyinfoGrid}>
             <MyData state={myData} />
+          </div>
+        </div>
+        <div className={styles.MycharacterList}>
+          <div className={styles.MycharacterListGrid}>
+            <MyCharacter state={myCharacter} />
           </div>
         </div>
       </div>
