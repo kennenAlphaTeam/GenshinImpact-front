@@ -1,6 +1,7 @@
 import * as API from '../../../api/data';
 import { all, call, put, takeLatest, fork } from 'redux-saga/effects';
 import {
+  getMyProfileAsync,
   GET_MY_PROFILE_FAILURE,
   GET_MY_PROFILE_REQUEST,
   GET_MY_PROFILE_SUCCESS,
@@ -10,13 +11,13 @@ import {
 
 function* getMyProfile() {
   try {
-    const [data, id]: API.DataProfile[] = yield all([
+    const [data, id]: Array<API.DataProfile> = yield all([
       call(API.getMyProfileData),
       call(API.getIDCardData),
     ]);
-    yield put({ type: GET_MY_PROFILE_SUCCESS, data: Object.assign(data, id) });
+    yield put(getMyProfileAsync.success(Object.assign(data, id)));
   } catch (error) {
-    yield put({ type: GET_MY_PROFILE_FAILURE, data: error.response.data });
+    yield put(getMyProfileAsync.failure(error.response.data));
     switch (errorSlice(error.message)) {
       case '500':
         //서버 에러 => 에러페이지로 보내기

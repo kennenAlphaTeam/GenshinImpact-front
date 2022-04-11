@@ -1,4 +1,5 @@
 import { ActionType } from 'typesafe-actions';
+import { DataProfile } from '../../../api/data';
 import {
   getProfileAsync,
   GET_PROFILE_FAILURE,
@@ -7,7 +8,7 @@ import {
 } from '../constants/actionTypes';
 
 type InitailState = {
-  data: object;
+  data: DataProfile | object;
   loading: boolean;
 };
 
@@ -16,9 +17,10 @@ const initialState: any = {
   loading: false,
 };
 
-type uidAction = ActionType<typeof getProfileAsync>;
-
-const uidProfile = (state = initialState, action: uidAction): InitailState => {
+const uidProfile = (
+  state = initialState,
+  action: ActionType<typeof getProfileAsync>,
+): InitailState => {
   switch (action.type) {
     case GET_PROFILE_REQUEST:
       return {

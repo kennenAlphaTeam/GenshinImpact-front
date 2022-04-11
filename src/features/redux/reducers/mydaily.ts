@@ -1,4 +1,7 @@
+import { ActionType } from 'typesafe-actions';
+import { DailyProfile } from '../../../api/data';
 import {
+  getMyDailyAsync,
   GET_MY_DAILY_FAILURE,
   GET_MY_DAILY_REQUEST,
   GET_MY_DAILY_SUCCESS,
@@ -9,7 +12,7 @@ export const getMyDaily = () => ({
 });
 
 type InitialState = {
-  data: object;
+  data: DailyProfile | object;
   loading: boolean;
   error: boolean;
 };
@@ -20,7 +23,10 @@ const initialState = {
   error: false,
 };
 
-const myDaily = (state = initialState, action: any): InitialState => {
+const myDaily = (
+  state = initialState,
+  action: ActionType<typeof getMyDailyAsync>,
+): InitialState => {
   switch (action.type) {
     case GET_MY_DAILY_REQUEST:
       return {
@@ -32,7 +38,7 @@ const myDaily = (state = initialState, action: any): InitialState => {
       return {
         ...state,
         loading: false,
-        data: action.data,
+        data: action.payload,
       };
     case GET_MY_DAILY_FAILURE:
       return {
