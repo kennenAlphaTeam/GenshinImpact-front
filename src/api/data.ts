@@ -114,7 +114,7 @@ export interface DataProfile {
   nickname?: string;
 }
 
-interface Reliquaries {
+export interface Reliquaries {
   id: number;
   name: string;
   icon: string;
@@ -138,6 +138,7 @@ export interface Character {
   fetter: number;
   level: number;
   rarity: number;
+  actived_constellation_num: number;
   weapon: {
     id: number;
     name: string;

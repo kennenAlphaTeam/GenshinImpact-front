@@ -159,7 +159,6 @@
 
 .BlackBg {
   background-color: #1b1b1b;
-  height: 1090px;
   width: 100%;
 }
 
@@ -260,6 +259,7 @@
   margin-top: 100px;
   width: 100%;
   background: #1b1b1b;
+  margin-bottom: 100px;
 }
 
 .MyinfoGrid {
@@ -462,6 +462,254 @@
 
 .Searchbar:focus-within > button {
   background-image: url('/public/img/icons/SearchButtonWhite.png');
+}
+
+/* 아바타 리스트 */
+.AvatarList {
+  max-width: 1520px;
+  width: 100%;
+  margin: auto;
+}
+
+.AvatarListGrid {
+  margin-top: 90px;
+  width: 100%;
+}
+
+.Avatardiv {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.Avatardiv > div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Avatardiv::-webkit-scrollbar {
+  display: none;
+}
+
+.AvatarSlide {
+  display: flex;
+}
+
+.AvatarBox {
+  display: flex;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  border-radius: 5%;
+  background-color: white;
+  flex-direction: column;
+  justify-content: flex-start;
+  opacity: 30%;
+  transition: opacity 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+  transition: height 0.2s ease-in-out;
+}
+
+.AvatarBoxNotActive {
+  opacity: 70%;
+  width: 80%;
+  height: 80%;
+}
+
+.AvatarBoxActive {
+  opacity: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.AvatarName {
+  font-family: 'Noto Sans KR';
+  color: #2d2d2d;
+  text-align: center;
+  font-weight: 700;
+  font-size: 100%;
+  margin-bottom: 2%;
+}
+
+.Avatarimg {
+  object-fit: contain;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: height 0.35s ease-in-out;
+  overflow: hidden;
+  border: 4px solid white;
+  border-radius: 10px;
+}
+
+.Avatarimg5 {
+  background-image: url('/public/img/star_5.png');
+}
+
+.Avatarimg4 {
+  background-image: url('/public/img/star_4.png');
+}
+
+.Avatarimg3 {
+  background-image: url('/public/img/star_none.png');
+}
+
+.CharacterInfo {
+  margin-top: 10px;
+}
+
+.CharacterInfoBox {
+  font-family: 'Noto Sans KR';
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.CharacterInfoName {
+  font-size: 50px;
+}
+
+.CharacterInfoData {
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.CharacterInfoContour {
+  margin: 2px auto 2px auto;
+  width: 160px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.CharacterInfoWeapon {
+  margin: 10px auto 10px auto;
+  height: 120px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: #2d2d2d;
+  text-align: left;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.CharacterInfoWeaponBase {
+  aspect-ratio: 1/1;
+  height: 80%;
+  border-radius: 10%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 4px rgb(229, 206, 130) solid;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.CharacterInfoWeaponRare5 {
+  background-image: url('/public/img/star_5.png');
+}
+.CharacterInfoWeaponRare4 {
+  background-image: url('/public/img/star_4.png');
+}
+.CharacterInfoWeaponRare3 {
+  background-image: url('/public/img/star_3.png');
+}
+.CharacterInfoWeaponRare2 {
+  background-image: url('/public/img/star_2.png');
+}
+.CharacterInfoWeaponRare1 {
+  background-image: url('/public/img/star_1.png');
+}
+.CharacterInfoWeaponData {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+}
+.CharacterInfoWeaponDataHead {
+  display: flex;
+  flex-direction: row;
+  line-height: 1;
+}
+.CharacterInfoWeaponDataHeadName {
+  font-weight: 700;
+  font-size: 20px;
+}
+.CharacterInfoWeaponDataHeadLevel {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 5px;
+  background-color: #2d2d2d;
+  color: white;
+  text-align: center;
+  border-radius: 3px;
+  padding: 3px;
+}
+.CharacterInfoWeaponDataHeadAffix {
+  margin-left: auto;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 100%;
+}
+.CharacterInfoWeaponDataHeadAffix > img {
+  object-fit: contain;
+  max-height: 22px;
+  height: 100%;
+  margin-right: 3px;
+}
+.CharacterInfoWeaponDataHeadAffix > div {
+  font-weight: 600;
+  font-size: 18px;
+}
+.CharacterInfoWeaponDataDescription {
+  max-width: 400px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.CharacterInfoArtifact {
+  width: 33%;
+  background-color: white;
+  display: flex;
+  margin: 10px auto 20vh auto;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 8px;
+}
+.CharacterInfoArtifact > img {
+  height: 50px;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 100%;
+  border: 4px rgb(229, 206, 130) solid;
+}
+.CharacterInfoArtifactImgRare5 {
+  background-image: url('/public/img/star_5.png');
+}
+.CharacterInfoArtifactImgRare4 {
+  background-image: url('/public/img/star_4.png');
+}
+.CharacterInfoArtifactImgRare3 {
+  background-image: url('/public/img/star_3.png');
+}
+.CharacterInfoArtifactImgRare2 {
+  background-image: url('/public/img/star_2.png');
+}
+.CharacterInfoArtifactImgRare1 {
+  background-image: url('/public/img/star_1.png');
 }
 
 .Footer {
