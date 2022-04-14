@@ -411,7 +411,7 @@ const MyCharacter = (props: any) => {
         <Grid item xs />
         <Grid item xs={8}>
           {state.avatars.map((list: Character) => {
-            return <img src={list.image} />;
+            return <img src={list.icon} />;
           })}
         </Grid>
         <Grid item xs />

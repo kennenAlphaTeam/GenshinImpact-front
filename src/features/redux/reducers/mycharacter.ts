@@ -11,12 +11,14 @@ type InitialState = {
   data: CharacterProfile | object;
   loading: boolean;
   error: boolean;
+  selected: number;
 };
 
 const initialState: InitialState = {
   data: {},
   loading: false,
   error: false,
+  selected: 0,
 };
 
 const myCharacter = (

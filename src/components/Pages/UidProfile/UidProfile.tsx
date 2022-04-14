@@ -227,12 +227,19 @@ const UidProfile = () => {
 
   const data = useSelector((state: RootState) => state.uid_profile.data);
   const navigator = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (data.uid !== uid) {
+    uid !== null &&
+      Object.keys(data).length === 0 &&
+      dispatch(getProfileAsync.request(uid));
+  }, []);
+
+  useEffect(() => {
+    if (Object.keys(data).length > 0 && data.uid !== uid) {
       navigator('/myprofile');
     }
-  }, []);
+  }, [data.uid]);
 
   return (
     <div className={styles.Body}>

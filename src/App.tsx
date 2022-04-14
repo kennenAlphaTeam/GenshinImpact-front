@@ -4,6 +4,7 @@ import Errorpage from './components/Pages/Errorpage/Errorpage';
 import Intro from './components/Pages/Intro/Intro';
 import Login from './components/Pages/Login/Login';
 import MyProfile from './components/Pages/MyProfile/MyProfile';
+import TestProfile from './components/Pages/MyProfile/TestProfile';
 import UidProfile from './components/Pages/UidProfile/UidProfile';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='/intro' element={<Intro />} />
         <Route path='/error' element={<Errorpage />} />
         <Route path='/' element={<Navigate replace to='/intro' />} />
+        <Route path='/test' element={<TestProfile />} />
       </Routes>
     </div>
   );
