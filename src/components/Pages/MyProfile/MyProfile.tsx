@@ -1,7 +1,17 @@
 import { Grid } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { EffectCoverflow } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import {
+  Character,
+  CharacterProfile,
+  DailyProfile,
+  DataProfile,
+  Reliquaries,
+} from '../../../api/data';
+import {
+  getMyCharacterAsync,
   getMyDailyAsync,
   getMyProfileAsync,
   getProfileAsync,
@@ -9,6 +19,7 @@ import {
 } from '../../../features/redux/constants/actionTypes';
 import { RootState } from '../../../features/redux/reducers';
 import styles from './MyProfile.module.css';
+import SwiperCore from 'swiper';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -396,6 +407,229 @@ const MyData = (props: any) => {
   return <></>;
 };
 
+const CheckedCharacter = (props: any) => {
+  if (props.state === undefined) return <></>;
+  if (props.state.reliquaries === undefined) return <></>;
+  const state: Character = props.state;
+  const reliq: Array<Reliquaries> = state.reliquaries;
+  return (
+    <div className={styles.CharacterInfo}>
+      <div className={styles.CharacterInfoBox}>
+        <div className={styles.CharacterInfoName}>{state.name}</div>
+        <div className={styles.CharacterInfoContour} />
+        <div className={styles.CharacterInfoData}>
+          호감도 레벨: {state.fetter}
+        </div>
+        <div className={styles.CharacterInfoData}>
+          운명의 별자리: {state.actived_constellation_num}
+        </div>
+        <div className={styles.CharacterInfoContour} />
+        <div className={styles.CharacterInfoWeapon}>
+          <img
+            src={state.weapon?.icon}
+            className={[
+              styles.CharacterInfoWeaponBase,
+              state.weapon?.rarity === 5 && styles.CharacterInfoWeaponRare5,
+              state.weapon?.rarity === 4 && styles.CharacterInfoWeaponRare4,
+              state.weapon?.rarity === 3 && styles.CharacterInfoWeaponRare3,
+              state.weapon?.rarity === 2 && styles.CharacterInfoWeaponRare2,
+              state.weapon?.rarity === 1 && styles.CharacterInfoWeaponRare1,
+            ].join(' ')}
+          />
+          <div className={styles.CharacterInfoWeaponData}>
+            <div className={styles.CharacterInfoWeaponDataHead}>
+              <div className={styles.CharacterInfoWeaponDataHeadName}>
+                {state.weapon?.name}
+              </div>
+              <div className={styles.CharacterInfoWeaponDataHeadLevel}>
+                Lv.{state.weapon?.level}
+              </div>
+              <div className={styles.CharacterInfoWeaponDataHeadAffix}>
+                <img src='img/icons/constell_dark.png' />
+                <div>{state.weapon?.affix_level}/5</div>
+              </div>
+            </div>
+            <div className={styles.CharacterInfoWeaponDataDescription}>
+              {state.weapon?.desc}
+            </div>
+          </div>
+        </div>
+        <div className={styles.CharacterInfoArtifact}>
+          {reliq.length > 0 ? (
+            <img
+              src={reliq[0].icon}
+              className={[
+                styles.CharacterInfoArtifactImg,
+                reliq[0].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
+                reliq[0].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
+                reliq[0].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
+                reliq[0].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
+                reliq[0].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
+              ].join(' ')}
+            />
+          ) : (
+            <img
+              src='img/star_1.png'
+              className={styles.CharacterInfoArtifactImg}
+            />
+          )}
+          {reliq.length > 1 ? (
+            <img
+              src={reliq[1].icon}
+              className={[
+                styles.CharacterInfoArtifactImg,
+                reliq[1].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
+                reliq[1].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
+                reliq[1].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
+                reliq[1].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
+                reliq[1].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
+              ].join(' ')}
+            />
+          ) : (
+            <img
+              src='img/star_1.png'
+              className={styles.CharacterInfoArtifactImg}
+            />
+          )}
+          {reliq.length > 2 ? (
+            <img
+              src={reliq[2].icon}
+              className={[
+                styles.CharacterInfoArtifactImg,
+                reliq[2].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
+                reliq[2].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
+                reliq[2].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
+                reliq[2].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
+                reliq[2].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
+              ].join(' ')}
+            />
+          ) : (
+            <img
+              src='img/star_1.png'
+              className={styles.CharacterInfoArtifactImg}
+            />
+          )}
+          {reliq.length > 3 ? (
+            <img
+              src={reliq[3].icon}
+              className={[
+                styles.CharacterInfoArtifactImg,
+                reliq[3].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
+                reliq[3].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
+                reliq[3].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
+                reliq[3].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
+                reliq[3].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
+              ].join(' ')}
+            />
+          ) : (
+            <img
+              src='img/star_1.png'
+              className={styles.CharacterInfoArtifactImg}
+            />
+          )}
+          {reliq.length > 4 ? (
+            <img
+              src={reliq[4].icon}
+              className={[
+                styles.CharacterInfoArtifactImg,
+                reliq[4].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
+                reliq[4].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
+                reliq[4].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
+                reliq[4].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
+                reliq[4].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
+              ].join(' ')}
+            />
+          ) : (
+            <img
+              src='img/star_1.png'
+              className={styles.CharacterInfoArtifactImg}
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const AvatarProfile = (props: any) => {
+  const [selected, setSelected] = useState(0);
+  const [selectedInfo, setSelectedInfo] = useState<Character | {}>({});
+  const [swiper, setSwiper] = useState<SwiperCore>();
+  const characters: any = props.state;
+
+  let listId: number = 0;
+  const setId = (id: number) => {
+    if (listId !== id) {
+      listId = id;
+    }
+  };
+
+  useEffect(() => {
+    if (characters.avatars?.length) {
+      setSelected(characters.avatars[0].id);
+      setSelectedInfo(characters.avatars[0]);
+    }
+  }, [Object.keys(characters).length]);
+
+  useEffect(() => {
+    setSelectedInfo(findWithID(selected));
+  }, [selected]);
+
+  const findWithID = (id: number) =>
+    characters.avatars?.filter((key: Character) => key.id === selected).pop();
+
+  return (
+    <Grid container spacing={2} className={styles.Grid}>
+      <Grid item xs />
+      <Grid item xs={8}>
+        <Swiper
+          className={styles.Avatardiv}
+          slideToClickedSlide={true}
+          slidesPerView={5}
+          spaceBetween={30}
+          grabCursor={true}
+          centeredSlides={true}
+          onTransitionEnd={() => {
+            setSelected(listId);
+          }}
+          onSwiper={(swiper) => setSwiper(swiper)}>
+          {characters.avatars &&
+            characters.avatars.map((list: Character, index: number) => {
+              return (
+                <SwiperSlide key={list.id} className={styles.AvatarSlide}>
+                  {({ isActive, isPrev, isNext }) => {
+                    isActive && setId(list.id);
+                    return (
+                      <div
+                        className={[
+                          styles.AvatarBox,
+                          isActive && styles.AvatarBoxActive,
+                          (isPrev || isNext) && styles.AvatarBoxNotActive,
+                        ].join(' ')}>
+                        <img
+                          src={list.icon}
+                          className={[
+                            styles.Avatarimg,
+                            list.rarity === 5 && styles.Avatarimg5,
+                            list.rarity === 4 && styles.Avatarimg4,
+                            list.rarity === 105 && styles.Avatarimg3,
+                          ].join(' ')}
+                        />
+                        <div className={styles.AvatarName}>Lv.{list.level}</div>
+                      </div>
+                    );
+                  }}
+                </SwiperSlide>
+              );
+            })}
+        </Swiper>
+        <CheckedCharacter state={selectedInfo} />
+      </Grid>
+      <Grid item xs />
+    </Grid>
+  );
+};
+
 const MyProfile = () => {
   const [intersect, setIntersect] = useState(false);
 
@@ -424,13 +658,15 @@ const MyProfile = () => {
   }, [blackline]);
   //IntersectionObserverAPI로 스크롤 애니매이션 지정
 
-  const dailyData: any = useSelector((state: RootState) => state.mydaily.data);
-  const myData: any = useSelector((state: RootState) => state.myprofile.data);
+  const dailyData = useSelector((state: RootState) => state.mydaily.data);
+  const myData = useSelector((state: RootState) => state.myprofile.data);
+  const myCharacter = useSelector((state: RootState) => state.mycharacter.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getMyDailyAsync.request());
     dispatch(getMyProfileAsync.request());
+    dispatch(getMyCharacterAsync.request());
   }, []);
 
   useEffect(() => {
@@ -460,10 +696,16 @@ const MyProfile = () => {
             <WorldExp state={myData} />
           </div>
         </div>
-        <div className={styles.Contour}></div>
+        <div className={styles.Contour} />
         <div className={styles.Myinfo}>
           <div className={styles.MyinfoGrid}>
             <MyData state={myData} />
+          </div>
+        </div>
+        <div className={styles.Contour} />
+        <div className={styles.AvatarList}>
+          <div className={styles.AvatarListGrid}>
+            <AvatarProfile state={myCharacter} />
           </div>
         </div>
       </div>

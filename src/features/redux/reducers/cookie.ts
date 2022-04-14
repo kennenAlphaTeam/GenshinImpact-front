@@ -1,11 +1,13 @@
+import { ActionType } from 'typesafe-actions';
 import {
+  fetchCookieAsync,
   FETCH_COOKIE_FAILURE,
   FETCH_COOKIE_REQUEST,
   FETCH_COOKIE_SUCCESS,
 } from '../constants/actionTypes';
 
 type InitialState = {
-  data: object;
+  data: { genshinUid: string; nickname: string } | object;
   loading: boolean;
 };
 
@@ -14,7 +16,10 @@ const initialState = {
   loading: false,
 };
 
-const myCookie = (state = initialState, action: any): InitialState => {
+const myCookie = (
+  state = initialState,
+  action: ActionType<typeof fetchCookieAsync>,
+): InitialState => {
   switch (action.type) {
     case FETCH_COOKIE_REQUEST:
       return {

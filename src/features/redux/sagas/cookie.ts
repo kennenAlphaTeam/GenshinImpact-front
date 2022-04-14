@@ -10,7 +10,10 @@ import {
 
 function* fetchCookie(action: ReturnType<typeof fetchCookieAsync.request>) {
   try {
-    const data: API.DataProfile = yield call(API.setCookieData, action.payload);
+    const data: { genshinUid: string; nickname: string } = yield call(
+      API.setCookieData,
+      action.payload,
+    );
     yield put(fetchCookieAsync.success(data));
     yield all([call(API.getDailyData), call(API.getMyProfileData)]);
     yield put({ type: GO_TO_MYPROFILE });

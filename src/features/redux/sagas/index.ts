@@ -1,5 +1,6 @@
 import { all, fork } from 'redux-saga/effects';
 import fetchCookieSaga from './cookie';
+import myCharacterSaga from './mycharacter';
 import myDailySaga from './mydaily';
 import myProfileSaga from './myprofile';
 import uidProfileSaga from './profile';
@@ -12,5 +13,6 @@ export default function* rootSaga() {
     fork(fetchCookieSaga),
     fork(toGoSaga),
     fork(uidProfileSaga),
+    fork(myCharacterSaga),
   ]);
 }
