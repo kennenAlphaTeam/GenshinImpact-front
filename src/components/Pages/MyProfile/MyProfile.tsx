@@ -455,61 +455,96 @@ const CheckedCharacter = (props: any) => {
           </div>
         </div>
         <div className={styles.CharacterInfoArtifact}>
-          <img
-            src={reliq[0].icon}
-            className={[
-              styles.CharacterInfoArtifactImg,
-              reliq[0].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
-              reliq[0].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
-              reliq[0].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
-              reliq[0].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
-              reliq[0].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
-            ].join(' ')}
-          />
-          <img
-            src={reliq[1].icon}
-            className={[
-              styles.CharacterInfoArtifactImg,
-              reliq[1].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
-              reliq[1].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
-              reliq[1].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
-              reliq[1].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
-              reliq[1].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
-            ].join(' ')}
-          />
-          <img
-            src={reliq[2].icon}
-            className={[
-              styles.CharacterInfoArtifactImg,
-              reliq[2].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
-              reliq[2].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
-              reliq[2].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
-              reliq[2].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
-              reliq[2].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
-            ].join(' ')}
-          />
-          <img
-            src={reliq[3].icon}
-            className={[
-              styles.CharacterInfoArtifactImg,
-              reliq[3].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
-              reliq[3].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
-              reliq[3].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
-              reliq[3].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
-              reliq[3].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
-            ].join(' ')}
-          />
-          <img
-            src={reliq[4].icon}
-            className={[
-              styles.CharacterInfoArtifactImg,
-              reliq[4].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
-              reliq[4].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
-              reliq[4].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
-              reliq[4].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
-              reliq[4].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
-            ].join(' ')}
-          />
+          {reliq.length > 0 ? (
+            <img
+              src={reliq[0].icon}
+              className={[
+                styles.CharacterInfoArtifactImg,
+                reliq[0].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
+                reliq[0].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
+                reliq[0].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
+                reliq[0].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
+                reliq[0].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
+              ].join(' ')}
+            />
+          ) : (
+            <img
+              src='img/star_1.png'
+              className={styles.CharacterInfoArtifactImg}
+            />
+          )}
+          {reliq.length > 1 ? (
+            <img
+              src={reliq[1].icon}
+              className={[
+                styles.CharacterInfoArtifactImg,
+                reliq[1].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
+                reliq[1].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
+                reliq[1].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
+                reliq[1].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
+                reliq[1].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
+              ].join(' ')}
+            />
+          ) : (
+            <img
+              src='img/star_1.png'
+              className={styles.CharacterInfoArtifactImg}
+            />
+          )}
+          {reliq.length > 2 ? (
+            <img
+              src={reliq[2].icon}
+              className={[
+                styles.CharacterInfoArtifactImg,
+                reliq[2].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
+                reliq[2].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
+                reliq[2].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
+                reliq[2].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
+                reliq[2].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
+              ].join(' ')}
+            />
+          ) : (
+            <img
+              src='img/star_1.png'
+              className={styles.CharacterInfoArtifactImg}
+            />
+          )}
+          {reliq.length > 3 ? (
+            <img
+              src={reliq[3].icon}
+              className={[
+                styles.CharacterInfoArtifactImg,
+                reliq[3].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
+                reliq[3].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
+                reliq[3].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
+                reliq[3].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
+                reliq[3].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
+              ].join(' ')}
+            />
+          ) : (
+            <img
+              src='img/star_1.png'
+              className={styles.CharacterInfoArtifactImg}
+            />
+          )}
+          {reliq.length > 4 ? (
+            <img
+              src={reliq[4].icon}
+              className={[
+                styles.CharacterInfoArtifactImg,
+                reliq[4].rarity === 5 && styles.CharacterInfoArtifactImgRare5,
+                reliq[4].rarity === 4 && styles.CharacterInfoArtifactImgRare4,
+                reliq[4].rarity === 3 && styles.CharacterInfoArtifactImgRare3,
+                reliq[4].rarity === 2 && styles.CharacterInfoArtifactImgRare2,
+                reliq[4].rarity === 1 && styles.CharacterInfoArtifactImgRare1,
+              ].join(' ')}
+            />
+          ) : (
+            <img
+              src='img/star_1.png'
+              className={styles.CharacterInfoArtifactImg}
+            />
+          )}
         </div>
       </div>
     </div>

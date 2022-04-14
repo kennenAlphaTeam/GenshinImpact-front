@@ -679,7 +679,6 @@
 }
 
 .CharacterInfoArtifact {
-  width: 33%;
   background-color: white;
   display: flex;
   margin: 10px auto 20vh auto;
@@ -695,6 +694,10 @@
   background-size: contain;
   border-radius: 100%;
   border: 4px rgb(229, 206, 130) solid;
+  margin-left: 5px;
+}
+.CharacterInfoArtifact > img:first-child {
+  margin-left: 0px !important;
 }
 .CharacterInfoArtifactImgRare5 {
   background-image: url('/public/img/star_5.png');
