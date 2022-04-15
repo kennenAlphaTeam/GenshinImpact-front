@@ -26,11 +26,11 @@ import ResinIcon from '../../../img/icons/icon-resin.png';
 import PotIcon from '../../../img/icons/icon-pot.png';
 import DailyIcon from '../../../img/icons/icon-dailyquest.png';
 import ExpIcon from '../../../img/icons/icon-expedition.png';
-import Monde from '../../../img/icons/Monde.png';
-import Liyue from '../../../img/icons/Liyue.png';
-import Inazuma from '../../../img/icons/Inazuma.png';
+import MondeIcon from '../../../img/icons/Monde.png';
+import LiyueIcon from '../../../img/icons/Liyue.png';
+import InazumaIcon from '../../../img/icons/Inazuma.png';
 import ConstellIcon from '../../../img/icons/constell_dark.png';
-import StarOneBg from '../../../img/icons/star_1.png';
+import StarOneBg from '../../../img/star_1.png';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -253,7 +253,7 @@ const WorldExp = (props: any) => {
             <div className={styles.WorldExpBox}>
               <div className={styles.WorldBoxFilter}>
                 <div>
-                  <img src={Monde} alt='' className={styles.WorldIcon} />
+                  <img src={MondeIcon} alt='' className={styles.WorldIcon} />
                   <div className={styles.WorldName}>몬드</div>
                   <div className={styles.WorldLevel}>
                     평판 레벨:{monde?.level}
@@ -268,7 +268,7 @@ const WorldExp = (props: any) => {
             <div className={styles.WorldExpBox}>
               <div className={styles.WorldBoxFilter}>
                 <div>
-                  <img src={Liyue} alt='' className={styles.WorldIcon} />
+                  <img src={LiyueIcon} alt='' className={styles.WorldIcon} />
                   <div className={styles.WorldName}>리월</div>
                   <div className={styles.WorldLevel}>
                     평판 레벨:{liyue?.level}
@@ -283,7 +283,7 @@ const WorldExp = (props: any) => {
             <div className={styles.WorldExpBox}>
               <div className={styles.WorldBoxFilter}>
                 <div>
-                  <img src={Inazuma} alt='' className={styles.WorldIcon} />
+                  <img src={InazumaIcon} alt='' className={styles.WorldIcon} />
                   <div className={styles.WorldName}>이나즈마</div>
                   <div className={styles.WorldLevel}>
                     평판 레벨:{inazuma?.level}
