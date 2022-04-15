@@ -214,7 +214,7 @@ const TodayMaterials = () => {
               <img src={dailydata.inazuma_book[index]} alt='' />
               <img src={dailydata.monde_material[index]} alt='' />
               <img src={dailydata.liyue_material[index]} alt='' />
-              <img src={dailydata.inazuma_book[index]} alt='' />
+              <img src={dailydata.inazuma_material[index]} alt='' />
             </div>
           </div>
         </div>
