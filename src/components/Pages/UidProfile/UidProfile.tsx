@@ -79,7 +79,7 @@ const WorldExp = (props: any) => {
           <div className={styles.WorldBoxFilter}>
             <div>
               <img
-                src='img/icons/Monde.png'
+                src='/img/icons/Monde.png'
                 alt=''
                 className={styles.WorldIcon}
               />
@@ -96,7 +96,7 @@ const WorldExp = (props: any) => {
           <div className={styles.WorldBoxFilter}>
             <div>
               <img
-                src='img/icons/Liyue.png'
+                src='/img/icons/Liyue.png'
                 alt=''
                 className={styles.WorldIcon}
               />
@@ -113,7 +113,7 @@ const WorldExp = (props: any) => {
           <div className={styles.WorldBoxFilter}>
             <div>
               <img
-                src='img/icons/Inazuma.png'
+                src='/img/icons/Inazuma.png'
                 alt=''
                 className={styles.WorldIcon}
               />

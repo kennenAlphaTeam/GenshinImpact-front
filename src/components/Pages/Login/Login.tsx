@@ -60,7 +60,7 @@ const Login = () => {
                       ' ',
                     )}>
                     <div className={styles.Divline} />
-                    <img src='img/example4.png'></img>
+                    <img src='/img/example4.png'></img>
                     <div className={styles.Divline} />
                     <div className={styles.Help}>
                       1. 호요랩 원신 전적 페이지에 들어갑니다.(

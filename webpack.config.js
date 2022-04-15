@@ -8,7 +8,7 @@ module.exports = {
   mode: 'development',
   entry: path.resolve(__dirname, 'src/index.tsx'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
     chunkFilename: '[name].js',
     assetModuleFilename: 'assets/[name][ext]',
@@ -70,10 +70,10 @@ module.exports = {
       //   type: 'javascript/auto',
       // },
       {
-        test: /\.(png|jp(e*)g)$/,
+        test: /\.(png|jp(e*)g)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'images/[hash][ext]',
+          filename: 'images/[name][ext]',
         },
       },
       // {
@@ -127,6 +127,7 @@ module.exports = {
     },
     proxy: {
       '/api/*': {
+        //target: 'https://[::1]:8080',
         secure: false,
         pathRewrite: { '^/api': '/' },
       },

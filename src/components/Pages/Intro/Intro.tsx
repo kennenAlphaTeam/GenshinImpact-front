@@ -6,7 +6,7 @@ const Intro = () => {
     <div className={styles.Body}>
       <div>
         <div>
-          <img src='img/banner-tri.png'></img>Kenshin
+          <img src='/img/banner-tri.png'></img>Kenshin
         </div>
         <a href='api/auth/oauth/login/google'>구글 로그인</a>
       </div>

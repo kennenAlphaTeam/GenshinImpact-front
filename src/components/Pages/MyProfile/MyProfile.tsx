@@ -57,7 +57,7 @@ const Menubar = (props: any) => {
   return (
     <div
       className={[styles.AppBar, props.opacity && styles.AppBarOff].join(' ')}>
-      <img src='img/icons/banner-tri.png' alt='' />
+      <img src='/img/icons/banner-tri.png' alt='' />
       <div className={styles.Searchbar}>
         <input
           type='number'
@@ -68,7 +68,7 @@ const Menubar = (props: any) => {
         <button onClick={handleOnClick}></button>
       </div>
       <button className={styles.LogoutButton} onClick={handleLogout}>
-        <img src='img/icons/Logout.png' alt='' className={styles.Logout} />
+        <img src='/img/icons/Logout.png' alt='' className={styles.Logout} />
       </button>
     </div>
   );
@@ -90,7 +90,7 @@ const GoTop = (props: any) => {
         props.opacity && styles.TopButtonPosOff,
       ].join(' ')}>
       <img
-        src='img/icons/icon-gototop.png'
+        src='/img/icons/icon-gototop.png'
         className={[
           styles.TopButton,
           props.opacity && styles.TopButtonOff,
@@ -125,7 +125,7 @@ const Dailydata = (props: any) => {
           <div className={styles.DailyBanner}>
             <div>
               <img
-                src='img/icons/icon-resin.png'
+                src='/img/icons/icon-resin.png'
                 className={styles.DailyiconResin}
               />
             </div>
@@ -134,7 +134,7 @@ const Dailydata = (props: any) => {
           <div className={styles.Divline}></div>
           <div className={styles.DailyBanner}>
             <div>
-              <img src='img/icons/icon-pot.png' className={styles.Dailyicon} />
+              <img src='/img/icons/icon-pot.png' className={styles.Dailyicon} />
             </div>
             <div>{state.current_home_coin}/2400</div>
           </div>
@@ -142,7 +142,7 @@ const Dailydata = (props: any) => {
           <div className={styles.DailyBanner}>
             <div>
               <img
-                src='img/icons/icon-dailyquest.png'
+                src='/img/icons/icon-dailyquest.png'
                 className={styles.Dailyicon}
               />
             </div>
@@ -152,7 +152,7 @@ const Dailydata = (props: any) => {
           <div className={styles.DailyBanner}>
             <div>
               <img
-                src='img/icons/icon-expedition.png'
+                src='/img/icons/icon-expedition.png'
                 className={styles.Dailyicon}
               />
             </div>
@@ -252,7 +252,7 @@ const WorldExp = (props: any) => {
               <div className={styles.WorldBoxFilter}>
                 <div>
                   <img
-                    src='img/icons/Monde.png'
+                    src='/img/icons/Monde.png'
                     alt=''
                     className={styles.WorldIcon}
                   />
@@ -271,7 +271,7 @@ const WorldExp = (props: any) => {
               <div className={styles.WorldBoxFilter}>
                 <div>
                   <img
-                    src='img/icons/Liyue.png'
+                    src='/img/icons/Liyue.png'
                     alt=''
                     className={styles.WorldIcon}
                   />
@@ -290,7 +290,7 @@ const WorldExp = (props: any) => {
               <div className={styles.WorldBoxFilter}>
                 <div>
                   <img
-                    src='img/icons/Inazuma.png'
+                    src='/img/icons/Inazuma.png'
                     alt=''
                     className={styles.WorldIcon}
                   />
@@ -445,7 +445,7 @@ const CheckedCharacter = (props: any) => {
                 Lv.{state.weapon?.level}
               </div>
               <div className={styles.CharacterInfoWeaponDataHeadAffix}>
-                <img src='img/icons/constell_dark.png' />
+                <img src='/img/icons/constell_dark.png' />
                 <div>{state.weapon?.affix_level}/5</div>
               </div>
             </div>
@@ -469,7 +469,7 @@ const CheckedCharacter = (props: any) => {
             />
           ) : (
             <img
-              src='img/star_1.png'
+              src='/img/star_1.png'
               className={styles.CharacterInfoArtifactImg}
             />
           )}
@@ -487,7 +487,7 @@ const CheckedCharacter = (props: any) => {
             />
           ) : (
             <img
-              src='img/star_1.png'
+              src='/img/star_1.png'
               className={styles.CharacterInfoArtifactImg}
             />
           )}
@@ -505,7 +505,7 @@ const CheckedCharacter = (props: any) => {
             />
           ) : (
             <img
-              src='img/star_1.png'
+              src='/img/star_1.png'
               className={styles.CharacterInfoArtifactImg}
             />
           )}
@@ -523,7 +523,7 @@ const CheckedCharacter = (props: any) => {
             />
           ) : (
             <img
-              src='img/star_1.png'
+              src='/img/star_1.png'
               className={styles.CharacterInfoArtifactImg}
             />
           )}
@@ -541,7 +541,7 @@ const CheckedCharacter = (props: any) => {
             />
           ) : (
             <img
-              src='img/star_1.png'
+              src='/img/star_1.png'
               className={styles.CharacterInfoArtifactImg}
             />
           )}

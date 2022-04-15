@@ -18,7 +18,7 @@ const Errorpage = () => {
           <Grid item xs={8}>
             <div className={styles.ErrorBox}>
               <div className={styles.ErrorIcon}>
-                <img src='img/icons/Error500.png' alt='' />
+                <img src='/img/icons/Error500.png' alt='' />
               </div>
               <div className={styles.ErrorText}>
                 <div>이런..!</div>
