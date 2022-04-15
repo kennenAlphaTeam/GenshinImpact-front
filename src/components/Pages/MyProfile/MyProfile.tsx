@@ -31,6 +31,24 @@ import LiyueIcon from '../../../img/icons/Liyue.png';
 import InazumaIcon from '../../../img/icons/Inazuma.png';
 import ConstellIcon from '../../../img/icons/constell_dark.png';
 import StarOneBg from '../../../img/star_1.png';
+import FreedomIcon from '../../../img/materials/freedom.png';
+import ProsperityIcon from '../../../img/materials/prosperity.png';
+import TransienceIcon from '../../../img/materials/transience.png';
+import DreamIcon from '../../../img/materials/dream.png';
+import GuyunIcon from '../../../img/materials/guyun.png';
+import SeaIcon from '../../../img/materials/sea.png';
+import ResistanceIcon from '../../../img/materials/resistance.png';
+import DiligenceIcon from '../../../img/materials/diligence.png';
+import EleganceIcon from '../../../img/materials/elegance.png';
+import NostalgiaIcon from '../../../img/materials/nostalgia.png';
+import ElixirIcon from '../../../img/materials/elixir.png';
+import ValorIcon from '../../../img/materials/valor.png';
+import BalladIcon from '../../../img/materials/ballad.png';
+import GoldIcon from '../../../img/materials/gold.png';
+import LightIcon from '../../../img/materials/light.png';
+import GladiatorIcon from '../../../img/materials/gladiator.png';
+import AerosideriteIcon from '../../../img/materials/aerosiderite.png';
+import KijinIcon from '../../../img/materials/kijin.png';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -171,35 +189,14 @@ const TodayMaterials = () => {
   const date = new Date().getDate();
   const index = date === 0 ? 0 : date % 3 === 1 ? 0 : date % 3 === 2 ? 1 : 2;
 
-  const dailydata = [
-    {
-      id: 0,
-      monde_book: 'img/materials/freedom.png',
-      liyue_book: 'img/materials/prosperity.png',
-      inazuma_book: 'img/materials/transience.png',
-      monde_material: 'img/materials/dream.png',
-      liyue_material: 'img/materials/guyun.png',
-      inazuma_material: 'img/materials/sea.png',
-    },
-    {
-      id: 1,
-      monde_book: 'img/materials/resistance.png',
-      liyue_book: 'img/materials/diligence.png',
-      inazuma_book: 'img/materials/elegance.png',
-      monde_material: 'img/materials/nostalgia.png',
-      liyue_material: 'img/materials/elixir.png',
-      inazuma_material: 'img/materials/valor.png',
-    },
-    {
-      id: 2,
-      monde_book: 'img/materials/ballad.png',
-      liyue_book: 'img/materials/gold.png',
-      inazuma_book: 'img/materials/light.png',
-      monde_material: 'img/materials/gladiator.png',
-      liyue_material: 'img/materials/aerosiderite.png',
-      inazuma_material: 'img/materials/kijin.png',
-    },
-  ];
+  const dailydata = {
+    monde_book: [FreedomIcon, ResistanceIcon, BalladIcon],
+    liyue_book: [ProsperityIcon, DiligenceIcon, GoldIcon],
+    inazuma_book: [TransienceIcon, EleganceIcon, LightIcon],
+    monde_material: [DreamIcon, NostalgiaIcon, GladiatorIcon],
+    liyue_material: [GuyunIcon, ElixirIcon, AerosideriteIcon],
+    inazuma_material: [SeaIcon, ValorIcon, KijinIcon],
+  };
 
   return (
     <Grid container spacing={2} className={styles.Grid}>
@@ -212,12 +209,12 @@ const TodayMaterials = () => {
               <div className={styles.MaterialTextUnder}></div>
             </div>
             <div className={styles.MaterialItems}>
-              <img src={dailydata[index].monde_book} alt='' />
-              <img src={dailydata[index].liyue_book} alt='' />
-              <img src={dailydata[index].inazuma_book} alt='' />
-              <img src={dailydata[index].monde_material} alt='' />
-              <img src={dailydata[index].liyue_material} alt='' />
-              <img src={dailydata[index].inazuma_book} alt='' />
+              <img src={dailydata.monde_book[index]} alt='' />
+              <img src={dailydata.liyue_book[index]} alt='' />
+              <img src={dailydata.inazuma_book[index]} alt='' />
+              <img src={dailydata.monde_material[index]} alt='' />
+              <img src={dailydata.liyue_material[index]} alt='' />
+              <img src={dailydata.inazuma_book[index]} alt='' />
             </div>
           </div>
         </div>
