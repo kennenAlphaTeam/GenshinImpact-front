@@ -1,7 +1,6 @@
 import { Grid } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { EffectCoverflow } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Character,
@@ -20,6 +19,18 @@ import {
 import { RootState } from '../../../features/redux/reducers';
 import styles from './MyProfile.module.css';
 import SwiperCore from 'swiper';
+import BannerTri from '../../../img/icons/banner-tri.png';
+import LogoutIcon from '../../../img/icons/Logout.png';
+import GotopIcon from '../../../img/icons/icon-gototop.png';
+import ResinIcon from '../../../img/icons/icon-resin.png';
+import PotIcon from '../../../img/icons/icon-pot.png';
+import DailyIcon from '../../../img/icons/icon-dailyquest.png';
+import ExpIcon from '../../../img/icons/icon-expedition.png';
+import Monde from '../../../img/icons/Monde.png';
+import Liyue from '../../../img/icons/Liyue.png';
+import Inazuma from '../../../img/icons/Inazuma.png';
+import ConstellIcon from '../../../img/icons/constell_dark.png';
+import StarOneBg from '../../../img/icons/star_1.png';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -57,7 +68,7 @@ const Menubar = (props: any) => {
   return (
     <div
       className={[styles.AppBar, props.opacity && styles.AppBarOff].join(' ')}>
-      <img src='/img/icons/banner-tri.png' alt='' />
+      <img src={BannerTri} alt='' />
       <div className={styles.Searchbar}>
         <input
           type='number'
@@ -68,7 +79,7 @@ const Menubar = (props: any) => {
         <button onClick={handleOnClick}></button>
       </div>
       <button className={styles.LogoutButton} onClick={handleLogout}>
-        <img src='/img/icons/Logout.png' alt='' className={styles.Logout} />
+        <img src={LogoutIcon} alt='' className={styles.Logout} />
       </button>
     </div>
   );
@@ -90,7 +101,7 @@ const GoTop = (props: any) => {
         props.opacity && styles.TopButtonPosOff,
       ].join(' ')}>
       <img
-        src='/img/icons/icon-gototop.png'
+        src={GotopIcon}
         className={[
           styles.TopButton,
           props.opacity && styles.TopButtonOff,
@@ -124,37 +135,28 @@ const Dailydata = (props: any) => {
         <div className={styles.Daily}>
           <div className={styles.DailyBanner}>
             <div>
-              <img
-                src='/img/icons/icon-resin.png'
-                className={styles.DailyiconResin}
-              />
+              <img src={ResinIcon} className={styles.DailyiconResin} />
             </div>
             <div>{state.current_resin}/160</div>
           </div>
           <div className={styles.Divline}></div>
           <div className={styles.DailyBanner}>
             <div>
-              <img src='/img/icons/icon-pot.png' className={styles.Dailyicon} />
+              <img src={PotIcon} className={styles.Dailyicon} />
             </div>
             <div>{state.current_home_coin}/2400</div>
           </div>
           <div className={styles.Divline}></div>
           <div className={styles.DailyBanner}>
             <div>
-              <img
-                src='/img/icons/icon-dailyquest.png'
-                className={styles.Dailyicon}
-              />
+              <img src={DailyIcon} className={styles.Dailyicon} />
             </div>
             <div>{state.finished_task_num}/4</div>
           </div>
           <div className={styles.Divline}></div>
           <div className={styles.DailyBanner}>
             <div>
-              <img
-                src='/img/icons/icon-expedition.png'
-                className={styles.Dailyicon}
-              />
+              <img src={ExpIcon} className={styles.Dailyicon} />
             </div>
             <div>{state.current_expedition_num}/5</div>
           </div>
@@ -251,11 +253,7 @@ const WorldExp = (props: any) => {
             <div className={styles.WorldExpBox}>
               <div className={styles.WorldBoxFilter}>
                 <div>
-                  <img
-                    src='/img/icons/Monde.png'
-                    alt=''
-                    className={styles.WorldIcon}
-                  />
+                  <img src={Monde} alt='' className={styles.WorldIcon} />
                   <div className={styles.WorldName}>몬드</div>
                   <div className={styles.WorldLevel}>
                     평판 레벨:{monde?.level}
@@ -270,11 +268,7 @@ const WorldExp = (props: any) => {
             <div className={styles.WorldExpBox}>
               <div className={styles.WorldBoxFilter}>
                 <div>
-                  <img
-                    src='/img/icons/Liyue.png'
-                    alt=''
-                    className={styles.WorldIcon}
-                  />
+                  <img src={Liyue} alt='' className={styles.WorldIcon} />
                   <div className={styles.WorldName}>리월</div>
                   <div className={styles.WorldLevel}>
                     평판 레벨:{liyue?.level}
@@ -289,11 +283,7 @@ const WorldExp = (props: any) => {
             <div className={styles.WorldExpBox}>
               <div className={styles.WorldBoxFilter}>
                 <div>
-                  <img
-                    src='/img/icons/Inazuma.png'
-                    alt=''
-                    className={styles.WorldIcon}
-                  />
+                  <img src={Inazuma} alt='' className={styles.WorldIcon} />
                   <div className={styles.WorldName}>이나즈마</div>
                   <div className={styles.WorldLevel}>
                     평판 레벨:{inazuma?.level}
@@ -445,7 +435,7 @@ const CheckedCharacter = (props: any) => {
                 Lv.{state.weapon?.level}
               </div>
               <div className={styles.CharacterInfoWeaponDataHeadAffix}>
-                <img src='/img/icons/constell_dark.png' />
+                <img src={ConstellIcon} />
                 <div>{state.weapon?.affix_level}/5</div>
               </div>
             </div>
@@ -468,10 +458,7 @@ const CheckedCharacter = (props: any) => {
               ].join(' ')}
             />
           ) : (
-            <img
-              src='/img/star_1.png'
-              className={styles.CharacterInfoArtifactImg}
-            />
+            <img src={StarOneBg} className={styles.CharacterInfoArtifactImg} />
           )}
           {reliq.length > 1 ? (
             <img
@@ -486,10 +473,7 @@ const CheckedCharacter = (props: any) => {
               ].join(' ')}
             />
           ) : (
-            <img
-              src='/img/star_1.png'
-              className={styles.CharacterInfoArtifactImg}
-            />
+            <img src={StarOneBg} className={styles.CharacterInfoArtifactImg} />
           )}
           {reliq.length > 2 ? (
             <img
@@ -504,10 +488,7 @@ const CheckedCharacter = (props: any) => {
               ].join(' ')}
             />
           ) : (
-            <img
-              src='/img/star_1.png'
-              className={styles.CharacterInfoArtifactImg}
-            />
+            <img src={StarOneBg} className={styles.CharacterInfoArtifactImg} />
           )}
           {reliq.length > 3 ? (
             <img
@@ -522,10 +503,7 @@ const CheckedCharacter = (props: any) => {
               ].join(' ')}
             />
           ) : (
-            <img
-              src='/img/star_1.png'
-              className={styles.CharacterInfoArtifactImg}
-            />
+            <img src={StarOneBg} className={styles.CharacterInfoArtifactImg} />
           )}
           {reliq.length > 4 ? (
             <img
@@ -540,10 +518,7 @@ const CheckedCharacter = (props: any) => {
               ].join(' ')}
             />
           ) : (
-            <img
-              src='/img/star_1.png'
-              className={styles.CharacterInfoArtifactImg}
-            />
+            <img src={StarOneBg} className={styles.CharacterInfoArtifactImg} />
           )}
         </div>
       </div>

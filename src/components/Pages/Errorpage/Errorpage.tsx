@@ -2,6 +2,7 @@ import { Grid } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import styles from './Errorpage.module.css';
+import ErrorIcon from '../../../img/icons/Error500.png';
 
 const Errorpage = () => {
   const navigator = useNavigate();
@@ -18,7 +19,7 @@ const Errorpage = () => {
           <Grid item xs={8}>
             <div className={styles.ErrorBox}>
               <div className={styles.ErrorIcon}>
-                <img src='/img/icons/Error500.png' alt='' />
+                <img src={ErrorIcon} alt='' />
               </div>
               <div className={styles.ErrorText}>
                 <div>이런..!</div>

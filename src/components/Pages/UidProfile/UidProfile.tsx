@@ -9,6 +9,9 @@ import {
 } from '../../../features/redux/constants/actionTypes';
 import { RootState } from '../../../features/redux/reducers';
 import styles from './UidProfile.module.css';
+import Monde from '../../../img/icons/Monde.png';
+import Liyue from '../../../img/icons/Liyue.png';
+import Inazuma from '../../../img/icons/Inazuma.png';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -78,11 +81,7 @@ const WorldExp = (props: any) => {
         <div className={styles.WorldExpBox}>
           <div className={styles.WorldBoxFilter}>
             <div>
-              <img
-                src='/img/icons/Monde.png'
-                alt=''
-                className={styles.WorldIcon}
-              />
+              <img src={Monde} alt='' className={styles.WorldIcon} />
               <div className={styles.WorldName}>몬드</div>
               <div className={styles.WorldLevel}>평판 레벨:{monde?.level}</div>
               <div className={styles.WorldProgress}>
@@ -95,11 +94,7 @@ const WorldExp = (props: any) => {
         <div className={styles.WorldExpBox}>
           <div className={styles.WorldBoxFilter}>
             <div>
-              <img
-                src='/img/icons/Liyue.png'
-                alt=''
-                className={styles.WorldIcon}
-              />
+              <img src={Liyue} alt='' className={styles.WorldIcon} />
               <div className={styles.WorldName}>리월</div>
               <div className={styles.WorldLevel}>평판 레벨:{liyue?.level}</div>
               <div className={styles.WorldProgress}>
@@ -112,11 +107,7 @@ const WorldExp = (props: any) => {
         <div className={styles.WorldExpBox}>
           <div className={styles.WorldBoxFilter}>
             <div>
-              <img
-                src='/img/icons/Inazuma.png'
-                alt=''
-                className={styles.WorldIcon}
-              />
+              <img src={Inazuma} alt='' className={styles.WorldIcon} />
               <div className={styles.WorldName}>이나즈마</div>
               <div className={styles.WorldLevel}>
                 평판 레벨:{inazuma?.level}

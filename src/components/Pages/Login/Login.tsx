@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router';
 import { fetchCookieAsync } from '../../../features/redux/constants/actionTypes';
 import { RootState } from '../../../features/redux/reducers';
 import styles from './Login.module.css';
+import ExampleImg from '../../../img/example4.png';
 
 const Login = () => {
   const [cookie, setCookie] = useState<string>('');
@@ -60,7 +61,7 @@ const Login = () => {
                       ' ',
                     )}>
                     <div className={styles.Divline} />
-                    <img src='/img/example4.png'></img>
+                    <img src={ExampleImg}></img>
                     <div className={styles.Divline} />
                     <div className={styles.Help}>
                       1. 호요랩 원신 전적 페이지에 들어갑니다.(
