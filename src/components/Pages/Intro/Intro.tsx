@@ -8,7 +8,7 @@ const Intro = () => {
         <div>
           <img src='img/banner-tri.png'></img>Kenshin
         </div>
-        <a href='https://localhost:8080/auth/oauth/login/google'>구글 로그인</a>
+        <a href='api/auth/oauth/login/google'>구글 로그인</a>
       </div>
     </div>
   );
