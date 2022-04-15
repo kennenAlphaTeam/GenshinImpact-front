@@ -7,7 +7,8 @@ const Intro = () => {
     <div className={styles.Body}>
       <div>
         <div>
-          <img src={BannerTri}></img>Kenshin
+          <img src={BannerTri}></img>
+          <div>Kenshin</div>
         </div>
         <a href='api/auth/oauth/login/google'>구글 로그인</a>
       </div>
