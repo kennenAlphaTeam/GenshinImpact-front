@@ -5,7 +5,7 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout source code.
@@ -45,6 +45,7 @@ jobs:
         run: |
           echo "BUILD_DIR=~/app/build-front" >> $GITHUB_ENV
       - name: deploy build file to GCP
+        id: deploy
         run: |
           MKDIR_COMMAND="mkdir -p ~/app/build-front"
           gcloud compute ssh --zone $ZONE --ssh-key-file gcp_ssh_key ka@genshin --command "$MKDIR_COMMAND"
