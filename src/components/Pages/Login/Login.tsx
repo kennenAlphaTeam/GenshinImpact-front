@@ -49,9 +49,13 @@ const Login = () => {
   return (
     <div className={styles.Body}>
       <div>
-        <Grid container spacing={2} className={styles.Gird}>
+        <Grid
+          container
+          spacing={{ xs: 0.5, md: 2 }}
+          columns={{ xs: 6, md: 12 }}
+          className={styles.Gird}>
           <Grid xs item />
-          <Grid xs={6} item>
+          <Grid xs={4} md={6} item>
             <div className={styles.LoginBox}>
               <div>
                 <div>쿠키를 입력해 주세요</div>

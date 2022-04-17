@@ -36,7 +36,42 @@
   text-decoration-line: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
+  .Body > div {
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Body > div > div {
+    font-size: 10vw;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Body > div > div > img {
+    width: 25vw;
+    height: 25vw;
+    margin: auto auto 5vh auto;
+  }
+
+  .Body > div > a {
+    background-color: #363636;
+    border-radius: 8px;
+    width: 20vw;
+    font-size: 2.5vw;
+    padding: 0.5vw;
+    color: white;
+    text-decoration-line: none;
+    margin: 8vh auto auto auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .Body > div {
     margin: auto;
     color: white;
