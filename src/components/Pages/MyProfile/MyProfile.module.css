@@ -5,10 +5,11 @@
 
 .Profile {
   width: 100%;
-  background: url('/public/img/Profile-background.png');
-  background-size: 102%;
+  background: url('/public/img/Profile-background-cut.png');
   background-attachment: fixed;
-  height: 860px;
+  background-position: center top;
+  background-size: cover;
+  height: 94vh;
   display: flex;
 }
 

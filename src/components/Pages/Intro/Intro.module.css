@@ -1,6 +1,6 @@
 .Body {
   background-color: #272727;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
 }
@@ -15,11 +15,16 @@
 .Body > div > div {
   font-size: 120px;
   font-weight: 700;
+  line-height: 1;
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .Body > div > div > img {
   width: 97px;
+  height: 97px;
   margin-right: 8px;
+  margin-top: 19px;
 }
 
 .Body > div > a {
@@ -29,4 +34,74 @@
   padding: 5px;
   color: white;
   text-decoration-line: none;
+}
+
+@media screen and (max-width: 900px) {
+  .Body > div {
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Body > div > div {
+    font-size: 10vw;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Body > div > div > img {
+    width: 25vw;
+    height: 25vw;
+    margin: auto auto 5vh auto;
+  }
+
+  .Body > div > a {
+    background-color: #363636;
+    border-radius: 8px;
+    width: 20vw;
+    font-size: 2.5vw;
+    padding: 0.5vw;
+    color: white;
+    text-decoration-line: none;
+    margin: 8vh auto auto auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Body > div {
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Body > div > div {
+    font-size: 10vw;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Body > div > div > img {
+    width: 25vw;
+    height: 25vw;
+    margin: auto auto 2vh auto;
+  }
+
+  .Body > div > a {
+    background-color: #363636;
+    border-radius: 8px;
+    width: 20vw;
+    font-size: 3.5vw;
+    padding: 0.5vw;
+    color: white;
+    text-decoration-line: none;
+    margin: 8vh auto auto auto;
+  }
 }
