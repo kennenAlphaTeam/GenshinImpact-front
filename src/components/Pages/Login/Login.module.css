@@ -184,23 +184,23 @@
 }
 
 .Divline:last-child {
-  margin-top: 19px;
+  margin-top: 2%;
 }
 
 .Infobox > img {
-  margin-top: 19px;
+  margin-top: 2%;
   width: 90%;
 }
 
 .Help:first-child {
-  margin-top: 25px;
+  margin-top: 4%;
 }
 
 .Help {
   font-size: 1.2vw;
   line-height: 1.2vw;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 2%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -216,7 +216,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-    margin-top: 10px;
+    margin-top: 2%;
   }
 
   /* 검색창 */
@@ -234,11 +234,11 @@
   }
 
   .InfoboxOn {
-    height: 6em;
+    height: 5.5em;
   }
 
   .Infobox > img {
-    margin-top: 19px;
+    margin-top: 2.5%;
     width: 90%;
   }
 
@@ -246,7 +246,7 @@
     font-size: 1.4vw;
     line-height: 1.4vw;
     text-align: center;
-    margin-top: 12px;
+    margin-top: 2%;
   }
 }
 
@@ -263,7 +263,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-    margin-top: 10px;
+    margin-top: 1.8%;
   }
 
   /* 검색창 */
@@ -280,11 +280,11 @@
     transition: border-color 0.2s linear;
   }
   .InfoboxOn {
-    height: 7.6em;
+    height: 7em;
   }
 
   .Infobox > img {
-    margin-top: 19px;
+    margin-top: 2.5%;
     width: 90%;
   }
 
@@ -292,7 +292,7 @@
     font-size: 2vw;
     line-height: 2vw;
     text-align: center;
-    margin-top: 12px;
+    margin-top: 2%;
   }
 }
 
@@ -329,7 +329,7 @@
   }
 
   .InfoboxOn {
-    height: 7em;
+    height: 6em;
   }
 
   /* 검색창 */
@@ -364,10 +364,99 @@
   }
 
   .Help {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     font-size: 1.8vw;
-    line-height: 1.8vw;
+    line-height: 3vw;
     text-align: center;
-    margin-top: 12px;
-    font-weight: 500;
+    margin-top: 2%;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .InfoboxOn {
+    height: 7em;
+  }
+
+  .Searchbar > button {
+    font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .InfoboxOn {
+    height: 10em;
+  }
+  .Help {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    font-size: 1.8vw;
+    line-height: 4vw;
+    text-align: center;
+    margin-top: 3%;
+    font-weight: 300;
+  }
+  .Howto > button {
+    font-size: 2vw;
+  }
+  /* 검색창 */
+  .Searchbar {
+    margin: auto;
+    background-color: #363636;
+    height: 5%;
+    width: 80%;
+    border-radius: 90px;
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s linear;
+  }
+
+  .Searchbar:focus-within {
+    border: 2px solid #ffffff;
+    color: #606060;
+  }
+
+  .Searchbar > input {
+    width: 37vw;
+    color: white;
+    background-color: transparent;
+    border: 0;
+    text-align: center;
+    font-size: 2vw;
+    line-height: 4vw;
+    font-family: 'Noto Sans KR';
+    margin-bottom: 2px;
+  }
+
+  .Searchbar > input::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 2vw;
+  }
+  .Searchbar > div {
+    width: 0px;
+    height: 90%;
+    border-left: 2px solid #313131;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: border-left 0.2s linear;
+  }
+
+  .Searchbar:focus-within > div {
+    border-left: 2px solid #ffffff;
+  }
+
+  .Searchbar > button {
+    width: 12vw;
+    border: 0;
+    margin-bottom: 1px;
+    color: #606060;
+    background-color: transparent;
+    transition: color 0.2s linear;
+    font-family: 'Noto Sans KR';
   }
 }

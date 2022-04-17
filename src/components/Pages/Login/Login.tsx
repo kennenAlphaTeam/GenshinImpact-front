@@ -81,8 +81,7 @@ const Login = () => {
                       3. 개발자 도구의 상단에서 Console(콘솔)을 선택합니다.
                     </div>
                     <div className={styles.Help}>
-                      4. 콘솔에 document.cookie 를 입력하면 유저 cookie값이
-                      나옵니다.
+                      4. 콘솔에 document.cookie를 입력시 유저 쿠키가 나옵니다.
                     </div>
                     <div className={styles.Help}>
                       5. cookie값을 복사해서 아래 칸에 붙여넣어주면 끝!
