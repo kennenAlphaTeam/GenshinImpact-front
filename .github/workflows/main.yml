@@ -1,9 +1,9 @@
-name: React build
+name: React deploy
 on:
   push:
     branches:
       - main
-
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -25,3 +25,43 @@ jobs:
 
       - name: Build
         run: npm run build
+# prepare deploy
+      - id: auth
+        name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+      - name: Set up GCP env
+        run: |
+          echo "ZONE=${{secrets.GCP_ZONE}}" >> $GITHUB_ENV
+          echo "${{secrets.GCP_SSH_KEY}}" > gcp_ssh_key
+          echo "${{secrets.GCP_SSH_KEY_PUB}}" > gcp_ssh_key.pub
+          chmod 600 gcp_ssh_key
+          chmod 600 gcp_ssh_key.pub
+# deploy
+      - name: Set build dir
+        run: |
+          echo "BUILD_DIR=~/app/build-front" >> $GITHUB_ENV
+      - name: deploy build file to GCP
+        run: |
+          MKDIR_COMMAND="mkdir -p ~/app/build-front"
+          gcloud compute ssh --zone $ZONE --ssh-key-file gcp_ssh_key ka@genshin --command "$MKDIR_COMMAND"
+          gcloud compute scp --zone $ZONE --ssh-key-file gcp_ssh_key --recurse dist/* ka@genshin:$BUILD_DIR
+          gcloud compute ssh --zone $ZONE --ssh-key-file gcp_ssh_key ka@genshin --command "sudo cp -r $BUILD_DIR/* /var/www/html"
+# nofify result to discord
+      - name: Set success color
+        if: always()
+        run: | 
+          if [[ ${{ steps.deploy.outcome }} == "success" ]]; then 
+            echo "STATUS_COLOR=7667570" >> "$GITHUB_ENV"
+          else 
+            echo "STATUS_COLOR=16735560" >> "$GITHUB_ENV"
+          fi
+      - name: Discord notification
+        if: always()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_EMBEDS: '[{"title":"${{github.repository}}","color":${{env.STATUS_COLOR}},"url":"${{github.server_url}}/${{github.repository}}","fields":[{"name":"WorkFlow","value":"${{github.workflow}}"},{"name":"Commit","value":"${{github.sha}}"}]}]'
+        uses: Ilshidur/action-discord@master  
