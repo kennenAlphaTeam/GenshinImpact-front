@@ -133,7 +133,11 @@ const GoTop = (props: any) => {
 const Userdata = (props: any) => {
   const state = props.state;
   return (
-    <Grid container spacing={2} className={styles.Grid}>
+    <Grid
+      container
+      spacing={{ xs: 0.5, sm: 2 }}
+      columns={{ xs: 6, sm: 12 }}
+      className={styles.Grid}>
       <Grid item xs></Grid>
       <Grid item xs={8}>
         <div className={styles.Nickname}>{state.nickname}</div>
@@ -147,9 +151,13 @@ const Userdata = (props: any) => {
 const Dailydata = (props: any) => {
   const state = props.state;
   return (
-    <Grid container spacing={2} className={styles.Grid}>
-      <Grid item xs></Grid>
-      <Grid item xs={4}>
+    <Grid
+      container
+      spacing={{ xs: 0.5, sm: 2, md: 2 }}
+      columns={{ xs: 6, sm: 12, md: 12 }}
+      className={styles.Grid}>
+      <Grid item md sm xs></Grid>
+      <Grid item md={4} sm={6} xs={4}>
         <div className={styles.Daily}>
           <div className={styles.DailyBanner}>
             <div>
@@ -180,7 +188,7 @@ const Dailydata = (props: any) => {
           </div>
         </div>
       </Grid>
-      <Grid item xs></Grid>
+      <Grid item md sm xs></Grid>
     </Grid>
   );
 };
@@ -199,9 +207,13 @@ const TodayMaterials = () => {
   };
 
   return (
-    <Grid container spacing={2} className={styles.Grid}>
-      <Grid item xs></Grid>
-      <Grid item xs={8}>
+    <Grid
+      container
+      spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
+      columns={{ xs: 6, sm: 12, md: 12, lg: 12 }}
+      className={styles.Grid}>
+      <Grid item xs sm md lg></Grid>
+      <Grid item xs={6} sm={10} md={10} lg={8}>
         <div className={styles.MaterialList}>
           <div>
             <div className={styles.MaterialText}>
@@ -219,7 +231,7 @@ const TodayMaterials = () => {
           </div>
         </div>
       </Grid>
-      <Grid item xs></Grid>
+      <Grid item xs sm md lg></Grid>
     </Grid>
   );
 };
@@ -243,9 +255,13 @@ const WorldExp = (props: any) => {
     const inazuma = state.find((obj) => obj.name === '이나즈마');
 
     return (
-      <Grid container spacing={2} className={styles.Grid}>
+      <Grid
+        container
+        spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
+        columns={{ xs: 6, sm: 12, md: 12, lg: 12 }}
+        className={styles.Grid}>
         <Grid item xs></Grid>
-        <Grid item xs={10}>
+        <Grid item xs={6} sm={10} md={10} lg={10}>
           <div className={styles.WorldExpList}>
             <div className={styles.WorldExpBox}>
               <div className={styles.WorldBoxFilter}>
@@ -305,9 +321,13 @@ const MyData = (props: any) => {
   if (Object.keys(props.state).length) {
     const state = props.state.stats;
     return (
-      <Grid container spacing={2} className={styles.Grid}>
-        <Grid item xs />
-        <Grid item xs={8}>
+      <Grid
+        container
+        spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
+        columns={{ xs: 6, sm: 12, md: 12, lg: 12 }}
+        className={styles.Grid}>
+        <Grid item xs sm md lg />
+        <Grid item xs={6} sm={10} md={8} lg={8}>
           <div className={styles.MydataList}>
             <div className={styles.MydataTextBox}>
               <div className={styles.MydataText}>
@@ -551,14 +571,26 @@ const AvatarProfile = (props: any) => {
     characters.avatars?.filter((key: Character) => key.id === selected).pop();
 
   return (
-    <Grid container spacing={2} className={styles.Grid}>
-      <Grid item xs />
-      <Grid item xs={8}>
+    <Grid
+      container
+      spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
+      columns={{ xs: 6, sm: 12, md: 12, lg: 12 }}
+      className={styles.Grid}>
+      <Grid item xs sm md lg />
+      <Grid item xs={6} sm={12} md={10} lg={8}>
         <Swiper
           className={styles.Avatardiv}
           slideToClickedSlide={true}
-          slidesPerView={5}
-          spaceBetween={30}
+          breakpoints={{
+            0: {
+              spaceBetween: 5,
+              slidesPerView: 3,
+            },
+            600: {
+              spaceBetween: 30,
+              slidesPerView: 5,
+            },
+          }}
           grabCursor={true}
           centeredSlides={true}
           onTransitionEnd={() => {
@@ -597,7 +629,7 @@ const AvatarProfile = (props: any) => {
         </Swiper>
         <CheckedCharacter state={selectedInfo} />
       </Grid>
-      <Grid item xs />
+      <Grid item xs sm md lg />
     </Grid>
   );
 };
