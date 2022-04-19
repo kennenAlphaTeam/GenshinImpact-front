@@ -85,8 +85,7 @@ const WorldExp = (props: any) => {
               <div className={styles.WorldName}>몬드</div>
               <div className={styles.WorldLevel}>평판 레벨:{monde?.level}</div>
               <div className={styles.WorldProgress}>
-                탐사 진행도:{' '}
-                {monde && monde?.exploration_percentage / 10.0 + '%'}
+                진행도: {monde && monde?.exploration_percentage / 10.0 + '%'}
               </div>
             </div>
           </div>
@@ -98,8 +97,7 @@ const WorldExp = (props: any) => {
               <div className={styles.WorldName}>리월</div>
               <div className={styles.WorldLevel}>평판 레벨:{liyue?.level}</div>
               <div className={styles.WorldProgress}>
-                탐사 진행도:{' '}
-                {liyue && liyue.exploration_percentage / 10.0 + '%'}
+                진행도: {liyue && liyue.exploration_percentage / 10.0 + '%'}
               </div>
             </div>
           </div>
@@ -113,8 +111,7 @@ const WorldExp = (props: any) => {
                 평판 레벨:{inazuma?.level}
               </div>
               <div className={styles.WorldProgress}>
-                탐사 진행도:{' '}
-                {inazuma && inazuma.exploration_percentage / 10.0 + '%'}
+                진행도: {inazuma && inazuma.exploration_percentage / 10.0 + '%'}
               </div>
             </div>
           </div>
@@ -235,9 +232,13 @@ const UidProfile = () => {
   return (
     <div className={styles.Body}>
       <div>
-        <Grid container spacing={2} className={styles.Grid}>
-          <Grid item xs />
-          <Grid item xs={10}>
+        <Grid
+          container
+          spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
+          columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
+          className={styles.Grid}>
+          <Grid item xs sm md lg />
+          <Grid item xs={10} sm={10} md={10} lg={10}>
             <div className={styles.Mainbox}>
               <Menubar />
               <div className={styles.Divline}></div>
@@ -251,7 +252,7 @@ const UidProfile = () => {
               </footer>
             </div>
           </Grid>
-          <Grid item xs />
+          <Grid item xs sm md lg />
         </Grid>
       </div>
     </div>

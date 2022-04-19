@@ -406,14 +406,12 @@
   border: 0;
   text-align: center;
   font-size: 16px;
-  line-height: 22px;
   font-family: 'Noto Sans KR';
-  margin-bottom: 2px;
 }
 
 .Searchbar > input::-webkit-input-placeholder {
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .Searchbar > input::-webkit-outer-spin-button,
@@ -454,7 +452,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  margin-top: 6px;
+  margin: auto;
   height: 24px;
   transition: background-image 0.2s linear;
 }
@@ -588,7 +586,6 @@
 
 .CharacterInfoWeapon {
   margin: 10px auto 10px auto;
-  height: 120px;
   background-color: white;
   border-radius: 10px;
   display: flex;
@@ -596,13 +593,12 @@
   justify-content: flex-start;
   color: #2d2d2d;
   text-align: left;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding: 6px;
 }
 
 .CharacterInfoWeaponBase {
   aspect-ratio: 1/1;
-  height: 80%;
+  width: 25%;
   border-radius: 10%;
   background-repeat: no-repeat;
   background-position: center;
@@ -628,10 +624,8 @@
   background-image: url('/public/img/star_1.png');
 }
 .CharacterInfoWeaponData {
-  margin-top: auto;
-  margin-bottom: auto;
   margin-left: 10px;
-  height: 85%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -1090,9 +1084,9 @@
   }
 
   .WorldName {
-    line-height: 5.5vw;
-    height: 5.5vw;
-    font-size: 4.5vw;
+    line-height: 8vw;
+    height: 8vw;
+    font-size: 7vw;
   }
 
   .WorldLevel {
@@ -1172,8 +1166,8 @@
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 500;
-    font-size: 4vw;
-    line-height: 5vw;
+    font-size: 5vw;
+    line-height: 6vw;
     text-align: left;
     color: rgba(0, 0, 0, 0.3);
   }
@@ -1325,7 +1319,6 @@
   .CharacterInfoWeapon {
     margin: 10px auto 10px auto;
     width: 60%;
-    height: 120px;
     background-color: white;
     border-radius: 10px;
     display: flex;
@@ -1333,13 +1326,12 @@
     justify-content: flex-start;
     color: #2d2d2d;
     text-align: left;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding: 6px;
   }
 
   .CharacterInfoWeaponBase {
     aspect-ratio: 1/1;
-    height: 80%;
+    width: 25%;
     border-radius: 10%;
     background-repeat: no-repeat;
     background-position: center;
@@ -1350,10 +1342,7 @@
   }
 
   .CharacterInfoWeaponData {
-    margin-top: auto;
-    margin-bottom: auto;
     margin-left: 10px;
-    height: 85%;
     display: flex;
     flex-direction: column;
   }
@@ -1425,9 +1414,18 @@
     margin-left: -4px !important;
   }
 
+  .Profile {
+    width: 100%;
+    background: url('/public/img/Profile-background-cut.png');
+    background-position: center top;
+    background-size: cover;
+    height: 79vh;
+    display: flex;
+  }
+
   .AppBar {
     width: 100vw;
-    height: 39px;
+    height: 6.3vh;
     background-color: #2d2d2d;
     position: fixed;
     top: 0px;
@@ -1493,15 +1491,13 @@
     background-color: transparent;
     border: 0;
     text-align: center;
-    font-size: 2vw;
-    line-height: 2vw;
+    font-size: 3vw;
     font-family: 'Noto Sans KR';
-    margin-bottom: 2px;
   }
 
   .Searchbar > input::-webkit-input-placeholder {
     text-align: center;
-    font-size: 2vw;
+    font-size: 3vw;
   }
 
   .Searchbar > input::-webkit-outer-spin-button,
@@ -1542,34 +1538,33 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    margin-top: 6px;
-    height: 70%;
-    transition: background-image 0.2s linear;
+    margin: auto;
+    height: 50%;
   }
 
   .Nickname {
     width: 100%;
-    height: 11vw;
-    font-size: 9.5vw;
-    line-height: 11vw;
+    height: 12vw;
+    font-size: 11vw;
+    line-height: 12vw;
   }
   .Uid {
     width: 100%;
-    font-size: 3vw;
+    font-size: 4vw;
   }
   .Daily {
     margin-top: 10%;
     font-size: 3vw;
-    line-height: 17px;
+    line-height: 3vw;
   }
   .DailyBanner {
-    width: 128px;
+    width: 25%;
     height: calc(60 / 78 * 78px);
   }
 
   .DailyBanner :first-child {
     height: calc(36 / 42 * 1vw * 7);
-    margin-bottom: 9px;
+    margin-bottom: 7px;
   }
 
   .DailyiconResin {
@@ -1594,8 +1589,8 @@
 
   .Materials {
     background-color: white;
-    padding-top: 97px;
-    padding-bottom: 97px;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
     width: 100%;
     display: flex;
   }
@@ -1609,25 +1604,52 @@
   }
 
   .WorldExpList {
-    width: 90%;
+    width: 100%;
   }
   .WorldExpBox {
     background-size: calc(600 * 0.555px) calc(337 * 0.555px);
   }
 
-  .MydataText {
-    min-width: 2vw;
+  .WorldLevel {
+    font-size: 3.8vw;
+    line-height: 4.3vw;
+    font-weight: 200;
+    height: 4.3vw;
+    margin-top: 1.9vw;
+  }
+
+  .WorldProgress {
+    font-size: 3.8vw;
+    font-weight: 200;
+    height: 4.3vw;
+    line-height: 4.3vw;
+    margin-top: 1.2vw;
+  }
+
+  .Myinfo {
+    margin-top: 2vh;
+    width: 100%;
+    background: #1b1b1b;
+    margin-bottom: 2vh;
+  }
+
+  .MyinfoGrid {
+    max-width: 1520px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .MydataList {
     max-width: 936px;
     margin: auto;
     background-color: transparent;
-    border: 0px solid #313131;
+    border: 1px solid transparent;
     box-sizing: border-box;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 3vw 2vw 3vw 2vw;
     color: white;
@@ -1635,27 +1657,39 @@
     text-align: center;
   }
 
+  .MydataTextBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .MydataTextBox:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .MydataText {
+    min-width: 30vw;
+    margin-bottom: 1vh;
+  }
+
   .MydataText :first-child {
-    font-size: 3vw;
+    font-size: 7vw;
     font-weight: 500;
   }
 
   .MydataText :last-child {
-    font-size: 0.5vw;
+    font-size: 3vw;
     font-weight: 400;
   }
 
   .MydataDivline {
-    height: 15vw;
+    height: 10vw;
     width: 0px;
-    border: 1px solid #313131;
-  }
-
-  .Myinfo {
-    margin-top: 5vw;
-    width: 100%;
-    background: #1b1b1b;
-    margin-bottom: 5vw;
+    border: 0px solid #313131;
   }
 
   /* 아바타 리스트 */
@@ -1759,11 +1793,11 @@
   }
 
   .CharacterInfoName {
-    font-size: 5.5vw;
+    font-size: 10vw;
   }
 
   .CharacterInfoData {
-    font-size: 2vw;
+    font-size: 4vw;
     font-weight: 200;
   }
 
@@ -1783,8 +1817,7 @@
 
   .CharacterInfoWeapon {
     margin: 10px auto 10px auto;
-    width: 80%;
-    height: 120px;
+    width: 84%;
     background-color: white;
     border-radius: 10px;
     display: flex;
@@ -1792,13 +1825,12 @@
     justify-content: flex-start;
     color: #2d2d2d;
     text-align: left;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding: 6px;
   }
 
   .CharacterInfoWeaponBase {
     aspect-ratio: 1/1;
-    height: 80%;
+    width: 25%;
     border-radius: 10%;
     background-repeat: no-repeat;
     background-position: center;
@@ -1809,10 +1841,7 @@
   }
 
   .CharacterInfoWeaponData {
-    margin-top: auto;
-    margin-bottom: auto;
     margin-left: 10px;
-    height: 85%;
     display: flex;
     flex-direction: column;
   }
@@ -1820,11 +1849,11 @@
     display: flex;
     flex-direction: row;
     line-height: 1;
-    font-size: 2.7vw;
+    font-size: 4vw;
   }
   .CharacterInfoWeaponDataHeadName {
     font-weight: 700;
-    font-size: 2.7vw;
+    font-size: 4vw;
     margin-top: auto;
     margin-bottom: auto;
   }
@@ -1847,19 +1876,19 @@
   }
   .CharacterInfoWeaponDataHeadAffix > img {
     object-fit: contain;
-    max-height: 2.7vw;
+    max-height: 4vw;
     height: 100%;
     margin-right: 3px;
   }
   .CharacterInfoWeaponDataHeadAffix > div {
     font-weight: 600;
-    font-size: 2.7vw;
+    font-size: 4vw;
   }
   .CharacterInfoWeaponDataDescription {
     max-width: 400px;
     margin-top: auto;
     margin-bottom: auto;
-    font-size: 1.8vw;
+    font-size: 3vw;
   }
 
   .CharacterInfoArtifact {
@@ -1879,5 +1908,37 @@
     border-radius: 100%;
     border: 4px rgb(229, 206, 130) solid;
     margin-left: 5px;
+  }
+
+  .TopButton {
+    opacity: 0;
+    border-radius: 100%;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+    transition: opacity 0.35s linear;
+    width: 9vw;
+    height: 9vw;
+  }
+
+  .TopButtonOff {
+    opacity: 1;
+    box-shadow: 0px 0px 0px transparent;
+  }
+
+  .TopButtonPos {
+    position: fixed;
+    bottom: 4vw;
+    right: -50px;
+    background-color: transparent;
+    border: 0;
+    transition: right 0.35s ease-in-out;
+  }
+
+  .TopButtonPosOff {
+    right: 4vw;
+  }
+
+  .AvatarListGrid {
+    margin-top: 5vh;
+    width: 100%;
   }
 }

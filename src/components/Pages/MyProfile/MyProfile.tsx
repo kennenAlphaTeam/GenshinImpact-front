@@ -694,14 +694,14 @@ const MyProfile = () => {
           <TodayMaterials />
         </div>
       </div>
-      <div className={styles.BlackBg} ref={blackline}>
+      <div className={styles.BlackBg}>
         <div className={styles.Worlds}>
           <div className={styles.WorldsGrid}>
             <WorldExp state={myData} />
           </div>
         </div>
         <div className={styles.Contour} />
-        <div className={styles.Myinfo}>
+        <div className={styles.Myinfo} ref={blackline}>
           <div className={styles.MyinfoGrid}>
             <MyData state={myData} />
           </div>
