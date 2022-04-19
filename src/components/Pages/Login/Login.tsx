@@ -32,7 +32,7 @@ const Login = () => {
     const errorName = error_string.split(' ').pop();
     switch (errorName) {
       case '401':
-        navigator('/api/auth/oauth/login/google');
+        navigator('/auth/oauth/login/google');
         return '구글 소셜로그인에 문제가 발생했습니다';
       case '500':
         navigator('/error');
