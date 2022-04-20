@@ -8,15 +8,19 @@ const Errorpage = () => {
   const navigator = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => navigator('/intro'), 5000);
+    setTimeout(() => navigator('/intro'), 500000);
   }, []);
 
   return (
     <div className={styles.Body}>
       <div className={styles.BodyWidth}>
-        <Grid container spacing={2} className={styles.Grid}>
+        <Grid
+          container
+          spacing={{ xs: 2, sm: 2, md: 2, lg: 2 }}
+          columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
+          className={styles.Grid}>
           <Grid item xs />
-          <Grid item xs={8}>
+          <Grid item xs={10} sm={10} md={8} lg={8}>
             <div className={styles.ErrorBox}>
               <div className={styles.ErrorIcon}>
                 <img src={ErrorIcon} alt='' />
