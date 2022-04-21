@@ -8,7 +8,7 @@ const Errorpage = () => {
   const navigator = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => navigator('/intro'), 500000);
+    setTimeout(() => navigator('/intro'), 4000);
   }, []);
 
   return (

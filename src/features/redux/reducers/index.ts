@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import myCookie from './cookie';
+import introCheck from './introcheck';
 import myCharacter from './mycharacter';
 import myDaily from './mydaily';
 import myProfile from './myprofile';
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   mycharacter: myCharacter,
   cookie: myCookie,
   uid_profile: uidProfile,
+  is_login: introCheck,
 });
 
 export default rootReducer;

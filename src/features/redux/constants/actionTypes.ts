@@ -28,6 +28,10 @@ export const GO_TO_LOGIN = 'route/GO_TO_LOGIN';
 export const GO_TO_INTRO = 'route/GO_TO_INTRO';
 export const GO_TO_ERROR = 'route/GO_TO_ERROR';
 
+export const GET_MY_IDCARD_REQUEST = 'introcheck/GET_MY_IDCARD_REQUEST';
+export const GET_MY_IDCARD_SUCCESS = 'introcheck/GET_MY_IDCARD_SUCCESS';
+export const GET_MY_IDCARD_FAILURE = 'introcheck/GET_MY_IDCARD_FAILURE';
+
 export const getMyProfileAsync = createAsyncAction(
   GET_MY_PROFILE_REQUEST,
   GET_MY_PROFILE_SUCCESS,
@@ -58,3 +62,9 @@ export const getMyCharacterAsync = createAsyncAction(
   GET_MY_CHARACTER_SUCCESS,
   GET_MY_CHARACTER_FAILURE,
 )<undefined, CharacterProfile, AxiosError>();
+
+export const getMyIDCardAsync = createAsyncAction(
+  GET_MY_IDCARD_REQUEST,
+  GET_MY_IDCARD_SUCCESS,
+  GET_MY_IDCARD_FAILURE,
+)<undefined, undefined, AxiosError>();
