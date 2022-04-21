@@ -15,6 +15,7 @@ import {
   getMyProfileAsync,
   getProfileAsync,
   GO_TO_INTRO,
+  GO_TO_LOGIN,
 } from '../../../features/redux/constants/actionTypes';
 import { RootState } from '../../../features/redux/reducers';
 import styles from './MyProfile.module.css';
@@ -80,7 +81,7 @@ const Menubar = (props: any) => {
   };
 
   const handleLogout = (e: React.MouseEvent<HTMLButtonElement>) => {
-    dispatch({ type: GO_TO_INTRO });
+    dispatch({ type: GO_TO_LOGIN });
   };
 
   return (
