@@ -157,6 +157,39 @@
   border-radius: 6px;
 }
 
+.IsSunday {
+  height: 182px;
+}
+
+.MaterialItems > div {
+  position: relative;
+  max-width: 128px;
+}
+
+.MaterialItems > div > img {
+  max-width: 128px;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.MaterialItems > div > img:first-child {
+  position: relative;
+  z-index: 100;
+}
+
+.MaterialItems > div > img:nth-child(2) {
+  position: relative;
+  top: -108px;
+  z-index: 99;
+}
+
+.MaterialItems > div > img:last-child {
+  position: relative;
+  top: -216px;
+  z-index: 98;
+}
+
 .BlackBg {
   background-color: #1b1b1b;
   width: 100%;
@@ -790,10 +823,43 @@
     justify-content: space-between;
   }
 
+  .IsSunday {
+    height: 12vw;
+  }
+
   .MaterialItems > img {
     width: 15%;
     aspect-ratio: 1/1;
     border-radius: 6px;
+  }
+
+  .MaterialItems > div {
+    position: relative;
+    max-width: 15%;
+  }
+
+  .MaterialItems > div > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .MaterialItems > div > img:first-child {
+    position: relative;
+    z-index: 100;
+  }
+
+  .MaterialItems > div > img:nth-child(2) {
+    position: relative;
+    top: -8vw;
+    z-index: 99;
+  }
+
+  .MaterialItems > div > img:last-child {
+    position: relative;
+    top: -16vw;
+    z-index: 98;
   }
 
   /* 월드 진행도 */
@@ -1103,6 +1169,39 @@
     line-height: 1.5vw;
     margin-top: 1.2vw;
   }
+
+  .IsSunday {
+    height: 15vw;
+  }
+
+  .MaterialItems > div {
+    position: relative;
+    max-width: 15%;
+  }
+
+  .MaterialItems > div > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .MaterialItems > div > img:first-child {
+    position: relative;
+    z-index: 100;
+  }
+
+  .MaterialItems > div > img:nth-child(2) {
+    position: relative;
+    top: -10vw;
+    z-index: 99;
+  }
+
+  .MaterialItems > div > img:last-child {
+    position: relative;
+    top: -20vw;
+    z-index: 98;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -1172,12 +1271,20 @@
     color: rgba(0, 0, 0, 0.3);
   }
 
-  .MaterialItems {
-    margin-top: 2%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  .IsSunday {
+    height: 13vw;
+  }
+
+  .MaterialItems > div > img:nth-child(2) {
+    position: relative;
+    top: -10vw;
+    z-index: 99;
+  }
+
+  .MaterialItems > div > img:last-child {
+    position: relative;
+    top: -20vw;
+    z-index: 98;
   }
 
   .MaterialTextUnder {
@@ -1940,5 +2047,9 @@
   .AvatarListGrid {
     margin-top: 5vh;
     width: 100%;
+  }
+
+  .IsSunday {
+    height: 16.5vw;
   }
 }

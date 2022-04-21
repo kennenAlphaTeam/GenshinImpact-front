@@ -194,8 +194,8 @@ const Dailydata = (props: any) => {
 };
 
 const TodayMaterials = () => {
-  const date = new Date().getDate();
-  const index = date === 0 ? 0 : date % 3 === 1 ? 0 : date % 3 === 2 ? 1 : 2;
+  const date = new Date().getDay() - 1;
+  const index = date !== -1 ? date % 3 : -1;
 
   const dailydata = {
     monde_book: [FreedomIcon, ResistanceIcon, BalladIcon],
@@ -220,14 +220,50 @@ const TodayMaterials = () => {
               오늘 얻을 수 있는 소재는...
               <div className={styles.MaterialTextUnder}></div>
             </div>
-            <div className={styles.MaterialItems}>
-              <img src={dailydata.monde_book[index]} alt='' />
-              <img src={dailydata.liyue_book[index]} alt='' />
-              <img src={dailydata.inazuma_book[index]} alt='' />
-              <img src={dailydata.monde_material[index]} alt='' />
-              <img src={dailydata.liyue_material[index]} alt='' />
-              <img src={dailydata.inazuma_material[index]} alt='' />
-            </div>
+            {date !== -1 ? (
+              <div className={styles.MaterialItems}>
+                <img src={dailydata.monde_book[index]} alt='' />
+                <img src={dailydata.liyue_book[index]} alt='' />
+                <img src={dailydata.inazuma_book[index]} alt='' />
+                <img src={dailydata.monde_material[index]} alt='' />
+                <img src={dailydata.liyue_material[index]} alt='' />
+                <img src={dailydata.inazuma_material[index]} alt='' />
+              </div>
+            ) : (
+              <div
+                className={[styles.MaterialItems, styles.IsSunday].join(' ')}>
+                <div>
+                  <img src={dailydata.monde_book[0]} alt='' />
+                  <img src={dailydata.monde_book[1]} alt='' />
+                  <img src={dailydata.monde_book[2]} alt='' />
+                </div>
+                <div>
+                  <img src={dailydata.liyue_book[0]} alt='' />
+                  <img src={dailydata.liyue_book[1]} alt='' />
+                  <img src={dailydata.liyue_book[2]} alt='' />
+                </div>
+                <div>
+                  <img src={dailydata.inazuma_book[0]} alt='' />
+                  <img src={dailydata.inazuma_book[1]} alt='' />
+                  <img src={dailydata.inazuma_book[2]} alt='' />
+                </div>
+                <div>
+                  <img src={dailydata.monde_material[0]} alt='' />
+                  <img src={dailydata.monde_material[1]} alt='' />
+                  <img src={dailydata.monde_material[2]} alt='' />
+                </div>
+                <div>
+                  <img src={dailydata.liyue_material[0]} alt='' />
+                  <img src={dailydata.liyue_material[1]} alt='' />
+                  <img src={dailydata.liyue_material[2]} alt='' />
+                </div>
+                <div>
+                  <img src={dailydata.inazuma_material[index]} alt='' />
+                  <img src={dailydata.inazuma_material[index]} alt='' />
+                  <img src={dailydata.inazuma_material[index]} alt='' />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </Grid>
