@@ -9,7 +9,7 @@ const Intro = () => {
   const dispatch = useDispatch();
   const isLogin = useSelector((state: RootState) => state.is_login.is_login);
   useEffect(() => {
-    isLogin && dispatch(getMyIDCardAsync.request());
+    dispatch(getMyIDCardAsync.request());
   }, []);
   return (
     <div className={styles.Body}>
