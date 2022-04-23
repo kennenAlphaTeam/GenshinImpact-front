@@ -657,12 +657,14 @@
   background-image: url('/public/img/star_1.png');
 }
 .CharacterInfoWeaponData {
+  width: 100%;
   margin-left: 10px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 .CharacterInfoWeaponDataHead {
+  width: 100%;
   display: flex;
   flex-direction: row;
   line-height: 1;

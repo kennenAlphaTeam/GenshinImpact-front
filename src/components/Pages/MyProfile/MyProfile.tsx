@@ -618,6 +618,7 @@ const AvatarProfile = (props: any) => {
         <Swiper
           className={styles.Avatardiv}
           slideToClickedSlide={true}
+          allowTouchMove={false}
           breakpoints={{
             0: {
               spaceBetween: 5,
