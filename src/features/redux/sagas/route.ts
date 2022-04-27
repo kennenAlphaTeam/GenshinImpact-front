@@ -9,23 +9,23 @@ import {
 } from '../constants/actionTypes';
 
 function* goToMyProfile() {
-  history.push('/myprofile');
+  yield history.push('/myprofile');
 }
 
 function* goToUidProfile(action: any) {
-  history.push(`/profile?uid=${action.payload}`);
+  yield history.push(`/profile/${action.payload}`);
 }
 
 function* goToOAuth() {
-  history.push('/login');
+  yield history.push('/login');
 }
 
 function* goToIntro() {
-  history.push('/intro');
+  yield history.push('/intro');
 }
 
 function* goToErrorPage() {
-  history.push(`/error?code=500`);
+  yield history.push(`/error?code=500`);
 }
 
 function* watchGoTo() {

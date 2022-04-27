@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
 import {
   getProfileAsync,
@@ -210,50 +210,50 @@ const UidData = (props: any) => {
 };
 
 const UidProfile = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const uid = searchParams.get('uid');
+  const params = useParams();
+  const uid = params.uid;
 
   const data = useSelector((state: RootState) => state.uid_profile.data);
   const navigator = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    uid !== null &&
-      Object.keys(data).length === 0 &&
-      dispatch(getProfileAsync.request(uid));
+    uid !== undefined && dispatch(getProfileAsync.request(uid));
   }, []);
 
-  useEffect(() => {
-    if (Object.keys(data).length > 0 && data.uid !== uid) {
-      navigator('/myprofile');
-    }
-  }, [data.uid]);
+  // useEffect(() => {
+  //   if (Object.keys(data).length > 0 && data.uid !== uid) {
+  //     navigator('/myprofile');
+  //   }
+  // }, [data.uid]);
 
   return (
     <div className={styles.Body}>
       <div>
-        <Grid
-          container
-          spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
-          columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
-          className={styles.Grid}>
-          <Grid item xs sm md lg />
-          <Grid item xs={10} sm={10} md={10} lg={10}>
-            <div className={styles.Mainbox}>
-              <Menubar />
-              <div className={styles.Divline}></div>
-              <div className={styles.Uid}>UID:{data.uid}</div>
-              <div className={styles.Divline}></div>
-              <UidData state={data} />
-              <div className={styles.Divline}></div>
-              <WorldExp state={data} />
-              <footer className={styles.Footer}>
-                문의 메일: kennenalphateam@gmail.com
-              </footer>
-            </div>
+        {Object.keys(data).length !== 0 && (
+          <Grid
+            container
+            spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
+            columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
+            className={styles.Grid}>
+            <Grid item xs sm md lg />
+            <Grid item xs={10} sm={10} md={10} lg={10}>
+              <div className={styles.Mainbox}>
+                <Menubar />
+                <div className={styles.Divline}></div>
+                <div className={styles.Uid}>UID:{data.uid}</div>
+                <div className={styles.Divline}></div>
+                <UidData state={data} />
+                <div className={styles.Divline}></div>
+                <WorldExp state={data} />
+                <footer className={styles.Footer}>
+                  문의 메일: kennenalphateam@gmail.com
+                </footer>
+              </div>
+            </Grid>
+            <Grid item xs sm md lg />
           </Grid>
-          <Grid item xs sm md lg />
-        </Grid>
+        )}
       </div>
     </div>
   );

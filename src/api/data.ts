@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export async function setCookieData(userCookie: string): Promise<any> {
-  const res = await axios.put<DataProfile>('api/user/me/cookie', {
+  const res = await axios.put<DataProfile>('/api/user/me/cookie', {
     cookie: userCookie,
   });
   return res.data;
@@ -9,26 +9,26 @@ export async function setCookieData(userCookie: string): Promise<any> {
 }
 
 export async function getDailyData(): Promise<any> {
-  const res = await axios.get<DailyProfile>('api/mihoyo/me/daily-note');
+  const res = await axios.get<DailyProfile>('/api/mihoyo/me/daily-note');
   return res.data;
   //유저 UID와 고유 Cookie값이 일치할 시 데이타를 반환해줌 api
 }
 
 export async function getProfileData(userUID: string): Promise<any> {
-  const res = await axios.get<DataProfile>(`api/mihoyo/profile/${userUID}`);
+  const res = await axios.get<DataProfile>(`/api/mihoyo/profile/${userUID}`);
   return res.data;
   //유저 UID 관련된 데이타를 반환해주는 api
 }
 
 export async function getMyProfileData(): Promise<any> {
-  const res = await axios.get<DataProfile>(`api/mihoyo/me/profile`);
+  const res = await axios.get<DataProfile>(`/api/mihoyo/me/profile`);
   return res.data;
   //유저 UID 관련된 데이타를 반환해주는 api
 }
 
 export async function getIDCardData(): Promise<any> {
   const res = await axios.get<{ genshinUid: string; nickname: string }>(
-    'api/user/me/genshinIdCard',
+    '/api/user/me/genshinIdCard',
   );
   return res.data;
 }
