@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import InputCookie from './components/InputCookie/InputCookie';
-import PrivateProfile from './components/PrivateProfile/PrivateProfile';
-import { useSelector } from 'react-redux';
-import { RootState } from './features/redux';
-import { Route, Routes, useNavigate } from 'react-router-dom';
-import { cookieGet } from './features/cookie/Cookie';
-import Login from './components/Login/Login';
+import React from 'react';
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import Errorpage from './components/Pages/Errorpage/Errorpage';
+import Intro from './components/Pages/Intro/Intro';
+import Login from './components/Pages/Login/Login';
+import MyProfile from './components/Pages/MyProfile/MyProfile';
+import UidProfile from './components/Pages/UidProfile/UidProfile';
 
 const App = () => {
-  const navigate = useNavigate();
-
   return (
     <div className='main'>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/myprofile' element={<PrivateProfile />} />
-        <Route path='/login' element={<InputCookie />} />
+        <Route path='/myprofile' element={<MyProfile />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/profile/:uid' element={<UidProfile />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/intro' element={<Intro />} />
+        <Route path='/error' element={<Errorpage />} />
+        <Route path='/' element={<Navigate replace to='/intro' />} />
       </Routes>
     </div>
   );

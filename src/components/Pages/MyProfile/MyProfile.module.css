@@ -1,0 +1,2079 @@
+.Parent {
+  width: 100%;
+}
+
+.Profile {
+  width: 100%;
+  background: url('/public/img/Profile-background-cut.png');
+  background-position: center top;
+  background-size: cover;
+  height: 94vh;
+  display: flex;
+}
+
+.ProfileGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin: auto;
+}
+
+.Grid {
+  display: flex;
+  margin-top: 0px !important;
+  margin-left: -16px !important;
+}
+
+.Grid > div {
+  padding-top: 0 !important;
+}
+
+.Nickname {
+  width: 825px;
+  height: 155px;
+  font-size: 128px;
+  color: white;
+  margin: auto;
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 155px;
+}
+
+.Uid {
+  width: 152px;
+  height: 24px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  font-weight: 300;
+  font-family: 'Inter-300', serif;
+  line-height: 24px;
+  margin: auto;
+}
+
+.Daily {
+  margin-top: 52px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Inter-300';
+  color: white;
+  justify-content: space-between;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.DailyBanner {
+  width: 128px;
+  height: 78px;
+}
+
+.DailyBanner :first-child {
+  height: 42px;
+  margin-bottom: 9px;
+}
+
+.DailyiconResin {
+  max-width: 34px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.Dailyicon {
+  max-width: 42px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.Divline::before {
+  content: '';
+  height: 78px;
+  position: absolute;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Materials {
+  background-color: white;
+  padding-top: 97px;
+  padding-bottom: 97px;
+  width: 100%;
+  display: flex;
+}
+
+.MaterialsGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin: auto;
+}
+
+.MaterialList {
+  max-width: 930px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 21px 33px 21px 33px;
+  margin: auto;
+}
+
+.MaterialList > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.MaterialText {
+  width: 409px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.MaterialTextUnder {
+  width: 100%;
+  height: 2px;
+  margin: 2px;
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.MaterialItems {
+  margin-top: 2%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.MaterialItems > img {
+  max-width: 128px;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+}
+
+.IsSunday {
+  height: 182px;
+}
+
+.MaterialItems > div {
+  position: relative;
+  max-width: 128px;
+}
+
+.MaterialItems > div > img {
+  max-width: 128px;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.MaterialItems > div > img:first-child {
+  position: relative;
+  z-index: 100;
+}
+
+.MaterialItems > div > img:nth-child(2) {
+  position: relative;
+  top: -108px;
+  z-index: 99;
+}
+
+.MaterialItems > div > img:last-child {
+  position: relative;
+  top: -216px;
+  z-index: 98;
+}
+
+.BlackBg {
+  background-color: #1b1b1b;
+  width: 100%;
+}
+
+.Worlds {
+  width: 100%;
+  padding-top: 10vw;
+  padding-bottom: 10vw;
+  background: #1b1b1b;
+  display: flex;
+}
+
+.WorldsGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin: auto;
+}
+
+.WorldExpList {
+  max-width: 1218px;
+  width: 100%;
+  max-height: 406px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.WorldExpList > :first-child {
+  background-image: url('/public/img/box/Monde.png');
+}
+
+.WorldExpList > :nth-child(2) {
+  background-image: url('/public/img/box/Liyue.png');
+}
+
+.WorldExpList > :last-child {
+  background-image: url('/public/img/box/Inazuma.png');
+}
+
+.WorldExpBox {
+  width: 33.3%;
+  max-width: 406px;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: calc(1920 * 0.555px) calc(1080 * 0.555px);
+}
+
+.WorldBoxFilter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  font-family: 'Noto Sans KR';
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.WorldBoxFilter > div {
+  margin: auto;
+}
+
+.WorldIcon {
+  max-width: 100px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: contain;
+  margin: auto;
+}
+
+.WorldName {
+  line-height: 77px;
+  height: 77px;
+  font-size: 64px;
+}
+
+.WorldLevel {
+  font-size: 28px;
+  line-height: 34px;
+  height: 34px;
+  margin-top: 26px;
+}
+
+.WorldProgress {
+  font-size: 15px;
+  font-weight: 200;
+  height: 18px;
+  line-height: 18px;
+  margin-top: 16px;
+}
+
+.Contour {
+  margin-left: 4%;
+  width: 92%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Myinfo {
+  margin-top: 100px;
+  width: 100%;
+  background: #1b1b1b;
+  margin-bottom: 100px;
+}
+
+.MyinfoGrid {
+  max-width: 1520px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.MydataList {
+  max-width: 936px;
+  margin: auto;
+  background-color: #212121;
+  border: 1px solid #313131;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3vw 2vw 3vw 2vw;
+  color: white;
+  font-family: 'Noto Sans KR';
+  text-align: center;
+}
+
+.MydataTextBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.MydataText {
+  min-width: 2vw;
+}
+
+.MydataText :first-child {
+  font-size: 2vw;
+  font-weight: 500;
+}
+
+.MydataText :last-child {
+  font-size: 1vw;
+  font-weight: 400;
+}
+
+.MydataDivline {
+  height: 10vw;
+  width: 0px;
+  border: 1px solid #313131;
+}
+
+.AppBar {
+  width: 100%;
+  height: 50px;
+  background-color: #2d2d2d;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  z-index: 100;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.35s linear;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.AppBarOff {
+  opacity: 0;
+  box-shadow: 0 0 0 transparent;
+}
+
+.AppBar > img:first-child {
+  width: 34px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 9px;
+  object-fit: contain;
+}
+
+.LogoutButton {
+  border: 0;
+  background-color: transparent;
+  width: 29px;
+  height: 25px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 18px;
+}
+
+.Logout {
+  object-fit: cover;
+}
+
+.TopButton {
+  opacity: 0;
+  border-radius: 100%;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.35s linear;
+}
+
+.TopButtonOff {
+  opacity: 1;
+  box-shadow: 0px 0px 0px transparent;
+}
+
+.TopButtonPos {
+  position: fixed;
+  bottom: 16px;
+  right: -50px;
+  background-color: transparent;
+  border: 0;
+  transition: right 0.35s ease-in-out;
+}
+
+.TopButtonPosOff {
+  right: 16px;
+}
+
+.Searchbar {
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #363636;
+  height: 28px;
+  width: 280px;
+  border-radius: 90px;
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: border-color 0.2s linear;
+  border-color: transparent;
+}
+
+.Searchbar:focus-within {
+  border: 2px solid #ffffff;
+  color: #606060;
+}
+
+.Searchbar > input {
+  color: white;
+  flex-grow: 8.5;
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Noto Sans KR';
+}
+
+.Searchbar > input::-webkit-input-placeholder {
+  text-align: center;
+  font-size: 16px;
+}
+
+.Searchbar > input::-webkit-outer-spin-button,
+.Searchbar > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.Searchbar > input:focus {
+  border: 0;
+  outline: none;
+}
+
+.Searchbar > input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.Searchbar > div {
+  flex-grow: 1.5;
+  width: 0;
+  height: 20px;
+  border-left: 2px solid #313131;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: border-left 0.2s linear;
+}
+
+.Searchbar:focus-within > div {
+  border-left: 2px solid #ffffff;
+}
+
+.Searchbar > button {
+  flex-grow: 1.5;
+  border: 0;
+  background-color: transparent;
+  background-image: url('/public/img/icons/SearchButtonGray.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: auto;
+  height: 24px;
+  transition: background-image 0.2s linear;
+}
+
+.Searchbar:focus-within > button {
+  background-image: url('/public/img/icons/SearchButtonWhite.png');
+}
+
+/* 아바타 리스트 */
+.AvatarList {
+  max-width: 1520px;
+  width: 100%;
+  margin: auto;
+}
+
+.AvatarListGrid {
+  margin-top: 90px;
+  width: 100%;
+}
+
+.Avatardiv {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.Avatardiv > div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Avatardiv::-webkit-scrollbar {
+  display: none;
+}
+
+.AvatarSlide {
+  display: flex;
+}
+
+.AvatarBox {
+  display: flex;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  border-radius: 5%;
+  background-color: white;
+  flex-direction: column;
+  justify-content: flex-start;
+  opacity: 30%;
+  transition: opacity 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+  transition: height 0.2s ease-in-out;
+}
+
+.AvatarBoxNotActive {
+  opacity: 70%;
+  width: 80%;
+  height: 80%;
+}
+
+.AvatarBoxActive {
+  opacity: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.AvatarName {
+  font-family: 'Noto Sans KR';
+  color: #2d2d2d;
+  text-align: center;
+  font-weight: 700;
+  font-size: 100%;
+  margin-bottom: 2%;
+}
+
+.Avatarimg {
+  object-fit: contain;
+  margin-top: auto;
+  margin-bottom: auto;
+  transition: height 0.35s ease-in-out;
+  overflow: hidden;
+  border: 4px solid white;
+  border-radius: 10px;
+}
+
+.Avatarimg5 {
+  background-image: url('/public/img/star_5.png');
+}
+
+.Avatarimg4 {
+  background-image: url('/public/img/star_4.png');
+}
+
+.Avatarimg3 {
+  background-image: url('/public/img/star_none.png');
+}
+
+.CharacterInfo {
+  margin-top: 10px;
+}
+
+.CharacterInfoBox {
+  font-family: 'Noto Sans KR';
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.CharacterInfoName {
+  font-size: 50px;
+}
+
+.CharacterInfoData {
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.CharacterInfoContour {
+  margin: 2px auto 2px auto;
+  width: 160px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.CharacterInfoWeapon {
+  margin: 10px auto 10px auto;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: #2d2d2d;
+  text-align: left;
+  padding: 6px;
+}
+
+.CharacterInfoWeaponBase {
+  aspect-ratio: 1/1;
+  width: 25%;
+  border-radius: 10%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 4px rgb(229, 206, 130) solid;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.CharacterInfoWeaponRare5 {
+  background-image: url('/public/img/star_5.png');
+}
+.CharacterInfoWeaponRare4 {
+  background-image: url('/public/img/star_4.png');
+}
+.CharacterInfoWeaponRare3 {
+  background-image: url('/public/img/star_3.png');
+}
+.CharacterInfoWeaponRare2 {
+  background-image: url('/public/img/star_2.png');
+}
+.CharacterInfoWeaponRare1 {
+  background-image: url('/public/img/star_1.png');
+}
+.CharacterInfoWeaponData {
+  width: 100%;
+  margin-left: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.CharacterInfoWeaponDataHead {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  line-height: 1;
+}
+.CharacterInfoWeaponDataHeadName {
+  font-weight: 700;
+  font-size: 20px;
+}
+.CharacterInfoWeaponDataHeadLevel {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 5px;
+  background-color: #2d2d2d;
+  color: white;
+  text-align: center;
+  border-radius: 3px;
+  padding: 3px;
+}
+.CharacterInfoWeaponDataHeadAffix {
+  margin-left: auto;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 100%;
+}
+.CharacterInfoWeaponDataHeadAffix > img {
+  object-fit: contain;
+  max-height: 22px;
+  height: 100%;
+  margin-right: 3px;
+}
+.CharacterInfoWeaponDataHeadAffix > div {
+  font-weight: 600;
+  font-size: 18px;
+}
+.CharacterInfoWeaponDataDescription {
+  max-width: 400px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.CharacterInfoArtifact {
+  background-color: white;
+  display: flex;
+  margin: 10px auto 20vh auto;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 8px;
+}
+.CharacterInfoArtifact > img {
+  height: 50px;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 100%;
+  border: 4px rgb(229, 206, 130) solid;
+  margin-left: 5px;
+}
+.CharacterInfoArtifact > img:first-child {
+  margin-left: 0px !important;
+}
+.CharacterInfoArtifactImgRare5 {
+  background-image: url('/public/img/star_5.png');
+}
+.CharacterInfoArtifactImgRare4 {
+  background-image: url('/public/img/star_4.png');
+}
+.CharacterInfoArtifactImgRare3 {
+  background-image: url('/public/img/star_3.png');
+}
+.CharacterInfoArtifactImgRare2 {
+  background-image: url('/public/img/star_2.png');
+}
+.CharacterInfoArtifactImgRare1 {
+  background-image: url('/public/img/star_1.png');
+}
+
+.Footer {
+  height: 30px;
+  text-align: center;
+  color: white;
+  background-color: #313131;
+  font-size: 16px;
+  font-family: 'Noto Sans KR';
+  font-weight: 300;
+}
+
+.Loading {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1536px) {
+  .Nickname {
+    width: 100%;
+    height: 9.8vw;
+    font-size: 8.4vw;
+    line-height: 9.8vw;
+  }
+  .Searchbar {
+    width: 280px;
+  }
+  .Daily {
+    margin-top: 10%;
+    font-size: 17px;
+    line-height: 21px;
+  }
+
+  .Materials {
+    background-color: white;
+    width: 100%;
+    display: flex;
+  }
+
+  .MaterialsGrid {
+    max-width: 1520px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .MaterialList {
+    max-width: 930px;
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 21px 33px 21px 33px;
+    margin: auto;
+  }
+
+  .MaterialList > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .MaterialText {
+    width: 409px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .MaterialTextUnder {
+    width: 100%;
+    height: 2px;
+    margin: 2px;
+    background-color: rgba(0, 0, 0, 0.07);
+  }
+
+  .MaterialItems {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .IsSunday {
+    height: 12vw;
+  }
+
+  .MaterialItems > img {
+    width: 15%;
+    aspect-ratio: 1/1;
+    border-radius: 6px;
+  }
+
+  .MaterialItems > div {
+    position: relative;
+    max-width: 15%;
+  }
+
+  .MaterialItems > div > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .MaterialItems > div > img:first-child {
+    position: relative;
+    z-index: 100;
+  }
+
+  .MaterialItems > div > img:nth-child(2) {
+    position: relative;
+    top: -8vw;
+    z-index: 99;
+  }
+
+  .MaterialItems > div > img:last-child {
+    position: relative;
+    top: -16vw;
+    z-index: 98;
+  }
+
+  /* 월드 진행도 */
+  .Worlds {
+    width: 100%;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    background: #1b1b1b;
+    display: flex;
+  }
+
+  .WorldsGrid {
+    max-width: 1520px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .WorldExpList {
+    max-width: 1218px;
+    width: 100%;
+    max-height: 406px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
+
+  .WorldExpList > :first-child {
+    background-image: url('/public/img/box/Monde.png');
+  }
+
+  .WorldExpList > :nth-child(2) {
+    background-image: url('/public/img/box/Liyue.png');
+  }
+
+  .WorldExpList > :last-child {
+    background-image: url('/public/img/box/Inazuma.png');
+  }
+
+  .WorldExpBox {
+    width: 33.3%;
+    max-width: 406px;
+    aspect-ratio: 1/1;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(1536 * 0.555px) calc(1080 * 0.555px);
+  }
+
+  .WorldBoxFilter {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    font-family: 'Noto Sans KR';
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .WorldBoxFilter > div {
+    margin: auto;
+  }
+
+  .WorldIcon {
+    max-width: 100px;
+    aspect-ratio: 1/1;
+    width: 100%;
+    object-fit: contain;
+    margin: auto;
+  }
+
+  .WorldName {
+    line-height: 5.5vw;
+    height: 5.5vw;
+    font-size: 4.5vw;
+  }
+
+  .WorldLevel {
+    font-size: 2vw;
+    line-height: 2.5vw;
+    height: 2.5vw;
+    margin-top: 1.9vw;
+  }
+
+  .WorldProgress {
+    font-size: 1.2vw;
+    font-weight: 200;
+    height: 1.5vw;
+    line-height: 1.5vw;
+    margin-top: 1.2vw;
+  }
+
+  /* 아바타 리스트 */
+  .AvatarList {
+    max-width: 1520px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .AvatarListGrid {
+    margin-top: 90px;
+    width: 100%;
+  }
+
+  .Avatardiv {
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .Avatardiv > div {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .Avatardiv::-webkit-scrollbar {
+    display: none;
+  }
+
+  .AvatarSlide {
+    display: flex;
+  }
+
+  .AvatarBox {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    border-radius: 5%;
+    background-color: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 30%;
+    transition: opacity 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
+  }
+
+  .AvatarBoxNotActive {
+    opacity: 70%;
+    width: 80%;
+    height: 80%;
+  }
+
+  .AvatarBoxActive {
+    opacity: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .AvatarName {
+    font-family: 'Noto Sans KR';
+    color: #2d2d2d;
+    text-align: center;
+    font-weight: 700;
+    font-size: 100%;
+    margin-bottom: 2%;
+  }
+
+  .Avatarimg {
+    object-fit: contain;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: height 0.35s ease-in-out;
+    overflow: hidden;
+    border: 4px solid white;
+    border-radius: 10px;
+  }
+
+  .Avatarimg5 {
+    background-image: url('/public/img/star_5.png');
+  }
+
+  .Avatarimg4 {
+    background-image: url('/public/img/star_4.png');
+  }
+
+  .Avatarimg3 {
+    background-image: url('/public/img/star_none.png');
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .Searchbar {
+    width: 30%;
+  }
+  .Daily {
+    margin-top: 10%;
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .DailyBanner {
+    width: 128px;
+    height: 60px;
+  }
+
+  .DailyBanner :first-child {
+    height: 36px;
+    margin-bottom: 9px;
+  }
+
+  .DailyiconResin {
+    max-width: calc(36 / 42 * 34px);
+    object-fit: contain;
+    overflow: hidden;
+  }
+
+  .Dailyicon {
+    max-width: 36px;
+    object-fit: contain;
+    overflow: hidden;
+  }
+
+  .Divline::before {
+    content: '';
+    height: 60px;
+    position: absolute;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* 월드 진행도 */
+  .Worlds {
+    width: 100%;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    background: #1b1b1b;
+    display: flex;
+  }
+
+  .WorldsGrid {
+    max-width: 1520px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .WorldExpList {
+    max-width: 1218px;
+    width: 100%;
+    max-height: 406px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
+
+  .WorldExpList > :first-child {
+    background-image: url('/public/img/box/Monde.png');
+  }
+
+  .WorldExpList > :nth-child(2) {
+    background-image: url('/public/img/box/Liyue.png');
+  }
+
+  .WorldExpList > :last-child {
+    background-image: url('/public/img/box/Inazuma.png');
+  }
+
+  .WorldExpBox {
+    width: 33.3%;
+    max-width: 406px;
+    aspect-ratio: 1/1;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(1200 * 0.555px) calc(675 * 0.555px);
+  }
+
+  .WorldBoxFilter {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    font-family: 'Noto Sans KR';
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .WorldBoxFilter > div {
+    margin: auto;
+  }
+
+  .WorldIcon {
+    width: 8vw;
+    max-width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    margin: auto;
+  }
+
+  .WorldName {
+    line-height: 8vw;
+    height: 8vw;
+    font-size: 7vw;
+  }
+
+  .WorldLevel {
+    font-size: 2vw;
+    line-height: 2.5vw;
+    height: 2.5vw;
+    margin-top: 1.9vw;
+  }
+
+  .WorldProgress {
+    font-size: 1.2vw;
+    font-weight: 200;
+    height: 1.5vw;
+    line-height: 1.5vw;
+    margin-top: 1.2vw;
+  }
+
+  .IsSunday {
+    height: 15vw;
+  }
+
+  .MaterialItems > div {
+    position: relative;
+    max-width: 15%;
+  }
+
+  .MaterialItems > div > img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .MaterialItems > div > img:first-child {
+    position: relative;
+    z-index: 100;
+  }
+
+  .MaterialItems > div > img:nth-child(2) {
+    position: relative;
+    top: -10vw;
+    z-index: 99;
+  }
+
+  .MaterialItems > div > img:last-child {
+    position: relative;
+    top: -20vw;
+    z-index: 98;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Searchbar {
+    width: 40%;
+  }
+  .Searchbar > input {
+    min-width: 30%;
+  }
+  .Searchbar > div {
+    flex-grow: 0;
+    width: 0;
+  }
+  .Searchbar > button {
+    min-width: 32px;
+  }
+
+  .Nickname {
+    width: 100%;
+    height: 11vw;
+    font-size: 9.5vw;
+    line-height: 11vw;
+  }
+  .Daily {
+    margin-top: 10%;
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .DailyBanner {
+    width: 128px;
+    height: calc(60 / 78 * 78px);
+  }
+
+  .DailyBanner :first-child {
+    height: calc(36 / 42 * 42px);
+    margin-bottom: 9px;
+  }
+
+  .DailyiconResin {
+    max-width: calc(36 / 42 * 34px);
+    object-fit: contain;
+    overflow: hidden;
+  }
+
+  .Dailyicon {
+    max-width: calc(36 / 42 * 42px);
+    object-fit: contain;
+    overflow: hidden;
+  }
+
+  .Divline::before {
+    content: '';
+    height: 60px;
+    position: absolute;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .MaterialText {
+    width: 100%;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 5vw;
+    line-height: 6vw;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .IsSunday {
+    height: 13vw;
+  }
+
+  .MaterialItems > div > img:nth-child(2) {
+    position: relative;
+    top: -10vw;
+    z-index: 99;
+  }
+
+  .MaterialItems > div > img:last-child {
+    position: relative;
+    top: -20vw;
+    z-index: 98;
+  }
+
+  .MaterialTextUnder {
+    width: 50vw;
+    height: 2px;
+    margin: 2px;
+    background-color: rgba(0, 0, 0, 0.07);
+  }
+
+  .WorldExpBox {
+    background-size: calc(900 * 0.555px) calc(506 * 0.555px);
+  }
+
+  .MydataText {
+    min-width: 2vw;
+  }
+
+  .MydataText :first-child {
+    font-size: 2vw;
+    font-weight: 500;
+  }
+
+  .MydataText :last-child {
+    font-size: 0.7vw;
+    font-weight: 400;
+  }
+
+  /* 아바타 리스트 */
+  .AvatarList {
+    max-width: 1520px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .AvatarListGrid {
+    margin-top: 90px;
+    width: 100%;
+  }
+
+  .Avatardiv {
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .Avatardiv > div {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .Avatardiv::-webkit-scrollbar {
+    display: none;
+  }
+
+  .AvatarSlide {
+    display: flex;
+  }
+
+  .AvatarBox {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    border-radius: 5%;
+    background-color: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 30%;
+    transition: opacity 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
+  }
+
+  .AvatarBoxNotActive {
+    opacity: 70%;
+    width: 80%;
+    height: 80%;
+  }
+
+  .AvatarBoxActive {
+    opacity: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .AvatarName {
+    font-family: 'Noto Sans KR';
+    color: #2d2d2d;
+    text-align: center;
+    font-weight: 700;
+    font-size: 100%;
+    margin-bottom: 2%;
+  }
+
+  .Avatarimg {
+    object-fit: contain;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: height 0.35s ease-in-out;
+    overflow: hidden;
+    border: 4px solid white;
+    border-radius: 10px;
+  }
+
+  .CharacterInfo {
+    margin-top: 10px;
+  }
+
+  .CharacterInfoBox {
+    font-family: 'Noto Sans KR';
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .CharacterInfoName {
+    font-size: 5.5vw;
+  }
+
+  .CharacterInfoData {
+    font-size: 2vw;
+    font-weight: 200;
+  }
+
+  .CharacterInfoContour {
+    margin: 2px auto 2px auto;
+    width: 18vw;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 25%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .CharacterInfoWeapon {
+    margin: 10px auto 10px auto;
+    width: 60%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: #2d2d2d;
+    text-align: left;
+    padding: 6px;
+  }
+
+  .CharacterInfoWeaponBase {
+    aspect-ratio: 1/1;
+    width: 25%;
+    border-radius: 10%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 4px rgb(229, 206, 130) solid;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .CharacterInfoWeaponData {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .CharacterInfoWeaponDataHead {
+    display: flex;
+    flex-direction: row;
+    line-height: 1;
+  }
+  .CharacterInfoWeaponDataHeadName {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .CharacterInfoWeaponDataHeadLevel {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+    background-color: #2d2d2d;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px;
+  }
+  .CharacterInfoWeaponDataHeadAffix {
+    margin-left: auto;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+  }
+  .CharacterInfoWeaponDataHeadAffix > img {
+    object-fit: contain;
+    max-height: 22px;
+    height: 100%;
+    margin-right: 3px;
+  }
+  .CharacterInfoWeaponDataHeadAffix > div {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .CharacterInfoWeaponDataDescription {
+    max-width: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.8vw;
+  }
+
+  .CharacterInfoArtifact {
+    background-color: white;
+    display: flex;
+    margin: 10px auto 20vh auto;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  .CharacterInfoArtifact > img {
+    height: 50px;
+    aspect-ratio: 1/1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 100%;
+    border: 4px rgb(229, 206, 130) solid;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Grid {
+    margin-left: -4px !important;
+  }
+
+  .Profile {
+    width: 100%;
+    background: url('/public/img/Profile-background-cut.png');
+    background-position: center top;
+    background-size: cover;
+    height: 79vh;
+    display: flex;
+  }
+
+  .AppBar {
+    width: 100%;
+    height: 6.3vh;
+    background-color: #2d2d2d;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    z-index: 100;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.35s linear;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .AppBar > img:first-child {
+    height: 60%;
+    aspect-ratio: 1/1;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 9px;
+    object-fit: contain;
+  }
+
+  .LogoutButton {
+    border: 0;
+    background-color: transparent;
+    height: 60%;
+    aspect-ratio: 29/25;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 18px;
+  }
+
+  .LogoutButton > img {
+    height: 100%;
+    aspect-ratio: 29/25;
+  }
+
+  .Logout {
+    object-fit: cover;
+  }
+
+  .Searchbar {
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: #363636;
+    height: 60%;
+    width: 50%;
+    border-radius: 90px;
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: border-color 0.2s linear;
+    border-color: transparent;
+  }
+
+  .Searchbar:focus-within {
+    border: 2px solid #ffffff;
+    color: #606060;
+  }
+
+  .Searchbar > input {
+    color: white;
+    flex-grow: 8.5;
+    background-color: transparent;
+    border: 0;
+    text-align: center;
+    font-size: 3vw;
+    font-family: 'Noto Sans KR';
+  }
+
+  .Searchbar > input::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 3vw;
+  }
+
+  .Searchbar > input::-webkit-outer-spin-button,
+  .Searchbar > input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  .Searchbar > input:focus {
+    border: 0;
+    outline: none;
+  }
+
+  .Searchbar > input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  .Searchbar > div {
+    flex-grow: 1.5;
+    width: 0;
+    height: 20px;
+    border-left: 2px solid #313131;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: border-left 0.2s linear;
+  }
+
+  .Searchbar:focus-within > div {
+    border-left: 2px solid #ffffff;
+  }
+
+  .Searchbar > button {
+    flex-grow: 1.5;
+    border: 0;
+    background-color: transparent;
+    background-image: url('/public/img/icons/SearchButtonGray.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: auto;
+    height: 50%;
+  }
+
+  .Nickname {
+    width: 100%;
+    height: 12vw;
+    font-size: 11vw;
+    line-height: 12vw;
+  }
+  .Uid {
+    width: 100%;
+    font-size: 4vw;
+  }
+  .Daily {
+    margin-top: 10%;
+    font-size: 3vw;
+    line-height: 3vw;
+  }
+  .DailyBanner {
+    width: 25%;
+    height: calc(60 / 78 * 78px);
+  }
+
+  .DailyBanner :first-child {
+    height: calc(36 / 42 * 1vw * 7);
+    margin-bottom: 7px;
+  }
+
+  .DailyiconResin {
+    max-width: calc(36 / 42 * 0.81vw * 9);
+    object-fit: contain;
+    overflow: hidden;
+  }
+
+  .Dailyicon {
+    max-width: calc(36 / 42 * 1vw * 9);
+    object-fit: contain;
+    overflow: hidden;
+  }
+
+  .Divline::before {
+    content: '';
+    height: 11vw;
+    position: absolute;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .Materials {
+    background-color: white;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    width: 100%;
+    display: flex;
+  }
+
+  .MaterialList {
+    width: 90%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 3% 5% 3% 5%;
+  }
+
+  .WorldExpList {
+    width: 100%;
+  }
+  .WorldExpBox {
+    background-size: calc(600 * 0.555px) calc(337 * 0.555px);
+  }
+
+  .WorldLevel {
+    font-size: 3.8vw;
+    line-height: 4.3vw;
+    font-weight: 200;
+    height: 4.3vw;
+    margin-top: 1.9vw;
+  }
+
+  .WorldProgress {
+    font-size: 3.8vw;
+    font-weight: 200;
+    height: 4.3vw;
+    line-height: 4.3vw;
+    margin-top: 1.2vw;
+  }
+
+  .Myinfo {
+    margin-top: 2vh;
+    width: 100%;
+    background: #1b1b1b;
+    margin-bottom: 2vh;
+  }
+
+  .MyinfoGrid {
+    max-width: 1520px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .MydataList {
+    max-width: 936px;
+    margin: auto;
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3vw 2vw 3vw 2vw;
+    color: white;
+    font-family: 'Noto Sans KR';
+    text-align: center;
+  }
+
+  .MydataTextBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .MydataTextBox:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .MydataText {
+    min-width: 30vw;
+    margin-bottom: 1vh;
+  }
+
+  .MydataText :first-child {
+    font-size: 7vw;
+    font-weight: 500;
+  }
+
+  .MydataText :last-child {
+    font-size: 3vw;
+    font-weight: 400;
+  }
+
+  .MydataDivline {
+    height: 10vw;
+    width: 0px;
+    border: 0px solid #313131;
+  }
+
+  /* 아바타 리스트 */
+  .AvatarList {
+    max-width: 1520px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .AvatarListGrid {
+    margin-top: 90px;
+    width: 100%;
+  }
+
+  .Avatardiv {
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .Avatardiv > div {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .Avatardiv::-webkit-scrollbar {
+    display: none;
+  }
+
+  .AvatarSlide {
+    display: flex;
+  }
+
+  .AvatarBox {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    border-radius: 5%;
+    background-color: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 30%;
+    transition: opacity 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+    transition: height 0.2s ease-in-out;
+  }
+
+  .AvatarBoxNotActive {
+    opacity: 70%;
+    width: 80%;
+    height: 80%;
+  }
+
+  .AvatarBoxActive {
+    opacity: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .AvatarName {
+    font-family: 'Noto Sans KR';
+    color: #2d2d2d;
+    text-align: center;
+    font-weight: 700;
+    font-size: 100%;
+    margin-bottom: 2%;
+  }
+
+  .Avatarimg {
+    object-fit: contain;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: height 0.35s ease-in-out;
+    overflow: hidden;
+    border: 4px solid white;
+    border-radius: 10px;
+  }
+
+  .Avatarimg5 {
+    background-image: url('/public/img/star_5.png');
+  }
+
+  .Avatarimg4 {
+    background-image: url('/public/img/star_4.png');
+  }
+
+  .Avatarimg3 {
+    background-image: url('/public/img/star_none.png');
+  }
+
+  .CharacterInfo {
+    margin-top: 10px;
+  }
+
+  .CharacterInfoBox {
+    font-family: 'Noto Sans KR';
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .CharacterInfoName {
+    font-size: 10vw;
+  }
+
+  .CharacterInfoData {
+    font-size: 4vw;
+    font-weight: 200;
+  }
+
+  .CharacterInfoContour {
+    margin: 2px auto 2px auto;
+    width: 18vw;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 25%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.1) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .CharacterInfoWeapon {
+    margin: 10px auto 10px auto;
+    width: 84%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: #2d2d2d;
+    text-align: left;
+    padding: 6px;
+  }
+
+  .CharacterInfoWeaponBase {
+    aspect-ratio: 1/1;
+    width: 25%;
+    border-radius: 10%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 4px rgb(229, 206, 130) solid;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .CharacterInfoWeaponData {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .CharacterInfoWeaponDataHead {
+    display: flex;
+    flex-direction: row;
+    line-height: 1;
+    font-size: 4vw;
+  }
+  .CharacterInfoWeaponDataHeadName {
+    font-weight: 700;
+    font-size: 4vw;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .CharacterInfoWeaponDataHeadLevel {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+    background-color: #2d2d2d;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px;
+  }
+  .CharacterInfoWeaponDataHeadAffix {
+    margin-left: auto;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+  }
+  .CharacterInfoWeaponDataHeadAffix > img {
+    object-fit: contain;
+    max-height: 4vw;
+    height: 100%;
+    margin-right: 3px;
+  }
+  .CharacterInfoWeaponDataHeadAffix > div {
+    font-weight: 600;
+    font-size: 4vw;
+  }
+  .CharacterInfoWeaponDataDescription {
+    max-width: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 3vw;
+  }
+
+  .CharacterInfoArtifact {
+    background-color: white;
+    display: flex;
+    margin: 10px auto 20vh auto;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  .CharacterInfoArtifact > img {
+    height: 7vw;
+    aspect-ratio: 1/1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 100%;
+    border: 4px rgb(229, 206, 130) solid;
+    margin-left: 5px;
+  }
+
+  .TopButton {
+    opacity: 0;
+    border-radius: 100%;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+    transition: opacity 0.35s linear;
+    width: 8vw;
+    height: 8vw;
+  }
+
+  .TopButtonOff {
+    opacity: 1;
+    box-shadow: 0px 0px 0px transparent;
+  }
+
+  .TopButtonPos {
+    position: fixed;
+    bottom: 4vw;
+    right: -50px;
+    background-color: transparent;
+    border: 0;
+    transition: right 0.35s ease-in-out;
+  }
+
+  .TopButtonPosOff {
+    right: 4vw;
+  }
+
+  .AvatarListGrid {
+    margin-top: 5vh;
+    width: 100%;
+  }
+
+  .IsSunday {
+    height: 16.5vw;
+  }
+}

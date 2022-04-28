@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    chunkFilename: '[name].js',
+    assetModuleFilename: 'assets/[name][ext]',
   },
   module: {
     rules: [
@@ -39,19 +39,62 @@ module.exports = {
         include: /\.module\.css$/,
       },
       {
-        test: /\.(png|jp(e*)g)$/,
+        test: /\.css$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
             options: {
-              outputPath: './img/',
-              limit: 10000,
-              esModule: false,
-              name: '[name].[ext]',
+              url: true,
             },
           },
         ],
-        type: 'javascript/auto',
+        exclude: /\.module\.css$/,
+      },
+      // {
+      //   test: /\.(png|jp(e*)g)$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         outputPath: './img/',
+      //         limit: 10000,
+      //         esModule: false,
+      //         name: '[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      //   type: 'javascript/auto',
+      // },
+      {
+        test: /\.(png|jp(e*)g)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash][ext]',
+        },
+      },
+      // {
+      //   test: /\.ttf$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 10000,
+      //         fallback: 'file-loader',
+      //         name: 'fonts/[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      //   type: 'javascript/auto',
+      // },
+      {
+        test: /\.(ttf|otf)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
       },
     ],
   },
@@ -69,6 +112,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'public/index.html',
       filename: 'index.html',
+      favicon: 'public/favicon.ico',
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css',
@@ -83,7 +127,8 @@ module.exports = {
     },
     proxy: {
       '/api/*': {
-        target: 'http://localhost:8080',
+        target: 'https://[::1]:8080',
+        secure: false,
         pathRewrite: { '^/api': '/' },
       },
     },

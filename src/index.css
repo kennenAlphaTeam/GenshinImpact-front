@@ -1,0 +1,51 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'); */
+
+@font-face {
+  font-family: 'Inter-400';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/public/fonts/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter-300';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/public/fonts/Inter-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/public/fonts/NotoSansKR-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/public/fonts/NotoSansKR-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/public/fonts/NotoSansKR-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/public/fonts/NotoSansKR-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 200;
+  src: url('/public/fonts/NotoSansKR-Thin.otf') format('opentype');
+}
