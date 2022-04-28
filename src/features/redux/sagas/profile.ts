@@ -3,6 +3,8 @@ import { DataProfile, getProfileData } from '../../../api/data';
 import {
   getProfileAsync,
   GET_PROFILE_REQUEST,
+  GO_TO_INTRO,
+  GO_TO_LOGIN,
   GO_TO_UIDPROFILE,
 } from '../constants/actionTypes';
 
@@ -17,7 +19,31 @@ function* getUidProfile(action: ReturnType<typeof getProfileAsync.request>) {
     if (window.location.pathname === '/myprofile') {
       yield alert('잘못되거나 조회 불가능한 UID입니다.');
     }
+    switch (errorSlice(error.message)) {
+      case '500':
+        //서버 에러 => 에러페이지로 보내기
+        break;
+      case '403':
+        //잘못된 쿠키 => 로그인페이지로 보내기
+        yield put({ type: GO_TO_LOGIN });
+        break;
+      case '401':
+        //구글 OAuth에러 => 메인페이지로 보내기
+        yield put({ type: GO_TO_INTRO });
+        break;
+      case '400':
+        //잘못된 요청 => 일어날 가능성 x 그냥 로그인페이지로 보내기
+        yield put({ type: GO_TO_LOGIN });
+        break;
+      default:
+        yield put({ type: GO_TO_LOGIN });
+    }
   }
+}
+
+function errorSlice(msg: string): string | undefined {
+  const err_code: string | undefined = msg.split(' ').pop();
+  return err_code;
 }
 
 function* watchGetUidProfile() {
