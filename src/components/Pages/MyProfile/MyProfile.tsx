@@ -50,6 +50,7 @@ import LightIcon from '../../../img/materials/light.png';
 import GladiatorIcon from '../../../img/materials/gladiator.png';
 import AerosideriteIcon from '../../../img/materials/aerosiderite.png';
 import KijinIcon from '../../../img/materials/kijin.png';
+import useMyFetch from '../../../hooks/useMyFetch';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -699,24 +700,9 @@ const MyProfile = () => {
     if (blackline.current) io.observe(blackline.current);
   }, [blackline]);
   //IntersectionObserverAPI로 스크롤 애니매이션 지정
-
-  const dailyData = useSelector((state: RootState) => state.mydaily.data);
-  const myData = useSelector((state: RootState) => state.myprofile.data);
-  const myCharacter = useSelector((state: RootState) => state.mycharacter.data);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getMyDailyAsync.request());
-    dispatch(getMyProfileAsync.request());
-    dispatch(getMyCharacterAsync.request());
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      dispatch(getMyDailyAsync.request());
-    }, 240000);
-    return () => clearInterval(timer);
-  }, []);
+  const [myData, myCharacter, dailyData] = useMyFetch();
 
   return (
     <div className={styles.Parent}>
