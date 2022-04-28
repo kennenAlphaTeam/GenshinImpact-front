@@ -230,30 +230,34 @@ const UidProfile = () => {
   return (
     <div className={styles.Body}>
       <div>
-        {Object.keys(data).length !== 0 && (
-          <Grid
-            container
-            spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
-            columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
-            className={styles.Grid}>
-            <Grid item xs sm md lg />
-            <Grid item xs={10} sm={10} md={10} lg={10}>
-              <div className={styles.Mainbox}>
-                <Menubar />
-                <div className={styles.Divline}></div>
-                <div className={styles.Uid}>UID:{data.uid}</div>
-                <div className={styles.Divline}></div>
-                <UidData state={data} />
-                <div className={styles.Divline}></div>
-                <WorldExp state={data} />
-                <footer className={styles.Footer}>
-                  문의 메일: kennenalphateam@gmail.com
-                </footer>
-              </div>
-            </Grid>
-            <Grid item xs sm md lg />
+        <Grid
+          container
+          spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
+          columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
+          className={styles.Grid}>
+          <Grid item xs sm md lg />
+          <Grid item xs={10} sm={10} md={10} lg={10}>
+            <div className={styles.Mainbox}>
+              <Menubar />
+              {Object.keys(data).length !== 0 && data.uid === uid ? (
+                <>
+                  <div className={styles.Divline}></div>
+                  <div className={styles.Uid}>UID:{data.uid}</div>
+                  <div className={styles.Divline}></div>
+                  <UidData state={data} />
+                  <div className={styles.Divline}></div>
+                  <WorldExp state={data} />
+                  <footer className={styles.Footer}>
+                    문의 메일: kennenalphateam@gmail.com
+                  </footer>
+                </>
+              ) : (
+                <div className={styles.Loading} />
+              )}
+            </div>
           </Grid>
-        )}
+          <Grid item xs sm md lg />
+        </Grid>
       </div>
     </div>
   );
