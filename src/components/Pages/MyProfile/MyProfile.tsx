@@ -719,13 +719,17 @@ const MyProfile = () => {
   }, []);
 
   return (
-    <div className={styles.Test}>
+    <div className={styles.Parent}>
       <Menubar opacity={intersect} />
       <main className={styles.Profile}>
-        <div className={styles.ProfileGrid}>
-          <Userdata state={myData} />
-          <Dailydata state={dailyData} />
-        </div>
+        {Object.keys(dailyData).length ? (
+          <div className={styles.ProfileGrid}>
+            <Userdata state={myData} />
+            <Dailydata state={dailyData} />
+          </div>
+        ) : (
+          <div className={styles.Loading} />
+        )}
       </main>
       <div className={styles.Materials}>
         <div className={styles.MaterialsGrid}>
@@ -739,15 +743,17 @@ const MyProfile = () => {
           </div>
         </div>
         <div className={styles.Contour} />
-        <div className={styles.Myinfo} ref={blackline}>
-          <div className={styles.MyinfoGrid}>
-            <MyData state={myData} />
+        <div ref={blackline}>
+          <div className={styles.Myinfo}>
+            <div className={styles.MyinfoGrid}>
+              <MyData state={myData} />
+            </div>
           </div>
-        </div>
-        <div className={styles.Contour} />
-        <div className={styles.AvatarList}>
-          <div className={styles.AvatarListGrid}>
-            <AvatarProfile state={myCharacter} />
+          <div className={styles.Contour} />
+          <div className={styles.AvatarList}>
+            <div className={styles.AvatarListGrid}>
+              <AvatarProfile state={myCharacter} />
+            </div>
           </div>
         </div>
       </div>
