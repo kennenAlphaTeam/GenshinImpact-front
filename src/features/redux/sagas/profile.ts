@@ -5,6 +5,7 @@ import {
   GET_PROFILE_REQUEST,
   GO_TO_INTRO,
   GO_TO_LOGIN,
+  GO_TO_MYPROFILE,
   GO_TO_UIDPROFILE,
 } from '../constants/actionTypes';
 
@@ -16,9 +17,6 @@ function* getUidProfile(action: ReturnType<typeof getProfileAsync.request>) {
     yield put({ type: GO_TO_UIDPROFILE, payload: action.payload });
   } catch (error) {
     yield put(getProfileAsync.failure(error));
-    if (window.location.pathname === '/myprofile') {
-      yield alert('잘못되거나 조회 불가능한 UID입니다.');
-    }
     switch (errorSlice(error.message)) {
       case '500':
         //서버 에러 => 에러페이지로 보내기
@@ -32,8 +30,11 @@ function* getUidProfile(action: ReturnType<typeof getProfileAsync.request>) {
         yield put({ type: GO_TO_INTRO });
         break;
       case '400':
-        //잘못된 요청 => 일어날 가능성 x 그냥 로그인페이지로 보내기
-        yield put({ type: GO_TO_LOGIN });
+        //잘못된 요청
+        if (window.location.pathname !== '/myprofile') {
+          yield put({ type: GO_TO_MYPROFILE });
+        }
+        yield alert('잘못되거나 조회 불가능한 UID입니다.');
         break;
       default:
         yield put({ type: GO_TO_LOGIN });
