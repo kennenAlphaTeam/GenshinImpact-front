@@ -38,7 +38,7 @@ const Login = () => {
         navigator('/error');
         return '서버에 문제가 발생했습니다';
       default:
-        return '잘못된 쿠키입니다';
+        return '잘못되거나 전적 조회 불가능한 쿠키입니다';
     }
   };
 
@@ -60,6 +60,11 @@ const Login = () => {
             <div className={styles.LoginBox}>
               <div>
                 <div>쿠키를 입력해 주세요</div>
+                <a
+                  className={styles.Caution}
+                  href='https://act.hoyolab.com/app/community-game-records-sea/index.html?bbs_presentation_style=fullscreen&bbs_auth_required=true&v=101&gid=2&utm_source=tools&bbs_theme=light&bbs_theme_device=1#/ys/set'>
+                  !!전적조회 설정은 여기서!!
+                </a>
                 <div className={styles.Howto}>
                   <div
                     className={[styles.Infobox, check && styles.InfoboxOn].join(
@@ -79,10 +84,10 @@ const Login = () => {
                       2. 브라우저 개발자 도구를 엽니다.
                     </div>
                     <div className={styles.Help}>
-                      3. 개발자 도구의 상단에서 Console(콘솔)을 선택합니다.
+                      3. 개발자 도구의 상단에서 Console을 선택합니다.
                     </div>
                     <div className={styles.Help}>
-                      4. 콘솔에 document.cookie를 입력시 유저 쿠키가 나옵니다.
+                      4. 콘솔에 document.cookie를 입력시 쿠키가 나옵니다.
                     </div>
                     <div className={styles.Help}>
                       5. cookie값을 복사해서 아래 칸에 붙여넣어주면 끝!
