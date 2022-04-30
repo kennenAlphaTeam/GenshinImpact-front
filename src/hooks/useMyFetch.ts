@@ -6,6 +6,7 @@ import {
   getMyProfileAsync,
 } from '../features/redux/constants/actionTypes';
 import { RootState } from '../features/redux/reducers';
+import { DataProfile, CharacterProfile, DailyProfile } from '../api/data';
 
 const useMyFetch = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const useMyFetch = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       dispatch(getMyDailyAsync.request());
-    }, 10000);
+    }, 120000);
     return () => clearInterval(timer);
   }, []);
   return [profile, character, daily];

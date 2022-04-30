@@ -10,6 +10,8 @@ import rootSaga from './features/redux/sagas';
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
 import history from './features/history';
 import './index.css';
+import { ThemeProvider } from '@emotion/react';
+import theme from './style/theme';
 
 const sagaMiddleware = createSagaMiddleware({
   context: {

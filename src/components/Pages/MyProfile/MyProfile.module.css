@@ -1086,7 +1086,7 @@
   }
 
   .DailyiconResin {
-    max-width: calc(36 / 42 * 34px);
+    max-width: calc(6 / 7 * 34px);
     object-fit: contain;
     overflow: hidden;
   }

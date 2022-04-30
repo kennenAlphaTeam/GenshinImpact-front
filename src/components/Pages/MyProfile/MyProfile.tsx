@@ -51,6 +51,7 @@ import GladiatorIcon from '../../../img/materials/gladiator.png';
 import AerosideriteIcon from '../../../img/materials/aerosiderite.png';
 import KijinIcon from '../../../img/materials/kijin.png';
 import useMyFetch from '../../../hooks/useMyFetch';
+import Dailydatas from '../../Dailydata';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -81,10 +82,6 @@ const Menubar = (props: any) => {
     }
   };
 
-  const handleLogout = (e: React.MouseEvent<HTMLButtonElement>) => {
-    dispatch({ type: GO_TO_LOGIN });
-  };
-
   return (
     <div
       className={[styles.AppBar, props.opacity && styles.AppBarOff].join(' ')}>
@@ -98,7 +95,9 @@ const Menubar = (props: any) => {
         <div />
         <button onClick={handleOnClick}></button>
       </div>
-      <button className={styles.LogoutButton} onClick={handleLogout}>
+      <button
+        className={styles.LogoutButton}
+        onClick={() => dispatch({ type: GO_TO_LOGIN })}>
         <img src={LogoutIcon} alt='' className={styles.Logout} />
       </button>
     </div>
@@ -584,7 +583,6 @@ const CheckedCharacter = (props: any) => {
 const AvatarProfile = (props: any) => {
   const [selected, setSelected] = useState(0);
   const [selectedInfo, setSelectedInfo] = useState<Character | {}>({});
-  const [swiper, setSwiper] = useState<SwiperCore>();
   const characters: any = props.state;
 
   let listId: number = 0;
@@ -634,8 +632,7 @@ const AvatarProfile = (props: any) => {
           centeredSlides={true}
           onTransitionEnd={() => {
             setSelected(listId);
-          }}
-          onSwiper={(swiper) => setSwiper(swiper)}>
+          }}>
           {characters.avatars &&
             characters.avatars.map((list: Character, index: number) => {
               return (
@@ -700,7 +697,6 @@ const MyProfile = () => {
     if (blackline.current) io.observe(blackline.current);
   }, [blackline]);
   //IntersectionObserverAPI로 스크롤 애니매이션 지정
-  const dispatch = useDispatch();
 
   const [myData, myCharacter, dailyData] = useMyFetch();
 
@@ -711,7 +707,7 @@ const MyProfile = () => {
         {Object.keys(dailyData).length ? (
           <div className={styles.ProfileGrid}>
             <Userdata state={myData} />
-            <Dailydata state={dailyData} />
+            <Dailydatas data={dailyData} />
           </div>
         ) : (
           <div className={styles.Loading} />

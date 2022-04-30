@@ -1,5 +1,5 @@
 import { ActionType } from 'typesafe-actions';
-import { DailyProfile } from '../../../api/data';
+import { DailyProfile, ErrorResponse } from '../../../api/data';
 import {
   getMyDailyAsync,
   GET_MY_DAILY_FAILURE,

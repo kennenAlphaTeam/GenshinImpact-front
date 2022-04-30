@@ -1,5 +1,5 @@
 import { ActionType } from 'typesafe-actions';
-import { DataProfile } from '../../../api/data';
+import { DataProfile, ErrorResponse } from '../../../api/data';
 import {
   getProfileAsync,
   GET_PROFILE_FAILURE,
@@ -8,12 +8,17 @@ import {
 } from '../constants/actionTypes';
 
 type InitailState = {
-  data: DataProfile | object;
+  data: DataProfile | ErrorResponse;
   loading: boolean;
 };
 
 const initialState: any = {
-  data: {},
+  data: {
+    timestamp: '',
+    statue: 0,
+    error: '',
+    message: '',
+  },
   loading: false,
 };
 

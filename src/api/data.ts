@@ -38,7 +38,14 @@ export async function getMyCharacterData(): Promise<object> {
   return res.data;
 }
 
-export interface DailyProfile {
+export interface ErrorResponse {
+  timestamp: string;
+  statue: number;
+  error: string;
+  message: string;
+}
+
+export interface DailyProfile extends ErrorResponse {
   current_resin: number;
   max_resin: 160;
   resin_recovery_time: string;

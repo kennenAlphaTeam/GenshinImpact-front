@@ -1,5 +1,5 @@
 import { ActionType } from 'typesafe-actions';
-import { DataProfile } from '../../../api/data';
+import { DataProfile, ErrorResponse } from '../../../api/data';
 import {
   getMyProfileAsync,
   GET_MY_PROFILE_FAILURE,
