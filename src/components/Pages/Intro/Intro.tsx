@@ -7,7 +7,6 @@ import { RootState } from '../../../features/redux/reducers';
 
 const Intro = () => {
   const dispatch = useDispatch();
-  const isLogin = useSelector((state: RootState) => state.is_login.is_login);
   useEffect(() => {
     dispatch(getMyIDCardAsync.request());
   }, []);
