@@ -1236,10 +1236,6 @@
   .Searchbar > input {
     min-width: 30%;
   }
-  .Searchbar > div {
-    flex-grow: 0;
-    width: 0;
-  }
   .Searchbar > button {
     min-width: 32px;
   }
@@ -1579,20 +1575,6 @@
     object-fit: contain;
   }
 
-  .LogoutButton {
-    border: 0;
-    background-color: transparent;
-    height: 60%;
-    aspect-ratio: 29/25;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 18px;
-  }
-
-  .LogoutButton > img {
-    height: 100%;
-  }
-
   .Searchbar {
     margin-top: auto;
     margin-bottom: auto;
@@ -1625,36 +1607,6 @@
   .Searchbar > input::-webkit-input-placeholder {
     text-align: center;
     font-size: 3vw;
-  }
-
-  .Searchbar > input::-webkit-outer-spin-button,
-  .Searchbar > input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-
-  .Searchbar > input:focus {
-    border: 0;
-    outline: none;
-  }
-
-  .Searchbar > input:focus::-webkit-input-placeholder {
-    color: transparent;
-  }
-
-  .Searchbar > div {
-    flex-grow: 1.5;
-    width: 0;
-    height: 20px;
-    border-left: 2px solid #313131;
-    margin-top: auto;
-    margin-bottom: auto;
-    transition: border-left 0.2s linear;
-  }
-
-  .Searchbar:focus-within > div {
-    border-left: 2px solid #ffffff;
   }
 
   .Searchbar > button {
