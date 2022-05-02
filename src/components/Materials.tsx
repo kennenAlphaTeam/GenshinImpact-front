@@ -19,6 +19,15 @@ import KijinIcon from '../assets/materials/kijin.png';
 import React from 'react';
 import styled from 'styled-components';
 
+const dailydata = {
+  monde_book: [FreedomIcon, ResistanceIcon, BalladIcon],
+  liyue_book: [ProsperityIcon, DiligenceIcon, GoldIcon],
+  inazuma_book: [TransienceIcon, EleganceIcon, LightIcon],
+  monde_material: [DreamIcon, NostalgiaIcon, GladiatorIcon],
+  liyue_material: [GuyunIcon, ElixirIcon, AerosideriteIcon],
+  inazuma_material: [SeaIcon, ValorIcon, KijinIcon],
+};
+
 const Materials = () => {
   const date = new Date().getDay() - 1;
   const index = date !== -1 ? date % 3 : -1;
@@ -26,15 +35,6 @@ const Materials = () => {
   interface CheckSunday {
     sunday: boolean;
   }
-
-  const dailydata = {
-    monde_book: [FreedomIcon, ResistanceIcon, BalladIcon],
-    liyue_book: [ProsperityIcon, DiligenceIcon, GoldIcon],
-    inazuma_book: [TransienceIcon, EleganceIcon, LightIcon],
-    monde_material: [DreamIcon, NostalgiaIcon, GladiatorIcon],
-    liyue_material: [GuyunIcon, ElixirIcon, AerosideriteIcon],
-    inazuma_material: [SeaIcon, ValorIcon, KijinIcon],
-  };
 
   const MaterialList = styled.div`
     max-width: 930px;
@@ -78,7 +78,7 @@ const Materials = () => {
     }
   `;
 
-  const Items = styled.div<CheckSunday>`
+  const Items = styled.div`
     margin-top: 2%;
     width: 100%;
     display: flex;
@@ -91,57 +91,88 @@ const Materials = () => {
     }
   `;
 
+  const SundayItems = styled.div`
+    ${Items}
+    height: 12vw;
+    & > div {
+      position: relative;
+      max-width: 15%;
+    }
+    & > div > img {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 6px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+      z-index: 99;
+      &:nth-child(2) {
+        z-index: 99;
+        top: -8vw;
+        @media screen and (max-width: 900px) {
+          top: -10vw;
+        }
+      }
+      &:last-child {
+        z-index: 97;
+        top: -16vw;
+        @media screen and (max-width: 900px) {
+          top: -20vw;
+        }
+      }
+    }
+  `;
+
   return (
-    <div>
-      <div>
-        <div>
-          오늘 얻을 수 있는 소재는...
-          <div />
-        </div>
-        {date !== -1 ? (
+    <MaterialList>
+      <Text>
+        오늘 얻을 수 있는 소재는...
+        <Divline />
+      </Text>
+      {date !== -1 ? (
+        <Items>
+          <img src={dailydata.monde_book[index]} alt='' />
+          <img src={dailydata.liyue_book[index]} alt='' />
+          <img src={dailydata.inazuma_book[index]} alt='' />
+          <img src={dailydata.monde_material[index]} alt='' />
+          <img src={dailydata.liyue_material[index]} alt='' />
+          <img src={dailydata.inazuma_material[index]} alt='' />
+        </Items>
+      ) : (
+        <SundayItems>
           <div>
-            <img src={dailydata.monde_book[index]} alt='' />
-            <img src={dailydata.liyue_book[index]} alt='' />
-            <img src={dailydata.inazuma_book[index]} alt='' />
-            <img src={dailydata.monde_material[index]} alt='' />
-            <img src={dailydata.liyue_material[index]} alt='' />
-            <img src={dailydata.inazuma_material[index]} alt='' />
+            <img src={dailydata.monde_book[0]} alt='' />
+            <img src={dailydata.monde_book[1]} alt='' />
+            <img src={dailydata.monde_book[2]} alt='' />
           </div>
-        ) : (
           <div>
-            <div>
-              <img src={dailydata.monde_book[0]} alt='' />
-              <img src={dailydata.monde_book[1]} alt='' />
-              <img src={dailydata.monde_book[2]} alt='' />
-            </div>
-            <div>
-              <img src={dailydata.liyue_book[0]} alt='' />
-              <img src={dailydata.liyue_book[1]} alt='' />
-              <img src={dailydata.liyue_book[2]} alt='' />
-            </div>
-            <div>
-              <img src={dailydata.inazuma_book[0]} alt='' />
-              <img src={dailydata.inazuma_book[1]} alt='' />
-              <img src={dailydata.inazuma_book[2]} alt='' />
-            </div>
-            <div>
-              <img src={dailydata.monde_material[0]} alt='' />
-              <img src={dailydata.monde_material[1]} alt='' />
-              <img src={dailydata.monde_material[2]} alt='' />
-            </div>
-            <div>
-              <img src={dailydata.liyue_material[0]} alt='' />
-              <img src={dailydata.liyue_material[1]} alt='' />
-              <img src={dailydata.liyue_material[2]} alt='' />
-            </div>
-            <div>
-              <img src={dailydata.inazuma_material[index]} alt='' />
-              <img src={dailydata.inazuma_material[index]} alt='' />
-              <img src={dailydata.inazuma_material[index]} alt='' />
-            </div>
+            <img src={dailydata.liyue_book[0]} alt='' />
+            <img src={dailydata.liyue_book[1]} alt='' />
+            <img src={dailydata.liyue_book[2]} alt='' />
           </div>
-        )}
-      </div>
-    </div>
+          <div>
+            <img src={dailydata.inazuma_book[0]} alt='' />
+            <img src={dailydata.inazuma_book[1]} alt='' />
+            <img src={dailydata.inazuma_book[2]} alt='' />
+          </div>
+          <div>
+            <img src={dailydata.monde_material[0]} alt='' />
+            <img src={dailydata.monde_material[1]} alt='' />
+            <img src={dailydata.monde_material[2]} alt='' />
+          </div>
+          <div>
+            <img src={dailydata.liyue_material[0]} alt='' />
+            <img src={dailydata.liyue_material[1]} alt='' />
+            <img src={dailydata.liyue_material[2]} alt='' />
+          </div>
+          <div>
+            <img src={dailydata.inazuma_material[0]} alt='' />
+            <img src={dailydata.inazuma_material[1]} alt='' />
+            <img src={dailydata.inazuma_material[2]} alt='' />
+          </div>
+        </SundayItems>
+      )}
+    </MaterialList>
   );
 };
+
+export default Materials;

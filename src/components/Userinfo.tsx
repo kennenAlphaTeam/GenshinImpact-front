@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { DataProfile, ErrorResponse } from '../api/data';
 
 type UserProps = {
-  data: DataProfile;
+  data: DataProfile | any;
 };
 
 const Userinfo = ({ data }: UserProps) => {

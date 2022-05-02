@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { DailyProfile } from '../api/data';
 import ResinIcon from '../assets/icons/icon-resin.png';
 import PotIcon from '../assets/icons/icon-pot.png';
@@ -65,15 +65,19 @@ const Dailydatas = ({ data }: UserProps) => {
     margin-left: auto;
     margin-right: auto;
     @media screen and (max-width: 1200px) {
-      width: ${(props) => (props.primary ? 'calc(6 / 7 * 34px)' : '36px')};
+      width: ${(props) => (props.primary ? `calc(6 / 7 * 34px)` : '36px')};
       height: 36px;
     }
     @media screen and (max-width: 600px) {
       width: ${(props) =>
-        props.primary ? 'calc(54 / 7 * 0.81vw)' : 'calc(54 / 7 * 1vw)'};
+        props.primary ? `calc(54 / 7 * 0.81vw)` : `calc(54 / 7 * 1vw)`};
       height: 6vw;
     }
   `;
+
+  useEffect(() => {
+    console.log(data);
+  }, []);
 
   return (
     <Daily>

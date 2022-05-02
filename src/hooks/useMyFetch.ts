@@ -6,7 +6,6 @@ import {
   getMyProfileAsync,
 } from '../features/redux/constants/actionTypes';
 import { RootState } from '../features/redux/reducers';
-import { DataProfile, CharacterProfile, DailyProfile } from '../api/data';
 
 const useMyFetch = () => {
   const dispatch = useDispatch();

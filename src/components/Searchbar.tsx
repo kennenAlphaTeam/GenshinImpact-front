@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import useOnChange from '../hooks/useOnChange';
-import BannerTri from '../assets/icons/BannerTri.png';
+import BannerTri from '../assets/icons/banner-tri.png';
 import CookieChange from '../assets/icons/CookieChange.png';
+import SearchButtonGray from '../assets/icons/SearchButtonGray.png';
+import SearchButtonWhite from '../assets/icons/SearchButtonWhite.png';
 
 type SearchbarProps = {
   active: boolean;
@@ -17,6 +19,24 @@ const Searchbar = ({ active }: SearchbarProps) => {
     active: boolean;
   }
 
+  const fadeIn = keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  `;
+
+  const fadeOut = keyframes`
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  `;
+
   const Appbar = styled.div<BarSwitch>`
     width: 100%;
     height: 50px;
@@ -26,10 +46,16 @@ const Searchbar = ({ active }: SearchbarProps) => {
     left: 0px;
     display: flex;
     z-index: 100;
-    transition: opacity 0.35s linear;
     flex-direction: row;
     justify-content: space-between;
-    opacity: ${(props) => (props.active ? 1 : 0)};
+    ${(props) =>
+      props.active
+        ? css`
+            animation: 0.35s ease-in forwards 0s ${fadeOut};
+          `
+        : css`
+            animation: 0.35s ease-in forwards 0s ${fadeIn};
+          `};
     @media screen and (max-width: 600px) {
       height: 6.3vh;
     }
@@ -88,7 +114,7 @@ const Searchbar = ({ active }: SearchbarProps) => {
       flex-grow: 1.5;
       border: 0;
       background-color: transparent;
-      background-image: url('/public/img/icons/SearchButtonGray.png');
+      background-image: url(${SearchButtonGray});
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -98,7 +124,7 @@ const Searchbar = ({ active }: SearchbarProps) => {
       transition: background-image 0.2s linear;
     }
     &:focus-within > button {
-      background-image: url('/public/img/icons/SearchButtonWhite.png');
+      background-image: url(${SearchButtonWhite});
     }
   `;
 
@@ -148,6 +174,10 @@ const Searchbar = ({ active }: SearchbarProps) => {
       object-fit: contain;
     }
   `;
+
+  useEffect(() => {
+    console.log('Rendered');
+  });
 
   return (
     <Appbar active={active}>

@@ -32,26 +32,11 @@ import LiyueIcon from '../../../img/icons/Liyue.png';
 import InazumaIcon from '../../../img/icons/Inazuma.png';
 import ConstellIcon from '../../../img/icons/constell_dark.png';
 import StarOneBg from '../../../img/star_1.png';
-import FreedomIcon from '../../../img/materials/freedom.png';
-import ProsperityIcon from '../../../img/materials/prosperity.png';
-import TransienceIcon from '../../../img/materials/transience.png';
-import DreamIcon from '../../../img/materials/dream.png';
-import GuyunIcon from '../../../img/materials/guyun.png';
-import SeaIcon from '../../../img/materials/sea.png';
-import ResistanceIcon from '../../../img/materials/resistance.png';
-import DiligenceIcon from '../../../img/materials/diligence.png';
-import EleganceIcon from '../../../img/materials/elegance.png';
-import NostalgiaIcon from '../../../img/materials/nostalgia.png';
-import ElixirIcon from '../../../img/materials/elixir.png';
-import ValorIcon from '../../../img/materials/valor.png';
-import BalladIcon from '../../../img/materials/ballad.png';
-import GoldIcon from '../../../img/materials/gold.png';
-import LightIcon from '../../../img/materials/light.png';
-import GladiatorIcon from '../../../img/materials/gladiator.png';
-import AerosideriteIcon from '../../../img/materials/aerosiderite.png';
-import KijinIcon from '../../../img/materials/kijin.png';
 import useMyFetch from '../../../hooks/useMyFetch';
-import Dailydatas from '../../Dailydata';
+import Dailydatas from '../../Dailydatas';
+import Materials from '../../Materials';
+import Searchbar from '../../Searchbar';
+import Userinfo from '../../Userinfo';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -190,85 +175,6 @@ const Dailydata = (props: any) => {
         </div>
       </Grid>
       <Grid item md sm xs></Grid>
-    </Grid>
-  );
-};
-
-const TodayMaterials = () => {
-  const date = new Date().getDay() - 1;
-  const index = date !== -1 ? date % 3 : -1;
-
-  const dailydata = {
-    monde_book: [FreedomIcon, ResistanceIcon, BalladIcon],
-    liyue_book: [ProsperityIcon, DiligenceIcon, GoldIcon],
-    inazuma_book: [TransienceIcon, EleganceIcon, LightIcon],
-    monde_material: [DreamIcon, NostalgiaIcon, GladiatorIcon],
-    liyue_material: [GuyunIcon, ElixirIcon, AerosideriteIcon],
-    inazuma_material: [SeaIcon, ValorIcon, KijinIcon],
-  };
-
-  return (
-    <Grid
-      container
-      spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
-      columns={{ xs: 6, sm: 12, md: 12, lg: 12 }}
-      className={styles.Grid}>
-      <Grid item xs sm md lg></Grid>
-      <Grid item xs={6} sm={10} md={10} lg={8}>
-        <div className={styles.MaterialList}>
-          <div>
-            <div className={styles.MaterialText}>
-              오늘 얻을 수 있는 소재는...
-              <div className={styles.MaterialTextUnder}></div>
-            </div>
-            {date !== -1 ? (
-              <div className={styles.MaterialItems}>
-                <img src={dailydata.monde_book[index]} alt='' />
-                <img src={dailydata.liyue_book[index]} alt='' />
-                <img src={dailydata.inazuma_book[index]} alt='' />
-                <img src={dailydata.monde_material[index]} alt='' />
-                <img src={dailydata.liyue_material[index]} alt='' />
-                <img src={dailydata.inazuma_material[index]} alt='' />
-              </div>
-            ) : (
-              <div
-                className={[styles.MaterialItems, styles.IsSunday].join(' ')}>
-                <div>
-                  <img src={dailydata.monde_book[0]} alt='' />
-                  <img src={dailydata.monde_book[1]} alt='' />
-                  <img src={dailydata.monde_book[2]} alt='' />
-                </div>
-                <div>
-                  <img src={dailydata.liyue_book[0]} alt='' />
-                  <img src={dailydata.liyue_book[1]} alt='' />
-                  <img src={dailydata.liyue_book[2]} alt='' />
-                </div>
-                <div>
-                  <img src={dailydata.inazuma_book[0]} alt='' />
-                  <img src={dailydata.inazuma_book[1]} alt='' />
-                  <img src={dailydata.inazuma_book[2]} alt='' />
-                </div>
-                <div>
-                  <img src={dailydata.monde_material[0]} alt='' />
-                  <img src={dailydata.monde_material[1]} alt='' />
-                  <img src={dailydata.monde_material[2]} alt='' />
-                </div>
-                <div>
-                  <img src={dailydata.liyue_material[0]} alt='' />
-                  <img src={dailydata.liyue_material[1]} alt='' />
-                  <img src={dailydata.liyue_material[2]} alt='' />
-                </div>
-                <div>
-                  <img src={dailydata.inazuma_material[index]} alt='' />
-                  <img src={dailydata.inazuma_material[index]} alt='' />
-                  <img src={dailydata.inazuma_material[index]} alt='' />
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </Grid>
-      <Grid item xs sm md lg></Grid>
     </Grid>
   );
 };
@@ -702,11 +608,11 @@ const MyProfile = () => {
 
   return (
     <div className={styles.Parent}>
-      <Menubar opacity={intersect} />
+      <Searchbar active={intersect} />
       <main className={styles.Profile}>
-        {Object.keys(dailyData).length ? (
+        {Object.keys(dailyData).find((key) => key === 'current_resin') ? (
           <div className={styles.ProfileGrid}>
-            <Userdata state={myData} />
+            <Userinfo data={myData} />
             <Dailydatas data={dailyData} />
           </div>
         ) : (
@@ -715,7 +621,7 @@ const MyProfile = () => {
       </main>
       <div className={styles.Materials}>
         <div className={styles.MaterialsGrid}>
-          <TodayMaterials />
+          <Materials />
         </div>
       </div>
       <div className={styles.BlackBg}>
