@@ -15,18 +15,21 @@ const Userinfo = ({ data }: UserProps) => {
     text-align: center;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 128px;
-    line-height: 1;
+    line-height: 155px;
     @media screen and (max-width: 1536px) {
       height: 9.8vw;
       font-size: 8.4vw;
+      line-height: 9.8vw;
     }
     @media screen and (max-width: 900px) {
       height: 11vw;
       font-size: 9.5vw;
+      line-height: 11vw;
     }
     @media screen and (max-width: 600px) {
       height: 12vw;
       font-size: 11vw;
+      line-height: 12vw;
     }
   `;
 

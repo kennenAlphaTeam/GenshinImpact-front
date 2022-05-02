@@ -36,35 +36,36 @@ const Materials = () => {
     sunday: boolean;
   }
 
-  const MaterialList = styled.div`
+  const MaterialList = styled.div<CheckSunday>`
     max-width: 930px;
     width: 100%;
     border: 2px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     border-radius: 6px;
-    padding: 21px 33px 21px 33px;
+    padding: ${(props) =>
+      props.sunday ? '21px 33px 51px 33px' : '21px 33px 21px 33px'};
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     @media screen and (max-width: 600px) {
       width: 90%;
-      padding: 3% 5% 3% 5%;
+      padding: ${(props) =>
+        props.sunday ? '3% 5% calc(3% + 30px) 5%' : '3% 5% 3% 5%'};
     }
   `;
 
   const Text = styled.div`
-    width: 409px;
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 500;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 44px;
-    text-align: center;
+    text-align: left;
     color: rgba(0, 0, 0, 0.3);
     @media screen and (max-width: 900px) {
-      font-size: 5vw;
-      line-height: 6vw;
+      font-size: 4.5vw;
+      line-height: 5.5vw;
     }
   `;
 
@@ -73,9 +74,6 @@ const Materials = () => {
     height: 2px;
     margin: 2px;
     background-color: rgba(0, 0, 0, 0.07);
-    @media screen and (max-width: 900px) {
-      width: 50vw;
-    }
   `;
 
   const Items = styled.div`
@@ -86,49 +84,43 @@ const Materials = () => {
     justify-content: space-between;
     & > img {
       max-width: 128px;
+      width: 15%;
       border-radius: 6px;
       object-fit: contain;
     }
   `;
 
-  const SundayItems = styled.div`
-    ${Items}
-    height: 12vw;
+  const SundayItems = styled(Items)`
     & > div {
       position: relative;
-      max-width: 15%;
+      width: 15%;
+      aspect-ratio: 1/1;
     }
     & > div > img {
-      position: relative;
+      position: absolute;
       width: 100%;
       aspect-ratio: 1/1;
       border-radius: 6px;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
       z-index: 99;
       &:nth-child(2) {
-        z-index: 99;
-        top: -8vw;
-        @media screen and (max-width: 900px) {
-          top: -10vw;
-        }
+        z-index: 98;
+        top: 15px;
       }
       &:last-child {
         z-index: 97;
-        top: -16vw;
-        @media screen and (max-width: 900px) {
-          top: -20vw;
-        }
+        top: 30px;
       }
     }
   `;
 
   return (
-    <MaterialList>
+    <MaterialList sunday={date === -1 ? false : true}>
       <Text>
         오늘 얻을 수 있는 소재는...
         <Divline />
       </Text>
-      {date !== -1 ? (
+      {date === -1 ? (
         <Items>
           <img src={dailydata.monde_book[index]} alt='' />
           <img src={dailydata.liyue_book[index]} alt='' />

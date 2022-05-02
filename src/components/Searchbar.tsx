@@ -111,7 +111,7 @@ const Searchbar = ({ active }: SearchbarProps) => {
       border-left: 2px solid #ffffff;
     }
     & > button {
-      flex-grow: 1.5;
+      width: 15%;
       border: 0;
       background-color: transparent;
       background-image: url(${SearchButtonGray});
@@ -120,7 +120,6 @@ const Searchbar = ({ active }: SearchbarProps) => {
       background-size: contain;
       margin: auto;
       height: 50%;
-      min-width: 32px;
       transition: background-image 0.2s linear;
     }
     &:focus-within > button {
@@ -130,7 +129,7 @@ const Searchbar = ({ active }: SearchbarProps) => {
 
   const Input = styled.input`
     color: white;
-    flex-grow: 8.5;
+    width: 85%;
     background-color: transparent;
     border: 0;
     text-align: center;
@@ -167,7 +166,7 @@ const Searchbar = ({ active }: SearchbarProps) => {
     height: 60%;
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 18px;
+    margin-right: 9px;
     & > img {
       width: 100%;
       height: 100%;
@@ -191,7 +190,7 @@ const Searchbar = ({ active }: SearchbarProps) => {
               ? alert('잘못된 UID입니다')
               : navigate(`/profile/${uid}`)
           }
-          placeholder='인게임 UID를 입력해 주세요'
+          placeholder='UID를 입력해 주세요'
         />
         <div />
         <button

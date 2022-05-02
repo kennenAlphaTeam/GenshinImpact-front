@@ -37,6 +37,8 @@ import Dailydatas from '../../Dailydatas';
 import Materials from '../../Materials';
 import Searchbar from '../../Searchbar';
 import Userinfo from '../../Userinfo';
+import WorldExp from '../../WorldExp';
+import Loading from '../../Loading';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -177,87 +179,6 @@ const Dailydata = (props: any) => {
       <Grid item md sm xs></Grid>
     </Grid>
   );
-};
-
-const WorldExp = (props: any) => {
-  if (Object.keys(props.state).length != 0) {
-    interface WorldExpType {
-      level: number;
-      exploration_percentage: number;
-      icon: string;
-      name: string;
-      type: number;
-      offerings: [];
-      id: number;
-    }
-
-    const state: WorldExpType[] = props.state.world_explorations;
-
-    const monde = state.find((obj) => obj.name === '몬드');
-    const liyue = state.find((obj) => obj.name === '리월');
-    const inazuma = state.find((obj) => obj.name === '이나즈마');
-
-    return (
-      <Grid
-        container
-        spacing={{ xs: 0.5, sm: 2, md: 2, lg: 2 }}
-        columns={{ xs: 6, sm: 12, md: 12, lg: 12 }}
-        className={styles.Grid}>
-        <Grid item xs></Grid>
-        <Grid item xs={6} sm={10} md={10} lg={10}>
-          <div className={styles.WorldExpList}>
-            <div className={styles.WorldExpBox}>
-              <div className={styles.WorldBoxFilter}>
-                <div>
-                  <img src={MondeIcon} alt='' className={styles.WorldIcon} />
-                  <div className={styles.WorldName}>몬드</div>
-                  <div className={styles.WorldLevel}>
-                    평판 레벨:{monde?.level}
-                  </div>
-                  <div className={styles.WorldProgress}>
-                    탐사 진행도:{' '}
-                    {monde && monde?.exploration_percentage / 10.0 + '%'}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.WorldExpBox}>
-              <div className={styles.WorldBoxFilter}>
-                <div>
-                  <img src={LiyueIcon} alt='' className={styles.WorldIcon} />
-                  <div className={styles.WorldName}>리월</div>
-                  <div className={styles.WorldLevel}>
-                    평판 레벨:{liyue?.level}
-                  </div>
-                  <div className={styles.WorldProgress}>
-                    탐사 진행도:{' '}
-                    {liyue && liyue.exploration_percentage / 10.0 + '%'}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.WorldExpBox}>
-              <div className={styles.WorldBoxFilter}>
-                <div>
-                  <img src={InazumaIcon} alt='' className={styles.WorldIcon} />
-                  <div className={styles.WorldName}>이나즈마</div>
-                  <div className={styles.WorldLevel}>
-                    평판 레벨:{inazuma?.level}
-                  </div>
-                  <div className={styles.WorldProgress}>
-                    탐사 진행도:{' '}
-                    {inazuma && inazuma.exploration_percentage / 10.0 + '%'}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Grid>
-        <Grid item xs></Grid>
-      </Grid>
-    );
-  }
-  return <></>;
 };
 
 const MyData = (props: any) => {
@@ -616,7 +537,7 @@ const MyProfile = () => {
             <Dailydatas data={dailyData} />
           </div>
         ) : (
-          <div className={styles.Loading} />
+          <Loading />
         )}
       </main>
       <div className={styles.Materials}>
@@ -627,7 +548,11 @@ const MyProfile = () => {
       <div className={styles.BlackBg}>
         <div className={styles.Worlds}>
           <div className={styles.WorldsGrid}>
-            <WorldExp state={myData} />
+            {Object.keys(myData).length ? (
+              <WorldExp data={myData} />
+            ) : (
+              <Loading />
+            )}
           </div>
         </div>
         <div className={styles.Contour} />
