@@ -115,12 +115,12 @@ const Materials = () => {
   `;
 
   return (
-    <MaterialList sunday={date === -1 ? false : true}>
+    <MaterialList sunday={date !== -1 ? false : true}>
       <Text>
         오늘 얻을 수 있는 소재는...
         <Divline />
       </Text>
-      {date === -1 ? (
+      {date !== -1 ? (
         <Items>
           <img src={dailydata.monde_book[index]} alt='' />
           <img src={dailydata.liyue_book[index]} alt='' />

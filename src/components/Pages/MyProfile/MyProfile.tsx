@@ -39,6 +39,7 @@ import Searchbar from '../../Searchbar';
 import Userinfo from '../../Userinfo';
 import WorldExp from '../../WorldExp';
 import Loading from '../../Loading';
+import Records from '../../Records';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -559,7 +560,11 @@ const MyProfile = () => {
         <div ref={blackline}>
           <div className={styles.Myinfo}>
             <div className={styles.MyinfoGrid}>
-              <MyData state={myData} />
+              {Object.keys(myData).length ? (
+                <Records data={myData} />
+              ) : (
+                <Loading />
+              )}
             </div>
           </div>
           <div className={styles.Contour} />

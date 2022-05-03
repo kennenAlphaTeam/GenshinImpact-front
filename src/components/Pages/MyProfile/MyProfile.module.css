@@ -1711,23 +1711,6 @@
     margin-right: auto;
   }
 
-  .MydataList {
-    max-width: 936px;
-    margin: auto;
-    background-color: transparent;
-    border: 1px solid transparent;
-    box-sizing: border-box;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 3vw 2vw 3vw 2vw;
-    color: white;
-    font-family: 'Noto Sans KR';
-    text-align: center;
-  }
-
   .MydataTextBox {
     display: flex;
     flex-direction: column;
