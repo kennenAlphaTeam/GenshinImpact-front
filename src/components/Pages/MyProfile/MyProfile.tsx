@@ -40,6 +40,7 @@ import Userinfo from '../../Userinfo';
 import WorldExp from '../../WorldExp';
 import Loading from '../../Loading';
 import Records from '../../Records';
+import AvatarSwiper from '../../AvatarSwiper';
 
 const Menubar = (props: any) => {
   const [uid, setUid] = useState('');
@@ -570,7 +571,11 @@ const MyProfile = () => {
           <div className={styles.Contour} />
           <div className={styles.AvatarList}>
             <div className={styles.AvatarListGrid}>
-              <AvatarProfile state={myCharacter} />
+              {Object.keys(myData).length ? (
+                <AvatarSwiper characters={myCharacter} />
+              ) : (
+                <Loading />
+              )}
             </div>
           </div>
         </div>

@@ -6,77 +6,76 @@ type RecordType = {
   data: DataProfile | any;
 };
 
-const Records = ({ data }: RecordType) => {
-  const record = data.stats;
+const RecordList = styled.div`
+  max-width: 936px;
+  margin: auto;
+  background-color: #212121;
+  border: 1px solid #313131;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.5vw 1vw 1.5vw 1vw;
+  color: white;
+  font-family: 'Noto Sans KR';
+  text-align: center;
+  @media screen and (max-width: 600px) {
+    flex-wrap: wrap;
+    border-radius: 0px;
+  }
+`;
 
-  const RecordList = styled.div`
-    max-width: 936px;
-    margin: auto;
-    background-color: #212121;
-    border: 1px solid #313131;
-    box-sizing: border-box;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1.5vw 1vw 1.5vw 1vw;
-    color: white;
-    font-family: 'Noto Sans KR';
-    text-align: center;
-    @media screen and (max-width: 600px) {
-      flex-wrap: wrap;
-      border-radius: 0px;
+const TextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  min-width: calc(100% / 7);
+  @media screen and (max-width: 600px) {
+    &:last-child {
+      flex-direction: row;
     }
-  `;
+  }
+`;
 
-  const TextBox = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: auto;
-    min-width: calc(100% / 7);
-    @media screen and (max-width: 600px) {
-      &:last-child {
-        flex-direction: row;
-      }
-    }
-  `;
-
-  const Text = styled.div`
-    min-width: 2vw;
-    & > div:first-child {
-      font-size: 2vw;
-      font-weight: 500;
-    }
+const Text = styled.div`
+  min-width: 2vw;
+  & > div:first-child {
+    font-size: 2vw;
+    font-weight: 500;
+  }
+  & > div:last-child {
+    font-size: 0.7vw;
+    font-weight: 400;
+  }
+  @media screen and (max-width: 900px) {
     & > div:last-child {
       font-size: 0.7vw;
-      font-weight: 400;
     }
-    @media screen and (max-width: 900px) {
-      & > div:last-child {
-        font-size: 0.7vw;
-      }
+  }
+  @media screen and (max-width: 600px) {
+    min-width: 30vw;
+    margin-bottom: 1vh;
+    & > div:first-child {
+      font-size: 7vw;
     }
-    @media screen and (max-width: 600px) {
-      min-width: 30vw;
-      margin-bottom: 1vh;
-      & > div:first-child {
-        font-size: 7vw;
-      }
-      & > div:last-child {
-        font-size: 3vw;
-      }
+    & > div:last-child {
+      font-size: 3vw;
     }
-  `;
-  const Divline = styled.div`
-    height: 10vw;
-    width: 0px;
-    border: 1px solid #313131;
-    @media screen and (max-width: 600px) {
-      height: 0px;
-      border: 0px;
-    }
-  `;
+  }
+`;
+const Divline = styled.div`
+  height: 10vw;
+  width: 0px;
+  border: 1px solid #313131;
+  @media screen and (max-width: 600px) {
+    height: 0px;
+    border: 0px;
+  }
+`;
+const Records = ({ data }: RecordType) => {
+  const record = data.stats;
 
   return (
     <RecordList>
